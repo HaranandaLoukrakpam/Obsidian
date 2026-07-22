@@ -1,0 +1,1 @@
+Empty note tag for Neural Network
