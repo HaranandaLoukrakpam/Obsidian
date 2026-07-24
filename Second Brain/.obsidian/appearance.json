@@ -1,1 +1,9 @@
-{}
+{
+  "cssTheme": "macOS",
+  "accentColor": "",
+  "enabledCssSnippets": [
+    "obsidian"
+  ],
+  "theme": "obsidian",
+  "nativeMenus": true
+}

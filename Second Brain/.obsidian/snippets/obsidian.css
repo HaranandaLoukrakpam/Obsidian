@@ -1,0 +1,22 @@
+/* Floral Teal & Peach Obsidian Theme */
+body {
+    /* Backgrounds */
+    --background-primary: #2A3F47;
+    --background-secondary: #213238;
+    --background-modifier-border: #416973;
+
+    /* Accents */
+    --interactive-accent: #F0AA91;
+    --interactive-accent-hover: #FFBBA3;
+    --text-accent: #F0AA91;
+    --text-accent-hover: #FFBBA3;
+
+    /* Typography */
+    --text-normal: #F2F4F5;
+    --text-muted: #EBCDD2;
+    --text-faint: #6A8A93;
+    
+    /* Interactive Elements */
+    --background-modifier-hover: rgba(240, 170, 145, 0.15);
+    --background-modifier-active-hover: rgba(240, 170, 145, 0.25);
+}
