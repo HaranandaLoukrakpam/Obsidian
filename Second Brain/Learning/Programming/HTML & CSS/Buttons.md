@@ -69,7 +69,7 @@ Each `button` element is assigned a unique CSS class.
 
 # CSS Properties Used
 
-## [[background-color]]
+## [[Background-color]]
 
 Sets the background color of an element.
 
@@ -102,7 +102,7 @@ color: rgb(66, 66, 255);
 
 ---
 
-## [[border]]
+## [[Border]]
 
 Controls the border around an element.
 
@@ -266,7 +266,7 @@ HTML:
 
 # HTML Tags Used
 
-## [[style]]
+## [[Style]]
 
 The `<style>` tag contains internal CSS.
 
@@ -308,11 +308,11 @@ Buttons can be styled with CSS and respond to user interaction.
     
 - [[Border Radius]]
     
-- [[Width]]
+- [[width]]
     
-- [[Height]]
+- [[height]]
     
-- [[Cursor]]
+- [[cursor]]
     
 - [[Font Weight]]
     

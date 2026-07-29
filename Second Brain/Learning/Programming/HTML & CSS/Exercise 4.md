@@ -155,7 +155,7 @@ Example:
 
 # CSS Properties Used
 
-## [[background-color]]
+## [[Background-color]]
 
 Sets the background color of an element.
 
@@ -183,7 +183,7 @@ color: white;
 
 ---
 
-## [[border]]
+## [[Border]]
 
 Controls the border around an element.
 

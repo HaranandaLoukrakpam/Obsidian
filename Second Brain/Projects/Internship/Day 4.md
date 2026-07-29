@@ -57,7 +57,7 @@ CSS selector
 
 ---
 
-### [[class]]
+### [[Class]]
 
 Assigns reusable styles.
 
@@ -327,7 +327,7 @@ padding:10px;
 
 ---
 
-## [[border]]
+## [[Border]]
 
 Creates borders.
 
@@ -350,7 +350,7 @@ border-radius:30px;
 
 ---
 
-## [[background-color]]
+## [[Background-color]]
 
 Changes background color.
 
@@ -636,7 +636,7 @@ Each row is itself a Flexbox container.
     
 - [[Background Color]]
     
-- [[Color]]
+- [[color]]
     
 - [[Font Family]]
     
@@ -646,7 +646,7 @@ Each row is itself a Flexbox container.
     
 - [[Letter Spacing]]
     
-- [[Cursor]]
+- [[cursor]]
     
 - [[Box Shadow]]
     

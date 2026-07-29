@@ -89,7 +89,7 @@ Declares the document as an HTML5 document.
 
 ---
 
-## [[html]]
+## [[HTML]]
 
 The root element of every HTML document.
 
@@ -526,9 +526,9 @@ the image data is stored directly inside the HTML document.
     
 - [[DOCTYPE]]
     
-- [[Head]]
+- [[head]]
     
-- [[Body]]
+- [[body]]
     
 - [[Meta Tag]]
     
@@ -564,7 +564,7 @@ the image data is stored directly inside the HTML document.
     
 - [[placeholder]]
     
-- [[Button]]
+- [[button]]
     
 - [[Container]]
     

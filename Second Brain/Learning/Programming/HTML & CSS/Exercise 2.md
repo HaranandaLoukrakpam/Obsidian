@@ -119,7 +119,7 @@ This exercise introduces **Internal CSS** by styling buttons to resemble those f
 
 # HTML Tags Used
 
-## [[style]]
+## [[Style]]
 
 Defines **Internal CSS**.
 
@@ -165,7 +165,7 @@ to insert extra vertical spacing between groups of buttons.
 
 # HTML Attributes Used
 
-## [[class]]
+## [[Class]]
 
 Assigns a CSS class to an HTML element.
 
@@ -209,7 +209,7 @@ will receive these styles.
 
 # CSS Properties Used
 
-## [[background-color]]
+## [[Background-color]]
 
 Changes the background color.
 
@@ -236,7 +236,7 @@ color: white;
 
 ---
 
-## [[border]]
+## [[Border]]
 
 Defines the border.
 
@@ -399,7 +399,7 @@ The element becomes see-through, allowing the parent background to show through.
     
 - [[Style Tag]]
     
-- [[Button]]
+- [[button]]
     
 - [[Class]]
     
@@ -413,9 +413,9 @@ The element becomes see-through, allowing the parent background to show through.
     
 - [[Border Radius]]
     
-- [[Width]]
+- [[width]]
     
-- [[Height]]
+- [[height]]
     
 - [[Font Size]]
     

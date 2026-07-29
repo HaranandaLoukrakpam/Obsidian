@@ -572,7 +572,7 @@ Common for navigation links.
 
 ---
 
-## [[border]]
+## [[Border]]
 
 Creates borders.
 
@@ -821,13 +821,13 @@ Pricing
     
 - [[section]]
     
-- [[Div]]
+- [[div]]
     
-- [[Span]]
+- [[span]]
     
 - [[Anchor]]
     
-- [[Button]]
+- [[button]]
     
 - [[Image]]
     
@@ -839,27 +839,27 @@ Pricing
     
 - [[Hover Selector]]
     
-- [[Display]]
+- [[display]]
     
 - [[Justify Content]]
     
 - [[Align Items]]
     
-- [[Gap]]
+- [[gap]]
     
-- [[Width]]
+- [[width]]
     
-- [[Height]]
+- [[height]]
     
-- [[Margin]]
+- [[margin]]
     
-- [[Padding]]
+- [[padding]]
     
-- [[Background]]
+- [[background]]
     
 - [[Linear Gradient]]
     
-- [[Color]]
+- [[color]]
     
 - [[Font Size]]
     
@@ -879,7 +879,7 @@ Pricing
     
 - [[Object Fit]]
     
-- [[Transition]]
+- [[transition]]
     
 - [[transform]]
     
@@ -887,7 +887,7 @@ Pricing
     
 - [[Translate]]
     
-- [[Cursor]]
+- [[cursor]]
     
 - [[RGBA]]
     

@@ -85,7 +85,7 @@ Declares the document as an HTML5 document.
 
 ---
 
-## [[html]]
+## [[HTML]]
 
 The root element that contains the entire webpage.
 
@@ -384,13 +384,13 @@ Resume
     
 - [[DOCTYPE]]
     
-- [[Head]]
+- [[head]]
     
-- [[Body]]
+- [[body]]
     
 - [[Meta Tag]]
     
-- [[Title]]
+- [[title]]
     
 - [[Heading]]
     
@@ -416,7 +416,7 @@ Resume
     
 - [[Character Encoding]]
     
-- [[Viewport]]
+- [[viewport]]
     
 - [[Semantic HTML]]
     

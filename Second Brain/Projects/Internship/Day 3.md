@@ -234,7 +234,7 @@ Opens the webpage in a new browser tab.
 
 # CSS Properties Used
 
-## [[border]]
+## [[Border]]
 
 Creates a border.
 
@@ -346,7 +346,7 @@ border-radius: 10px;
 
 ---
 
-## [[background-color]]
+## [[Background-color]]
 
 Sets the background color.
 
@@ -526,7 +526,7 @@ This keeps HTML cleaner and makes CSS reusable across multiple pages.
     
 - [[Link Tag]]
     
-- [[Div]]
+- [[div]]
     
 - [[span]]
     
@@ -558,9 +558,9 @@ This keeps HTML cleaner and makes CSS reusable across multiple pages.
     
 - [[Text Align]]
     
-- [[Width]]
+- [[width]]
     
-- [[Height]]
+- [[height]]
     
 - [[Background Color]]
     

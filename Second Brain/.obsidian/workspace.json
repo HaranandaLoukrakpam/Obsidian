@@ -8,7 +8,79 @@
         "type": "tabs",
         "children": [
           {
-            "id": "3060944be67a5720",
+            "id": "65448ab6cdb760f6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "College/Semester 5/Machine Learning/Theory/Unsupervised Learning.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Unsupervised Learning"
+            }
+          },
+          {
+            "id": "638f6a98e0fc729c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "College/Semester 5/Machine Learning/Theory/Advanced Concept & Case Studies.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Advanced Concept & Case Studies"
+            }
+          },
+          {
+            "id": "c62d577d3ed5cea7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "College/Semester 5/Software Engineering/Theory/Software Requirements, Analysis, and Specification.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Software Requirements, Analysis, and Specification"
+            }
+          },
+          {
+            "id": "a283ead46033a6a7",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -17,7 +89,8 @@
               "title": "Graph view"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -186,35 +259,35 @@
       "bases:Create new base": false
     }
   },
-  "active": "3060944be67a5720",
+  "active": "d8fc3adb52488e4b",
   "lastOpenFiles": [
-    "College/Semester 4/Artificial Intelligence/IBM Watson Cloud.md",
-    "College/Semester 4/Data Visualization/NumPy.md",
-    "Tags/Matplotlib.md",
-    "Tags/Font.md",
-    "Tags/DOCTYPE.md",
-    "Tags/Broadcasting.md",
-    "Tags/Availability.md",
-    "Tags/Access Control.md",
-    "Tags/4G LTE.md",
-    "Books/The Idiot - Fyodor Dostoevsky/Part-1/Chapter-4.md",
-    "Tags/Chapter 4.md",
-    "Tags/Reputation.md",
-    "Tags/Money.md",
-    "Tags/Marriage.md",
-    "Tags/Freedom.md",
-    "Tags/Power and Exploitation.md",
-    "Tags/Social Reputation.md",
-    "Tags/Money and Morality.md",
-    "Tags/Gavrila Ardalionovich Ivolgin (Ganya).md",
-    "College/Semester 5/Data Communication and Computer Network/Introduction to Data Communication and Computer Network.md",
-    "Projects/Internship/Day 15.md",
-    "Tags/Building an E-Commerce Product Listing Page using Fetch API.md",
-    "Async/Await.md",
+    "College/Semester 5/Software Engineering/Theory/Modern Software Quality Engineering.md",
+    "Tags/GitHub Actions.md",
+    "Tags/Jenkins.md",
+    "Tags/Reliability Growth.md",
+    "Tags/Failure Rate.md",
+    "Tags/MTTR.md",
+    "Tags/Defect Density.md",
+    "Tags/Mean Time To Repair.md",
+    "Tags/MTBF.md",
+    "Tags/Mean Time Between Failures.md",
+    "Tags/MTTF.md",
+    "Tags/Mean Time To Failure.md",
+    "Tags/Reliability Measurement.md",
+    "Tags/Software Reliability.md",
+    "Tags/AI-Based Quality Analytics.md",
+    "Tags/CI.md",
+    "Tags/Automation Testing.md",
+    "Tags/ISO 25010.md",
+    "Tags/ISO 9126.md",
+    "Tags/Quality Control.md",
+    "Tags/Classical Quality Models.md",
+    "Tags/McCall's Quality Model.md",
+    "Tags/Boehm's Quality Model.md",
+    "Tags/Quality Assurance.md",
+    "Tags/Software Quality.md",
+    "Tags/Software Quality Engineering.md",
     "Async",
-    "Tags/Fetch API.md",
-    "Tags/Await.md",
-    "Tags/Async.md",
     "Projects/Internship/Day 15",
     "TCP",
     "College/Semester 4/Probability and Statisticss",

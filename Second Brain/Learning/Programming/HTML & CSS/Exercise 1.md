@@ -48,7 +48,7 @@ It tells the browser how to interpret the document.
 
 ---
 
-## [[html]]
+## [[HTML]]
 
 The root element that contains the entire webpage.
 
@@ -232,7 +232,7 @@ Buttons can later be styled using [[CSS]] and can execute actions using [[JavaSc
 
 # HTML Attributes Used
 
-## [[style]]
+## [[Style]]
 
 Applies CSS directly to an HTML element (called **Inline CSS**).
 
@@ -293,7 +293,7 @@ Possible values:
     
 - [[Paragraph]]
     
-- [[Button]]
+- [[button]]
     
 - [[Attributes]]
     

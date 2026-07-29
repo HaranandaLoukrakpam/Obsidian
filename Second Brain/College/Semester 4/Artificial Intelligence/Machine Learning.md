@@ -112,7 +112,7 @@ Examples:
 
 ## Types of Machine Learning
 
-### [[Supervised Learning]]
+### [[Tags/Supervised Learning]]
 
 The model learns using **labeled data**, where the correct output is known.
 
@@ -134,7 +134,7 @@ Common Algorithms:
 
 ---
 
-### [[Unsupervised Learning]]
+### [[Tags/Unsupervised Learning]]
 
 The model learns from **unlabeled data** by identifying hidden structures or patterns.
 
@@ -419,8 +419,8 @@ A machine learning model inspired by the human brain, widely used in [[Deep Lear
 - [[Label]]
 - [[Model]]
 - [[Algorithm]]
-- [[Supervised Learning]]
-- [[Unsupervised Learning]]
+- [[Tags/Supervised Learning]]
+- [[Tags/Unsupervised Learning]]
 - [[Semi-Supervised Learning]]
 - [[Reinforcement Learning]]
 - [[Training Dataset]]

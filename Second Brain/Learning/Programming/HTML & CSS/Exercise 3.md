@@ -146,7 +146,7 @@ Creates a clickable button.
 
 ---
 
-## [[style]]
+## [[Style]]
 
 Contains Internal CSS.
 
@@ -199,7 +199,7 @@ target="_blank"
 
 ---
 
-## [[style]]
+## [[Style]]
 
 Applies Inline CSS directly to an HTML element.
 
@@ -211,7 +211,7 @@ style="color: rgb(0,113,133);"
 
 ---
 
-## [[class]]
+## [[Class]]
 
 Assigns a CSS class to an HTML element.
 
@@ -245,7 +245,7 @@ Selects all elements with a specific class.
 
 # CSS Properties Used
 
-## [[background-color]]
+## [[Background-color]]
 
 Sets the background color.
 
@@ -269,7 +269,7 @@ color: rgb(0,113,133);
 
 ---
 
-## [[border]]
+## [[Border]]
 
 Controls the border.
 
@@ -383,7 +383,7 @@ Only one `h1` should normally be used for the main topic of a webpage.
     
 - [[Anchor Tag]]
     
-- [[Button]]
+- [[button]]
     
 - [[Style Tag]]
     
@@ -401,9 +401,9 @@ Only one `h1` should normally be used for the main topic of a webpage.
     
 - [[Border Radius]]
     
-- [[Width]]
+- [[width]]
     
-- [[Height]]
+- [[height]]
     
 - [[Font Size]]
     

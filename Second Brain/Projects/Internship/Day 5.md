@@ -300,7 +300,7 @@ Example
 
 # CSS Properties Used
 
-## [[border]]
+## [[Border]]
 
 Creates borders.
 
@@ -533,9 +533,9 @@ Selects
     
 - [[padding]]
     
-- [[Width]]
+- [[width]]
     
-- [[Height]]
+- [[height]]
     
 - [[background]]
     
