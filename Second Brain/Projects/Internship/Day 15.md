@@ -27,7 +27,7 @@ project/
     
 - [[Fetch API]]
     
-- [[Async/Await]]
+- [[Await 1]]
     
 - [[DOM Manipulation]]
     

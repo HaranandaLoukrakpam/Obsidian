@@ -85,7 +85,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Projects/Internship/Day 17.md",
+                "file": "Tags/Await 1.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -100,7 +100,7 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Day 17"
+              "title": "Await 1"
             }
           }
         ],
@@ -275,8 +275,8 @@
   },
   "active": "d8fc3adb52488e4b",
   "lastOpenFiles": [
-    "Tags/JavaScript DOM.md",
     "Projects/Internship/Day 17.md",
+    "Tags/JavaScript DOM.md",
     "Tags/Package.json.md",
     "Tags/Environment Variables.md",
     "Tags/Nodemon.md",
