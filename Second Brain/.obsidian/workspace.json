@@ -83,10 +83,24 @@
             "id": "a283ead46033a6a7",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "Projects/Internship/Day 17.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Day 17"
             }
           }
         ],
@@ -261,6 +275,15 @@
   },
   "active": "d8fc3adb52488e4b",
   "lastOpenFiles": [
+    "Tags/JavaScript DOM.md",
+    "Projects/Internship/Day 17.md",
+    "Tags/Package.json.md",
+    "Tags/Environment Variables.md",
+    "Tags/Nodemon.md",
+    "Tags/Routes.md",
+    "Tags/dotenv.md",
+    "Tags/CORS.md",
+    "Tags/Express.js.md",
     "College/Semester 5/Software Engineering/Theory/Modern Software Quality Engineering.md",
     "Tags/GitHub Actions.md",
     "Tags/Jenkins.md",
@@ -278,15 +301,6 @@
     "Tags/AI-Based Quality Analytics.md",
     "Tags/CI.md",
     "Tags/Automation Testing.md",
-    "Tags/ISO 25010.md",
-    "Tags/ISO 9126.md",
-    "Tags/Quality Control.md",
-    "Tags/Classical Quality Models.md",
-    "Tags/McCall's Quality Model.md",
-    "Tags/Boehm's Quality Model.md",
-    "Tags/Quality Assurance.md",
-    "Tags/Software Quality.md",
-    "Tags/Software Quality Engineering.md",
     "Async",
     "Projects/Internship/Day 15",
     "TCP",
