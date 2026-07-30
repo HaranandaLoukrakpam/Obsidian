@@ -1,298 +1,411 @@
 # Probability
 
-## Definition
-
-**Probability** is the branch of mathematics that deals with the likelihood or chance of an event occurring. It measures uncertainty and assigns a value between **0 and 1**, where:
-
-- **0** means the event is impossible.
-- **1** means the event is certain.
-
-Probability is widely used in **statistics, data science, artificial intelligence, machine learning, finance, engineering, medicine, and everyday decision-making**.
+**Tags:** [[Mathematics]] [[Probability]] [[Statistics]] [[Engineering Mathematics]] [[Random Variables]] [[Combinatorics]]
 
 ---
 
-## Basic Terminology
+# Definition
 
-### [[Experiment]]
+**Probability** is the branch of mathematics that deals with the study of **random events** and the likelihood of their occurrence.
 
-An action or process that produces one or more outcomes.
+It measures how likely an event is to happen and assigns a value between **0** and **1**.
 
-Examples:
+- **0** → Impossible event
+- **1** → Certain event
+
+---
+
+# Basic Terminology
+
+## [[Random Experiment]]
+
+An experiment whose outcome cannot be predicted with certainty before it is performed.
+
+Examples
 
 - Tossing a coin
 - Rolling a die
-- Drawing a card
+- Drawing a card from a deck
 
 ---
 
-### [[Outcome]]
+## [[Outcome]]
 
-A possible result of an experiment.
+A single possible result of a random experiment.
 
-Example:
+Example
 
-Rolling a die:
+Rolling a die
 
-```
-4
-```
+Possible outcomes
 
-is one outcome.
-
----
-
-### [[Sample Space]]
-
-The **sample space** is the set of all possible outcomes of an experiment.
-
-Example:
-
-Rolling a die:
-
-```
-S = {1,2,3,4,5,6}
-```
+$$
+\{1,2,3,4,5,6\}
+$$
 
 ---
 
-### [[Event]]
+## [[Sample Space]]
 
-An **event** is a subset of the sample space.
+The set of all possible outcomes of a random experiment.
 
-Example:
+Denoted by
 
-Getting an even number:
+$$
+S
+$$
 
-```
-E = {2,4,6}
-```
+Example
 
----
+Coin Toss
 
-## Probability Formula
+$$
+S=\{H,T\}
+$$
 
-The probability of an event is:
+Die Roll
 
-\[
-P(E)=\frac{\text{Number of favorable outcomes}}{\text{Total number of possible outcomes}}
-\]
-
-Example:
-
-Probability of getting an even number on a fair die:
-
-\[
-P(E)=\frac{3}{6}=\frac{1}{2}
-\]
+$$
+S=\{1,2,3,4,5,6\}
+$$
 
 ---
 
-## Characteristics of Probability
+## [[Event]]
 
-- Always lies between **0 and 1**.
-- Measures uncertainty.
-- Can be expressed as a fraction, decimal, or percentage.
-- Larger probability means a greater chance of occurring.
+An event is any subset of the sample space.
 
----
+Example
 
-# Types of Probability
+Getting an even number when rolling a die
 
-## 1. Classical Probability
-
-Based on equally likely outcomes.
-
-Example:
-
-Probability of getting a head:
-
-```
-1/2
-```
-
----
-
-## 2. Experimental (Empirical) Probability
-
-Calculated using actual observations.
-
-Formula:
-
-\[
-P(E)=\frac{\text{Number of times event occurs}}{\text{Total number of trials}}
-\]
-
----
-
-## 3. Subjective Probability
-
-Based on personal judgment or experience.
-
-Example:
-
-Estimating the chance that a sports team will win.
-
----
-
-## Basic Probability Rules
-
-### Impossible Event
-
-```
-P(E)=0
-```
-
----
-
-### Certain Event
-
-```
-P(E)=1
-```
-
----
-
-### Complement Rule
-
-For an event **A**:
-
-\[
-P(A')=1-P(A)
-\]
-
-where **A'** is the complement of **A**.
-
----
-
-### Addition Rule
-
-For two events:
-
-\[
-P(A\cup B)=P(A)+P(B)-P(A\cap B)
-\]
-
----
-
-### Multiplication Rule (Independent Events)
-
-If events **A** and **B** are independent:
-
-\[
-P(A\cap B)=P(A)\times P(B)
-\]
-
----
-
-### Conditional Probability
-
-The probability of event **A** occurring given that **B** has already occurred.
-
-\[
-P(A|B)=\frac{P(A\cap B)}{P(B)}
-\]
+$$
+E=\{2,4,6\}
+$$
 
 ---
 
 # Types of Events
 
-## Simple Event
+## [[Simple Event]]
 
 Contains only one outcome.
 
-Example:
+Example
 
-Rolling a **3**.
+$$
+\{3\}
+$$
 
 ---
 
-## Compound Event
+## [[Compound Event]]
 
 Contains more than one outcome.
 
-Example:
+Example
 
-Rolling an even number:
-
-```
-{2,4,6}
-```
+$$
+\{2,4,6\}
+$$
 
 ---
 
-## Independent Events
+## [[Certain Event]]
 
-The occurrence of one event does not affect the other.
+Occurs in every trial.
 
-Example:
+$$
+P(S)=1
+$$
+
+---
+
+## [[Impossible Event]]
+
+Can never occur.
+
+$$
+P(\varnothing)=0
+$$
+
+---
+
+## [[Complementary Event]]
+
+The complement of event $A$ consists of all outcomes not in $A$.
+
+Formula
+
+$$
+A'=S-A
+$$
+
+Probability
+
+$$
+P(A')=1-P(A)
+$$
+
+---
+
+## [[Mutually Exclusive Events]]
+
+Two events that cannot occur simultaneously.
+
+$$
+A\cap B=\varnothing
+$$
+
+Example
+
+Rolling a die
+
+- Event A = Even number
+- Event B = Odd number
+
+---
+
+## [[Independent Events]]
+
+Two events are independent if the occurrence of one does not affect the other.
+
+Formula
+
+$$
+P(A\cap B)=P(A)P(B)
+$$
+
+Example
 
 - Tossing a coin
 - Rolling a die
 
 ---
 
-## Dependent Events
+## [[Dependent Events]]
 
-The occurrence of one event affects the probability of the other.
+Two events are dependent if one event affects the probability of the other.
 
-Example:
+Example
 
 Drawing two cards without replacement.
 
 ---
 
-## Mutually Exclusive Events
+# Probability Formula
 
-Two events that cannot occur simultaneously.
+For equally likely outcomes,
 
-Example:
-
-Getting both **2** and **5** in a single die roll.
-
----
-
-## Equally Likely Events
-
-Events having the same probability.
-
-Example:
-
-Each face of a fair die.
+$$
+P(A)=\frac{\text{Number of favourable outcomes}}{\text{Total number of outcomes}}
+$$
 
 ---
 
-## Conditional Probability
+# Properties of Probability
 
-Probability when another event has already occurred.
+## Range
 
-Example:
-
-Probability that a selected card is a King given that it is a face card.
+$$
+0\le P(A)\le1
+$$
 
 ---
 
-# Random Variables
+## Impossible Event
 
-A **[[Random Variable]]** assigns numerical values to the outcomes of a random experiment.
+$$
+P(\varnothing)=0
+$$
 
-Types:
+---
 
-### [[Discrete Random Variable]]
+## Certain Event
+
+$$
+P(S)=1
+$$
+
+---
+
+## Complement Rule
+
+$$
+P(A')=1-P(A)
+$$
+
+---
+
+# Addition Rule
+
+For any two events,
+
+$$
+P(A\cup B)=P(A)+P(B)-P(A\cap B)
+$$
+
+If A and B are mutually exclusive,
+
+$$
+P(A\cup B)=P(A)+P(B)
+$$
+
+---
+
+# Multiplication Rule
+
+For independent events,
+
+$$
+P(A\cap B)=P(A)P(B)
+$$
+
+For dependent events,
+
+$$
+P(A\cap B)=P(A)P(B|A)
+$$
+
+---
+
+# Conditional Probability
+
+Conditional probability is the probability of event $A$ occurring given that event $B$ has already occurred.
+
+Formula
+
+$$
+P(A|B)=\frac{P(A\cap B)}{P(B)}
+$$
+
+where
+
+$$
+P(B)\neq0
+$$
+
+---
+
+# Bayes' Theorem
+
+Bayes' theorem relates conditional probabilities.
+
+Formula
+
+$$
+P(A|B)=\frac{P(B|A)P(A)}{P(B)}
+$$
+
+Applications
+
+- Medical diagnosis
+- Machine Learning
+- Spam detection
+- Artificial Intelligence
+
+---
+
+# Law of Total Probability
+
+If
+
+$$
+B_1,B_2,\ldots,B_n
+$$
+
+are mutually exclusive and exhaustive events,
+
+then
+
+$$
+P(A)=\sum_{i=1}^{n}P(A|B_i)P(B_i)
+$$
+
+---
+
+# Counting Principles
+
+## Factorial
+
+$$
+n!=n(n-1)(n-2)\cdots2\cdot1
+$$
+
+Special Case
+
+$$
+0!=1
+$$
+
+---
+
+## Permutations
+
+The number of arrangements of $r$ objects from $n$ objects.
+
+Formula
+
+$$
+{}^nP_r=\frac{n!}{(n-r)!}
+$$
+
+Example
+
+Arrange 3 students from 5 students
+
+$$
+{}^5P_3=\frac{5!}{2!}=60
+$$
+
+---
+
+## Combinations
+
+The number of selections of $r$ objects from $n$ objects.
+
+Formula
+
+$$
+{}^nC_r=\frac{n!}{r!(n-r)!}
+$$
+
+Example
+
+Choose 3 students from 5
+
+$$
+{}^5C_3=10
+$$
+
+---
+
+# Random Variable
+
+A variable whose value depends on the outcome of a random experiment.
+
+Types
+
+- Discrete Random Variable
+- Continuous Random Variable
+
+---
+
+## [[Discrete Random Variable]]
 
 Takes countable values.
 
-Examples:
+Example
 
-- Number of heads
-- Number of customers
+Number of heads in three coin tosses.
 
 ---
 
-### [[Continuous Random Variable]]
+## [[Continuous Random Variable]]
 
-Takes values from a continuous interval.
+Can take infinitely many values within an interval.
 
-Examples:
+Example
 
 - Height
 - Weight
@@ -300,30 +413,102 @@ Examples:
 
 ---
 
-# Probability Distributions
+# Probability Distribution
+
+A probability distribution describes how probabilities are assigned to different values of a random variable.
+
+---
+
+## [[Discrete Distribution]]
+
+Example
+
+| X | P(X) |
+|---|------|
+|0|0.25|
+|1|0.50|
+|2|0.25|
+
+---
+
+## [[Continuous Distribution]]
+
+Represented by a probability density function (PDF).
+
+---
+
+# Expected Value
+
+The expected value is the weighted average of all possible outcomes.
+
+Formula
+
+$$
+E(X)=\sum xP(x)
+$$
+
+---
+
+# [[Variance]]
+
+Measures the spread of the random variable.
+
+Formula
+
+$$
+Var(X)=E(X^2)-[E(X)]^2
+$$
+
+---
+
+# [[Standard Deviation]]
+
+The positive square root of the variance.
+
+$$
+\sigma=\sqrt{Var(X)}
+$$
+
+---
+
+# Common Probability Distributions
+
+## [[Bernoulli Distribution]]
+
+Models a single trial.
+
+Possible outcomes
+
+- Success
+- Failure
+
+---
 
 ## [[Binomial Distribution]]
 
-Used when:
+Models repeated independent Bernoulli trials.
 
-- Fixed number of trials.
-- Two possible outcomes.
-- Independent trials.
-- Constant probability of success.
+Formula
 
-Example:
-
-Number of heads in 10 coin tosses.
+$$
+P(X=x)=
+\binom{n}{x}
+p^x
+(1-p)^{n-x}
+$$
 
 ---
 
 ## [[Poisson Distribution]]
 
-Models the number of events occurring in a fixed interval.
+Used to model the number of events occurring in a fixed interval.
 
-Example:
+Formula
 
-Calls received by a call center in one hour.
+$$
+P(X=x)=
+\frac{e^{-\lambda}\lambda^x}{x!}
+$$
 
 ---
 
@@ -331,190 +516,182 @@ Calls received by a call center in one hour.
 
 A continuous probability distribution with a bell-shaped curve.
 
-Characteristics:
+Properties
 
-- Symmetric.
-- Mean = Median = Mode.
-
-Applications:
-
-- Heights
-- Test scores
-- Measurement errors
+- Symmetric
+- Mean = Median = Mode
+- Total area = 1
 
 ---
 
-# Counting Principles
+# Applications of Probability
 
-## [[Permutation]]
+## Engineering
 
-Arrangement where **order matters**.
-
-Formula:
-
-\[
-{}_nP_r=\frac{n!}{(n-r)!}
-\]
+- Reliability Analysis
+- Signal Processing
+- Communication Systems
 
 ---
 
-## [[Combination]]
+## Computer Science
 
-Selection where **order does not matter**.
+- Machine Learning
+- Artificial Intelligence
+- Cryptography
+- Randomized Algorithms
 
-Formula:
+---
 
-\[
-{}_nC_r=\frac{n!}{r!(n-r)!}
-\]
+## Finance
+
+- Risk Analysis
+- Stock Market Prediction
+- Insurance
+
+---
+
+## Medical Science
+
+- Disease Diagnosis
+- Clinical Trials
+
+---
+
+# Formula Sheet
+
+## [[Basic Probability]]
+
+$$
+P(A)=\frac{\text{Favourable Outcomes}}{\text{Total Outcomes}}
+$$
+
+---
+
+## [[Complement Rule]]
+
+$$
+P(A')=1-P(A)
+$$
+
+---
+
+## [[Addition Rule]]
+
+$$
+P(A\cup B)=P(A)+P(B)-P(A\cap B)
+$$
+
+---
+
+## [[Multiplication Rule]]
+
+Independent
+
+$$
+P(A\cap B)=P(A)P(B)
+$$
+
+Dependent
+
+$$
+P(A\cap B)=P(A)P(B|A)
+$$
+
+---
+
+## [[Conditional Probability]]
+
+$$
+P(A|B)=\frac{P(A\cap B)}{P(B)}
+$$
+
+---
+
+## [[Bayes' Theorem]]
+
+$$
+P(A|B)=\frac{P(B|A)P(A)}{P(B)}
+$$
+
+---
+
+## Permutations
+
+$$
+{}^nP_r=\frac{n!}{(n-r)!}
+$$
+
+---
+
+## Combinations
+
+$$
+{}^nC_r=\frac{n!}{r!(n-r)!}
+$$
 
 ---
 
 ## Expected Value
 
-The expected value is the long-run average outcome of a random variable.
-
-Formula:
-
-\[
+$$
 E(X)=\sum xP(x)
-\]
+$$
 
 ---
 
-## Applications of Probability
+## [[Variance]]
 
-### Statistics
-
-Data analysis and hypothesis testing.
-
----
-
-### Artificial Intelligence
-
-- Prediction
-- Decision-making
-- Bayesian models
+$$
+Var(X)=E(X^2)-[E(X)]^2
+$$
 
 ---
 
-### Machine Learning
+# Problem Solving Strategy
 
-- Classification
-- Naive Bayes algorithm
-- Model evaluation
-
----
-
-### Finance
-
-- Risk analysis
-- Investment planning
-- Insurance
+1. Identify the sample space.
+2. Define the event(s).
+3. Determine whether events are independent, dependent, or mutually exclusive.
+4. Choose the appropriate probability rule.
+5. Use permutations or combinations if counting is required.
+6. Simplify the result.
+7. Verify that the probability lies between 0 and 1.
 
 ---
 
-### Engineering
+# Common Mistakes
 
-- Reliability analysis
-- Quality control
+- Confusing permutations with combinations.
+- Forgetting the intersection term in the addition rule.
+- Assuming events are independent when they are not.
+- Ignoring conditional probability.
+- Forgetting that probabilities must satisfy
 
----
-
-### Medicine
-
-- Disease prediction
-- Clinical trials
-
----
-
-### Weather Forecasting
-
-Estimating the chance of rain or storms.
+$$
+0\le P(A)\le1
+$$
 
 ---
 
-## Advantages
+# Summary
 
-- Quantifies uncertainty.
-- Supports decision-making.
-- Widely applicable.
-- Foundation of statistics and machine learning.
-- Helps model real-world randomness.
+**Probability** is the mathematical study of uncertainty. It provides tools for measuring the likelihood of events and forms the foundation of **statistics**, **machine learning**, **artificial intelligence**, **data science**, **engineering**, **finance**, and **scientific research**. Understanding concepts such as sample spaces, events, conditional probability, Bayes' theorem, counting techniques, and probability distributions is essential for solving real-world problems involving randomness and decision-making.
 
 ---
 
-## Limitations
+# Related Notes
 
-- Predictions are probabilistic, not certain.
-- Accuracy depends on assumptions and data quality.
-- Complex events may require advanced mathematical models.
-
----
-
-## Probability vs Statistics
-
-| Probability | Statistics |
-|-------------|------------|
-| Predicts future outcomes | Analyzes collected data |
-| Starts with known probabilities | Starts with observed data |
-| Forward reasoning | Backward reasoning |
-| Theoretical | Data-driven |
-
----
-
-## Real-World Examples
-
-- Tossing a coin
-- Rolling a die
-- Lottery systems
-- Weather forecasting
-- Stock market risk analysis
-- Medical diagnosis
-- Spam email filtering
-- Recommendation systems
-
----
-
-## Key Terms
-
-| Term | Description |
-|------|-------------|
-| [[Probability]] | Measure of the likelihood of an event |
-| [[Experiment]] | Process that produces outcomes |
-| [[Outcome]] | Result of an experiment |
-| [[Sample Space]] | Set of all possible outcomes |
-| [[Event]] | Subset of the sample space |
-| [[Random Variable]] | Variable representing random outcomes |
-| [[Independent Events]] | Events that do not influence each other |
-| [[Dependent Events]] | Events where one affects the other |
-| [[Permutation]] | Ordered arrangement |
-| [[Combination]] | Unordered selection |
-| [[Expected Value]] | Long-run average outcome |
-
----
-
-## Related Notes
-
-- [[Probability]]
 - [[Statistics]]
-- [[Experiment]]
-- [[Outcome]]
-- [[Sample Space]]
-- [[Event]]
-- [[Independent Events]]
-- [[Dependent Events]]
-- [[Mutually Exclusive Events]]
-- [[Conditional Probability]]
-- [[Random Variable]]
-- [[Discrete Random Variable]]
-- [[Continuous Random Variable]]
-- [[Permutation]]
-- [[Combination]]
+- [[Random Variables]]
+- [[Combinatorics]]
+- [[Permutations]]
+- [[Combinations]]
 - [[Binomial Distribution]]
 - [[Poisson Distribution]]
 - [[Normal Distribution]]
-- [[Expected Value]]
-- [[Artificial Intelligence]]
-- [[Machine Learning]]
-- [[Data Science]]
+- [[Bayes' Theorem]]
+- [[Conditional Probability]]
+- [[Differential Equations]]
+- [[Engineering Mathematics]]
+- [[Mathematics Formula Sheet]]

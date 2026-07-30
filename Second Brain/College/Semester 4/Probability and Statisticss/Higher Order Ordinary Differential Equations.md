@@ -1,473 +1,891 @@
-# Higher-Order Ordinary Differential Equations (ODEs)
+# [[Higher Order Ordinary Differential Equations]]
 
-## Definition
-
-A **Higher-Order Ordinary Differential Equation (ODE)** is a differential equation that contains derivatives of an unknown function with respect to a single independent variable, where the **highest derivative is of order two or greater**.
-
-Higher-order ODEs are widely used to model systems involving acceleration, oscillations, electrical circuits, structural mechanics, heat transfer, and many other engineering and scientific applications.
+**Tags:** [[Mathematics]] [[Differential Equations]] [[Ordinary Differential Equations]] [[Higher Order ODE]] [[Calculus]] [[Engineering Mathematics]]
 
 ---
 
-## Ordinary Differential Equation (ODE)
+# [[Definition]]
 
-An **Ordinary Differential Equation (ODE)** is an equation involving a function of one independent variable and its derivatives.
+A **[[Higher Order Ordinary Differential Equation]] (ODE)** is an [[Ordinary Differential Equation]] that contains derivatives of the dependent variable of **order two or higher**.
 
-General form:
+Unlike a [[First Order Ordinary Differential Equation]], higher-order ODEs involve second, third, fourth, or higher derivatives.
 
-\[
-F(x, y, y', y'', \ldots, y^{(n)}) = 0
-\]
+General Form
 
-where:
+$$
+F\left(x,y,\frac{dy}{dx},\frac{d^2y}{dx^2},\cdots,\frac{d^ny}{dx^n}\right)=0
+$$
 
-- **x** = Independent variable
-- **y** = Dependent variable
-- **y', y'', ..., y⁽ⁿ⁾** = Derivatives of **y**
+where
 
----
-
-## Higher-Order Differential Equation
-
-A higher-order ODE contains at least the **second derivative**.
-
-General form:
-
-\[
-F(x,y,y',y'',...,y^{(n)})=0
-\]
-
-where **n ≥ 2**.
-
-Examples:
-
-\[
-\frac{d^2y}{dx^2}+5\frac{dy}{dx}+6y=0
-\]
-
-\[
-\frac{d^3y}{dx^3}=x^2
-\]
-
-\[
-\frac{d^4y}{dx^4}+y=0
-\]
+- $x$ → [[Independent Variable]]
+- $y$ → [[Dependent Variable]]
+- $\frac{d^ny}{dx^n}$ → [[Highest Order Derivative]]
 
 ---
 
-## Characteristics
+# [[Terminology]]
 
-- Contains derivatives of order two or higher.
-- One independent variable.
-- One dependent variable.
-- Models more complex physical systems.
-- Often requires initial or boundary conditions.
+## [[Order]]
 
----
+The **[[Order]]** of a [[Differential Equation]] is the highest derivative appearing in the equation.
 
-## Order and Degree
+### [[Second Order]]
 
-### Order
+$$
+\frac{d^2y}{dx^2}+4y=0
+$$
 
-The **order** is the highest-order derivative present in the equation.
-
-Example:
-
-\[
-\frac{d^3y}{dx^3}+2\frac{dy}{dx}=0
-\]
-
-Order = **3**
+Order = 2
 
 ---
 
-### Degree
+### [[Third Order]]
 
-The **degree** is the exponent of the highest-order derivative after removing radicals and fractional powers involving derivatives.
+$$
+\frac{d^3y}{dx^3}+x\frac{dy}{dx}=0
+$$
 
-Example:
-
-\[
-\left(\frac{d^2y}{dx^2}\right)^2+y=0
-\]
-
-Order = **2**
-
-Degree = **2**
+Order = 3
 
 ---
 
-# Types of Higher-Order ODEs
+### [[Fourth Order]]
 
-## 1. Linear Differential Equation
+$$
+\frac{d^4y}{dx^4}+16y=0
+$$
 
-General form:
-
-\[
-a_n(x)y^{(n)}+a_{n-1}(x)y^{(n-1)}+\cdots+a_1(x)y'+a_0(x)y=g(x)
-\]
-
-Characteristics:
-
-- Dependent variable and its derivatives appear only to the first power.
-- No products of derivatives.
-
-Example:
-
-\[
-y''+4y'+4y=0
-\]
+Order = 4
 
 ---
 
-## 2. Homogeneous Linear Equation
+## [[Degree]]
 
-A linear equation where the right-hand side is zero.
+The **[[Degree]]** of a differential equation is the exponent of the highest-order derivative after removing radicals and fractions involving derivatives.
 
-General form:
+Example
 
-\[
-a_ny^{(n)}+\cdots+a_1y'+a_0y=0
-\]
+$$
+\left(\frac{d^2y}{dx^2}\right)^3+y=0
+$$
 
-Example:
+Order = 2
 
-\[
-y''-5y'+6y=0
-\]
+Degree = 3
 
 ---
 
-## 3. Non-Homogeneous Linear Equation
+# [[Linear Differential Equations]]
 
-A linear equation with a non-zero right-hand side.
+A [[Higher Order Ordinary Differential Equation]] is **linear** if
 
-General form:
+- The dependent variable and all derivatives occur only to the first power.
+- There are no products between derivatives.
+- The coefficients depend only on the [[Independent Variable]].
 
-\[
-a_ny^{(n)}+\cdots+a_1y'+a_0y=f(x)
-\]
+General Form
 
-Example:
-
-\[
-y''+3y=x
-\]
-
----
-
-## 4. Nonlinear Differential Equation
-
-Contains nonlinear terms involving the dependent variable or its derivatives.
-
-Examples:
-
-\[
-(y')^2+y=0
-\]
-
-\[
-yy''+y'=0
-\]
+$$
+a_n(x)\frac{d^ny}{dx^n}
++a_{n-1}(x)\frac{d^{n-1}y}{dx^{n-1}}
++\cdots
++a_1(x)\frac{dy}{dx}
++a_0(x)y
+=
+g(x)
+$$
 
 ---
 
-# Solution of Linear Higher-Order ODEs
+# [[Nonlinear Differential Equations]]
 
-For equations with constant coefficients:
+A [[Differential Equation]] is **nonlinear** if
 
-\[
-ay''+by'+cy=0
-\]
+- Powers of derivatives occur.
+- Products of derivatives occur.
+- Functions such as
 
-Assume a solution of the form:
+$$
+y^2,\;e^y,\;\sin y
+$$
 
-\[
-y=e^{mx}
-\]
+appear.
 
-Substitute into the equation to obtain the **characteristic equation**:
+Example
 
-\[
-am^2+bm+c=0
-\]
-
-The roots determine the general solution.
+$$
+\frac{d^2y}{dx^2}+y^2=0
+$$
 
 ---
 
-## Cases of Characteristic Roots
+# [[Classification]]
 
-### 1. Distinct Real Roots
+## [[Homogeneous Differential Equations]]
 
-If:
+A higher-order equation is **homogeneous** if
 
-\[
-m_1 \ne m_2
-\]
+$$
+g(x)=0
+$$
 
-General solution:
+General Form
 
-\[
-y=C_1e^{m_1x}+C_2e^{m_2x}
-\]
+$$
+a_n(x)y^{(n)}
++\cdots
++a_1(x)y'
++a_0(x)y
+=
+0
+$$
 
----
+Example
 
-### 2. Repeated Real Roots
-
-If:
-
-\[
-m_1=m_2=m
-\]
-
-General solution:
-
-\[
-y=(C_1+C_2x)e^{mx}
-\]
-
----
-
-### 3. Complex Roots
-
-If:
-
-\[
-m=\alpha \pm i\beta
-\]
-
-General solution:
-
-\[
-y=e^{\alpha x}(C_1\cos\beta x+C_2\sin\beta x)
-\]
+$$
+\frac{d^2y}{dx^2}
++
+5\frac{dy}{dx}
++
+6y
+=
+0
+$$
 
 ---
 
-# Initial Value Problem (IVP)
+## [[Non-Homogeneous Differential Equations]]
 
-An **Initial Value Problem** specifies the value of the function and its derivatives at a particular point.
+A higher-order equation is **non-homogeneous** if
 
-Example:
+$$
+g(x)\neq0
+$$
 
-\[
-y''+y=0
-\]
+Example
 
-Conditions:
+$$
+\frac{d^2y}{dx^2}
++
+5\frac{dy}{dx}
++
+6y
+=
+e^x
+$$
 
-\[
+---
+
+# [[General Solution]]
+
+The **[[General Solution]]** of an $n^{th}$ order differential equation contains **n arbitrary constants**.
+
+Example
+
+$$
+\frac{d^2y}{dx^2}=0
+$$
+
+Integrating once
+
+$$
+\frac{dy}{dx}=C_1
+$$
+
+Integrating again
+
+$$
+y=C_1x+C_2
+$$
+
+Notice that two arbitrary constants appear because the equation is second order.
+
+---
+
+# [[Particular Solution]]
+
+A [[Particular Solution]] is obtained after applying the given [[Initial Condition]] or [[Boundary Condition]].
+
+General Solution
+
+$$
+y=C_1x+C_2
+$$
+
+Given
+
+$$
 y(0)=2
-\]
+$$
 
-\[
-y'(0)=1
-\]
+$$
+y'(0)=3
+$$
 
-These conditions determine the arbitrary constants.
+Therefore
+
+$$
+C_2=2
+$$
+
+$$
+C_1=3
+$$
+
+Hence
+
+$$
+y=3x+2
+$$
 
 ---
 
-# Boundary Value Problem (BVP)
+# [[Initial Value Problems]]
 
-A **Boundary Value Problem** specifies conditions at two different points.
+An **[[Initial Value Problem]] (IVP)** consists of a higher-order differential equation together with initial conditions specified at the same point.
 
-Example:
+Example
 
-\[
-y''+y=0
-\]
+$$
+\frac{d^2y}{dx^2}+4y=0
+$$
 
-Conditions:
+Given
 
-\[
+$$
+y(0)=1
+$$
+
+$$
+y'(0)=0
+$$
+
+---
+
+# [[Boundary Value Problems]]
+
+A **[[Boundary Value Problem]] (BVP)** specifies the values of the solution at two or more different points.
+
+Example
+
+$$
+\frac{d^2y}{dx^2}=0
+$$
+
+Given
+
+$$
 y(0)=0
-\]
+$$
 
-\[
-y(\pi)=0
-\]
-
----
-
-# Applications
-
-Higher-order ODEs are used in:
-
-### Physics
-
-- Newton's Second Law
-- Oscillations
-- Wave motion
-- Heat conduction
+$$
+y(5)=10
+$$
 
 ---
 
-### Mechanical Engineering
+# [[Constant Coefficient Linear Differential Equations]]
 
-- Vibrating systems
-- Beam deflection
-- Suspension systems
+A **[[Constant Coefficient Linear Differential Equation]]** has constant coefficients.
 
----
+General Form
 
-### Electrical Engineering
-
-- RLC circuits
-- Signal processing
-- Control systems
-
----
-
-### Civil Engineering
-
-- Bridge analysis
-- Structural design
+$$
+a_ny^{(n)}
++a_{n-1}y^{(n-1)}
++\cdots
++a_1y'
++a_0y
+=
+0
+$$
 
 ---
 
-### Aerospace Engineering
+# [[Solution Procedure]]
 
-- Aircraft motion
-- Satellite dynamics
-
----
-
-### Biology
-
-- Population dynamics
-- Biomechanics
+1. Form the [[Auxiliary Equation]].
+2. Solve for its roots.
+3. Construct the [[Complementary Function]].
+4. Find the [[Particular Integral]] if necessary.
+5. Apply the given [[Initial Condition]] or [[Boundary Condition]].
 
 ---
 
-## Advantages
+# [[Auxiliary Equation]]
 
-- Models complex real-world systems.
-- Describes dynamic behavior accurately.
-- Applicable across many scientific disciplines.
-- Supports engineering design and analysis.
+The [[Auxiliary Equation]] (also called the [[Characteristic Equation]]) is obtained by replacing
 
----
+$$
+\frac{d}{dx}
+$$
 
-## Limitations
+with
 
-- Solutions may be difficult to obtain analytically.
-- Some equations require numerical methods.
-- Higher-order equations often involve lengthy calculations.
+$$
+m
+$$
 
----
+Example
 
-# First-Order ODE vs Higher-Order ODE
+$$
+\frac{d^2y}{dx^2}
+-
+5\frac{dy}{dx}
++
+6y
+=
+0
+$$
 
-| First-Order ODE | Higher-Order ODE |
-|-----------------|------------------|
-| Highest derivative is first order | Highest derivative is second order or higher |
-| Simpler to solve | More complex to solve |
-| One initial condition is usually sufficient | Multiple initial or boundary conditions are needed |
-| Models simpler systems | Models more complex systems |
+Auxiliary Equation
 
----
+$$
+m^2-5m+6=0
+$$
 
-# Homogeneous vs Non-Homogeneous ODE
+Roots
 
-| Homogeneous | Non-Homogeneous |
-|-------------|-----------------|
-| Right-hand side is zero | Right-hand side is non-zero |
-| Solution is the complementary function | Solution = complementary function + particular solution |
-| Example: \(y''+y=0\) | Example: \(y''+y=x\) |
+$$
+m=2,\;3
+$$
 
----
+General Solution
 
-## Common Solution Methods
-
-| Method | Applicable To |
-|---------|---------------|
-| Characteristic Equation | Linear ODEs with constant coefficients |
-| Method of Undetermined Coefficients | Non-homogeneous linear ODEs |
-| Variation of Parameters | General non-homogeneous linear ODEs |
-| Reduction of Order | Second-order linear ODEs with one known solution |
-| Power Series Method | Variable-coefficient ODEs |
+$$
+y=C_1e^{2x}+C_2e^{3x}
+$$
 
 ---
 
-## Real-World Examples
+# [[Types of Roots]]
 
-- Motion of a spring-mass system
-- RLC electrical circuits
-- Vibrations of buildings during earthquakes
-- Heat transfer in solids
-- Beam bending in construction
-- Satellite orbit calculations
-- Mechanical suspension systems
+## [[Distinct Real Roots]]
 
----
+If the auxiliary equation has distinct real roots
 
-## Important Concepts
+$$
+m_1,m_2,\ldots,m_n
+$$
 
-### [[Characteristic Equation]]
+then
 
-An algebraic equation obtained by assuming an exponential solution for linear ODEs with constant coefficients.
-
----
-
-### [[Complementary Function]]
-
-The general solution of the associated homogeneous equation.
-
----
-
-### [[Particular Solution]]
-
-A specific solution of a non-homogeneous differential equation.
+$$
+y
+=
+C_1e^{m_1x}
++
+C_2e^{m_2x}
++
+\cdots
++
+C_ne^{m_nx}
+$$
 
 ---
 
-### [[Boundary Value Problem (BVP)]]
+## [[Repeated Roots]]
 
-A differential equation with conditions specified at different boundary points.
+If a root
 
----
+$$
+m
+$$
 
-### [[Initial Value Problem (IVP)]]
+is repeated $k$ times,
 
-A differential equation with initial conditions specified at a single point.
+then
 
----
-
-## Key Terms
-
-| Term | Description |
-|------|-------------|
-| [[Higher-Order Differential Equation]] | ODE with derivatives of order two or higher |
-| [[Order]] | Highest derivative present |
-| [[Degree]] | Power of the highest-order derivative |
-| [[Characteristic Equation]] | Equation used to solve linear ODEs |
-| [[Complementary Function]] | Solution of the homogeneous equation |
-| [[Particular Solution]] | Solution satisfying the non-homogeneous equation |
-| [[Initial Value Problem (IVP)]] | ODE with initial conditions |
-| [[Boundary Value Problem (BVP)]] | ODE with boundary conditions |
+$$
+y
+=
+(C_1+C_2x+\cdots+C_kx^{k-1})e^{mx}
+$$
 
 ---
 
-## Related Notes
+## [[Complex Roots]]
 
-- [[Differential Equation]]
-- [[Ordinary Differential Equation (ODE)]]
-- [[First-Order Ordinary Differential Equations (ODEs)]]
-- [[Higher-Order Differential Equation]]
-- [[Linear Differential Equation]]
-- [[Homogeneous Differential Equation]]
-- [[Non-Homogeneous Differential Equation]]
-- [[Characteristic Equation]]
-- [[Complementary Function]]
-- [[Particular Solution]]
-- [[Initial Value Problem (IVP)]]
-- [[Boundary Value Problem (BVP)]]
-- [[Method of Undetermined Coefficients]]
-- [[Variation of Parameters]]
-- [[Reduction of Order]]
-- [[Power Series Method]]
-- [[Newton's Second Law]]
-- [[RLC Circuit]]
+If the roots are
+
+$$
+m=\alpha\pm\beta i
+$$
+
+then
+
+$$
+y
+=
+e^{\alpha x}
+(C_1\cos\beta x
++
+C_2\sin\beta x)
+$$
+# [[Complementary Function (CF)]]
+
+## [[Definition]]
+
+The **[[Complementary Function]] (CF)** is the solution of the associated **[[Homogeneous Differential Equation]]**.
+
+It represents the **natural response** of the system without any external forcing function.
+
+General Solution
+
+$$
+y=CF+PI
+$$
+
+where
+
+- $CF$ → [[Complementary Function]]
+- $PI$ → [[Particular Integral]]
+
+---
+
+## [[Finding the Complementary Function]]
+
+Steps
+
+1. Form the [[Auxiliary Equation]].
+2. Solve for its roots.
+3. Construct the solution according to the type of roots.
+
+Example
+
+$$
+y''+4y=0
+$$
+
+Auxiliary Equation
+
+$$
+m^2+4=0
+$$
+
+Roots
+
+$$
+m=\pm2i
+$$
+
+Complementary Function
+
+$$
+y=C_1\cos2x+C_2\sin2x
+$$
+
+---
+
+# [[Particular Integral (PI)]]
+
+## [[Definition]]
+
+The **[[Particular Integral]] (PI)** is a specific solution of the **[[Non-Homogeneous Differential Equation]]**.
+
+It represents the response due to the external forcing function.
+
+General Solution
+
+$$
+y=CF+PI
+$$
+
+---
+
+## [[Purpose]]
+
+The [[Complementary Function]] satisfies the homogeneous equation, while the [[Particular Integral]] accounts for the non-homogeneous term.
+
+---
+
+# [[Method of Undetermined Coefficients]]
+
+## [[Definition]]
+
+The **[[Method of Undetermined Coefficients]]** is used to determine the [[Particular Integral]] when the forcing function is simple.
+
+Applicable forcing functions include
+
+- Polynomial
+- Exponential
+- Sine
+- Cosine
+- Linear combinations of these
+
+---
+
+## [[Procedure]]
+
+1. Assume a suitable form of the [[Particular Integral]].
+2. Substitute into the differential equation.
+3. Determine the unknown constants.
+4. Write the complete solution.
+
+---
+
+## [[Example]]
+
+Given
+
+$$
+y''-3y'+2y=e^x
+$$
+
+Assume
+
+$$
+y_p=Ae^x
+$$
+
+Substitute into the equation and determine $A$.
+
+---
+
+# [[Method of Variation of Parameters]]
+
+## [[Definition]]
+
+The **[[Method of Variation of Parameters]]** is a general technique for finding the [[Particular Integral]].
+
+Unlike the [[Method of Undetermined Coefficients]], it works for a much wider class of forcing functions.
+
+---
+
+## [[Idea]]
+
+Instead of constants
+
+$$
+C_1,\;C_2
+$$
+
+assume they become functions
+
+$$
+C_1(x),\;C_2(x)
+$$
+
+The particular solution becomes
+
+$$
+y_p
+=
+C_1(x)y_1
++
+C_2(x)y_2
+$$
+
+where
+
+- $y_1$
+- $y_2$
+
+are independent solutions of the homogeneous equation.
+
+---
+
+# [[Cauchy-Euler Differential Equation]]
+
+## [[Definition]]
+
+A **[[Cauchy-Euler Differential Equation]]** has variable coefficients that follow a special pattern.
+
+General Form
+
+$$
+x^2y''
++
+axy'
++
+by
+=
+0
+$$
+
+---
+
+## [[Solution Method]]
+
+Assume
+
+$$
+y=x^m
+$$
+
+Substitute into the equation.
+
+This produces an [[Auxiliary Equation]] in terms of $m$.
+
+Solve for the roots and construct the solution.
+
+---
+
+## [[Example]]
+
+$$
+x^2y''
++
+3xy'
++
+y
+=
+0
+$$
+
+Assume
+
+$$
+y=x^m
+$$
+
+Substitute and solve for $m$.
+
+---
+
+# [[Reduction of Order]]
+
+## [[Definition]]
+
+The **[[Reduction of Order]]** method is used when
+
+- One solution is already known.
+- A second independent solution is required.
+
+---
+
+## [[Substitution]]
+
+Assume
+
+$$
+y=v(x)y_1
+$$
+
+where
+
+- $v(x)$ is unknown.
+- $y_1$ is the known solution.
+
+Substitute into the differential equation and solve for $v(x)$.
+
+---
+
+# [[Applications]]
+
+## [[Physics]]
+
+Higher-order differential equations are used in
+
 - [[Simple Harmonic Motion]]
+- [[Mechanical Vibrations]]
+- [[Wave Motion]]
+- [[Heat Transfer]]
+- [[Beam Deflection]]
+- [[Electrical Circuits]]
+
+---
+
+## [[Mechanical Engineering]]
+
+Applications include
+
+- [[Spring-Mass Systems]]
+- [[Damped Vibrations]]
+- [[Structural Analysis]]
+- [[Machine Design]]
+
+---
+
+## [[Electrical Engineering]]
+
+Applications include
+
+- [[RLC Circuits]]
+- [[Signal Processing]]
+- [[Control Systems]]
+- [[Electromagnetic Waves]]
+
+---
+
+## [[Civil Engineering]]
+
+Applications include
+
+- [[Beam Theory]]
+- [[Structural Mechanics]]
+- [[Bridge Analysis]]
+- [[Earthquake Engineering]]
+
+---
+
+## [[Aerospace Engineering]]
+
+Applications include
+
+- [[Flight Dynamics]]
+- [[Rocket Motion]]
+- [[Aircraft Stability]]
+- [[Control Systems]]
+
+---
+
+# [[Formula Sheet]]
+
+## [[General Linear Equation]]
+
+$$
+a_ny^{(n)}
++
+a_{n-1}y^{(n-1)}
++
+\cdots
++
+a_1y'
++
+a_0y
+=
+g(x)
+$$
+
+---
+
+## [[Homogeneous Differential Equation]]
+
+$$
+g(x)=0
+$$
+
+---
+
+## [[Non-Homogeneous Differential Equation]]
+
+$$
+g(x)\neq0
+$$
+
+---
+
+## [[General Solution]]
+
+$$
+y=CF+PI
+$$
+
+---
+
+## [[Auxiliary Equation]]
+
+Replace
+
+$$
+\frac{d}{dx}
+$$
+
+with
+
+$$
+m
+$$
+
+---
+
+## [[Distinct Real Roots]]
+
+$$
+y=\sum_{i=1}^{n}C_ie^{m_ix}
+$$
+
+---
+
+## [[Repeated Roots]]
+
+$$
+y
+=
+(C_1+C_2x+\cdots)e^{mx}
+$$
+
+---
+
+## [[Complex Roots]]
+
+$$
+y
+=
+e^{\alpha x}
+(C_1\cos\beta x
++
+C_2\sin\beta x)
+$$
+
+---
+
+## [[Cauchy-Euler Differential Equation]]
+
+$$
+x^2y''
++
+axy'
++
+by
+=
+0
+$$
+
+---
+
+# [[Problem Solving Strategy]]
+
+1. Determine the [[Order]] and [[Degree]].
+2. Check whether the equation is [[Linear Differential Equation|Linear]] or [[Nonlinear Differential Equation|Nonlinear]].
+3. Identify whether it is [[Homogeneous Differential Equation|Homogeneous]] or [[Non-Homogeneous Differential Equation|Non-Homogeneous]].
+4. Form the [[Auxiliary Equation]].
+5. Solve for the roots.
+6. Construct the [[Complementary Function]].
+7. Find the [[Particular Integral]], if required.
+8. Apply the [[Initial Condition]] or [[Boundary Condition]].
+9. Verify the solution.
+
+---
+
+# [[Common Mistakes]]
+
+- Forming the [[Auxiliary Equation]] incorrectly.
+- Ignoring repeated roots.
+- Using the wrong solution for complex roots.
+- Forgetting the [[Particular Integral]].
+- Confusing the [[Complementary Function]] with the [[Particular Integral]].
+- Losing arbitrary constants during integration.
+- Forgetting to apply [[Initial Value Problems|Initial Conditions]] or [[Boundary Value Problems|Boundary Conditions]].
+- Algebraic errors while simplifying.
+
+---
+
+# [[Summary]]
+
+A **[[Higher Order Ordinary Differential Equation]]** is an [[Ordinary Differential Equation]] containing derivatives of order two or higher. These equations model many physical and engineering systems, including [[Mechanical Vibrations]], [[Electrical Circuits]], [[Structural Analysis]], and [[Control Systems]].
+
+Linear higher-order differential equations with constant coefficients are solved using the [[Auxiliary Equation]], [[Complementary Function]], and [[Particular Integral]]. Special forms such as the [[Cauchy-Euler Differential Equation]] require substitution techniques, while more advanced methods such as the [[Method of Variation of Parameters]] and the [[Method of Undetermined Coefficients]] are used to obtain complete solutions.
+
+---
+
+# [[Related Notes]]
+
+- [[First Order Ordinary Differential Equations]]
+- [[Differential Equations]]
+- [[Ordinary Differential Equations]]
+- [[Partial Differential Equations]]
+- [[Calculus]]
+- [[Differentiation]]
+- [[Integration]]
+- [[Laplace Transform]]
+- [[Linear Algebra]]
+- [[Complex Numbers]]
+- [[Engineering Mathematics]]
+- [[Simple Harmonic Motion]]
+- [[Mechanical Vibrations]]
+- [[Control Systems]]
+- [[Electrical Circuits]]
+- [[Mathematics Formula Sheet]]
