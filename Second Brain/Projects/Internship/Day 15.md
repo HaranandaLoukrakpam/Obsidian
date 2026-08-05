@@ -500,4 +500,16 @@ JSON (JavaScript Object Notation) is a lightweight format used to exchange data 
 
 # Tags
 
-#JavaScript #FetchAPI #AsyncAwait #DOM #CSSGrid #Flexbox #HTML #CSS #ResponsiveDesign #Frontend #WebDevelopment #API #Obsidian
+- [[JavaScript]]
+- [[Fetch API]]
+- [[Async/Await]]
+- [[DOM]]
+- [[CSS Grid]]
+- [[Flexbox]]
+- [[HTML]]
+- [[CSS]]
+- [[Responsive Design]]
+- [[Frontend]]
+- [[Web Development]]
+- [[API]]
+- [[Obsidian]]

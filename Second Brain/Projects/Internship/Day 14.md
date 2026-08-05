@@ -2,7 +2,7 @@
 
 ## Tags
 
-#javascript #web-development #frontend #async #dom #api #promises
+[[JavaScript]] [[Web Development]] [[Frontend]] [[Asynchronous Programming]] [[DOM]] [[API]] [[Promises]]
 
 Related Notes:
 - [[JavaScript]]

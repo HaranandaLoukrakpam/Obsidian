@@ -1,30 +1,58 @@
 {
   "collapse-filter": false,
   "search": "",
-  "showTags": false,
+  "showTags": true,
   "showAttachments": false,
-  "hideUnresolved": false,
-  "showOrphans": true,
+  "hideUnresolved": true,
+  "showOrphans": false,
   "collapse-color-groups": false,
   "colorGroups": [
     {
-      "query": "",
+      "query": "path:Tags  ",
       "color": {
         "a": 1,
-        "rgb": 14701138
+        "rgb": 11390424
+      }
+    },
+    {
+      "query": "path:Books  ",
+      "color": {
+        "a": 1,
+        "rgb": 16759435
+      }
+    },
+    {
+      "query": "path:College  ",
+      "color": {
+        "a": 1,
+        "rgb": 16768973
+      }
+    },
+    {
+      "query": "path:Learning  ",
+      "color": {
+        "a": 1,
+        "rgb": 7511203
+      }
+    },
+    {
+      "query": "path:Projects  ",
+      "color": {
+        "a": 1,
+        "rgb": 16767398
       }
     }
   ],
   "collapse-display": false,
   "showArrow": true,
-  "textFadeMultiplier": -1.5,
-  "nodeSizeMultiplier": 1.11644694010417,
-  "lineSizeMultiplier": 1.803515625,
-  "collapse-forces": true,
-  "centerStrength": 0.518713248970312,
-  "repelStrength": 10,
-  "linkStrength": 1,
-  "linkDistance": 250,
-  "scale": 0.200225830078125,
+  "textFadeMultiplier": 0.5,
+  "nodeSizeMultiplier": 0.753173828125,
+  "lineSizeMultiplier": 0.351220703125,
+  "collapse-forces": false,
+  "centerStrength": 0.246826171875,
+  "repelStrength": 14.0201822916667,
+  "linkStrength": 0.89697265625,
+  "linkDistance": 120,
+  "scale": 0.0263671875,
   "close": true
 }

@@ -293,7 +293,7 @@ Example:
 
 - **1969** – [[ARPANET]]
     
-- **1983** – [[IP]]
+- **1983** – [[IP 1]]
     
 - **1989–1991** – [[World Wide Web]]
     
@@ -645,6 +645,6 @@ Defenses:
 
 ---
 
-# Tags
+## Tags
 
-#DCN #Networking #Semester5 #ComputerNetworks #OSI #TCPIP #Internet #Protocols #NetworkSecurity #Obsidian
+[[DCN]] [[Networking]] [[Semester 5]] [[Computer Networks]] [[OSI]] [[IP 1]] [[Internet]] [[Protocols]] [[Network Security]] [[Obsidian]]
