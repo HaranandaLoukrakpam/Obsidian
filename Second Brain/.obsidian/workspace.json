@@ -116,7 +116,8 @@
             "state": {
               "type": "backlink",
               "state": {
-                "collapseAll": false,
+                "file": "College/Semester 5/Machine Learning/Theory/Introduction to Machine Learning Class notes.md",
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
@@ -134,6 +135,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "College/Semester 5/Machine Learning/Theory/Introduction to Machine Learning Class notes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -176,6 +178,7 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "College/Semester 5/Machine Learning/Theory/Introduction to Machine Learning Class notes.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -194,11 +197,12 @@
               "title": "Calendar"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
+    "width": 200,
     "collapsed": true
   },
   "left-ribbon": {
@@ -215,32 +219,34 @@
   "active": "ee46cf15d3c3a9ca",
   "lastOpenFiles": [
     "College/Semester 5/Machine Learning/Theory/Introduction to Machine Learning Class notes.md",
-    "Tags/UNIT-1.md",
-    "Tags/Code.md",
-    "Tags/PCA (Principle Component Analysis).md",
-    "Tags/11. Algorithms used in Unsupervised learning.md",
-    "Tags/DBSCAN (Density Based Spatial Clustering Application with Noise).md",
-    "Tags/10. Common Algorithms used in supervised learning.md",
-    "Label / Target.md",
+    "Tags/Summary of Iterations.md",
+    "Tags/Gradient Descent Iteration Example.md",
+    "Tags/Cost Function Graphs.md",
+    "Tags/Mini Batch GD.md",
+    "Tags/Stochastic GD.md",
+    "Tags/Batch Gradient Descent.md",
+    "Tags/Main Characteristic.md",
+    "Tags/Data Used in one Update.md",
+    "Tags/KNN Prediction Example.md",
+    "Tags/Entropy.md",
+    "Tags/Information gain.md",
+    "Tags/Entropy formula.md",
+    "Tags/leaf nodes.md",
+    "Tags/Branches.md",
+    "Tags/Internal nodes.md",
+    "Tags/Final prediction.md",
+    "Tags/Sigmoid func.md",
+    "Tags/LR.md",
+    "Tags/Assign.md",
+    "Tags/Assumptions.md",
+    "Tags/Non linear SVM.md",
+    "Tags/Linear SVM.md",
+    "Tags/TYPES.md",
+    "Tags/RBF (Gaussian).md",
+    "Tags/Polynomial.md",
+    "PyTorch ",
+    "Recommended library",
     "Label ",
-    "Tags/9. Data in ML.md",
-    "Tags/Semi-Structured Data.md",
-    "Tags/Unstructured Data.md",
-    "Tags/Structured data.md",
-    "Tags/Raw Data.md",
-    "Tags/8. Types of Data.md",
-    "Tags/Library.md",
-    "College/Semester 5/Machine Learning/Theory/Introduction to Machine Learning (ML).md",
-    "Tags/3. PyTorch.md",
-    "Tags/Google.md",
-    "Tags/2. TensorFlow.md",
-    "Tags/1. Scikit-learn (sklearn).md",
-    "Tags/6. ML Libraries & Frameworks.md",
-    "Tags/Deployment.md",
-    "Tags/Monitoring.md",
-    "Tags/Model Tuning.md",
-    "Tags/Model Training (Building).md",
-    "Tags/Exploratory Data Analysis (EDA).md",
     "Pass ",
     "Spam ",
     "Async",
@@ -248,8 +254,6 @@
     "College/Semester 4/Computational System and Digital World",
     "College/Semester 4/Basic Acclimatizing Skills",
     "College/Semester 4/Trees and Graph Basics",
-    "College/Semester 3/Basic Life Saving Skillss",
-    "College/Semester 3/Personal Finance Planning",
     "Untitled.canvas",
     "Pasted image 20260721213748.png",
     "Tags/Pasted image 20260721213738.png"

@@ -31,8 +31,8 @@
 - No correct output is given
 
 #### **Types**
-| (i) [[Clustering]] | (ii) [[Association]] | (iii) [[Dimensionality Reduction]] |
-| :--- | :--- | :--- |
+| (i) [[Clustering]]                                        | (ii) [[Association]]                                                | (iii) [[Dimensionality Reduction]]     |
+| :-------------------------------------------------------- | :------------------------------------------------------------------ | :------------------------------------- |
 | - Groups similar data<br>- eg - [[Customer segmentation]] | - Finds relationships<br>- eg - People buying bread also buy butter | - Reduces number of features<br>- eg - |
 
 ---
@@ -179,7 +179,8 @@
    - *classification*
 6. **[[K-Nearest Neighbors (KNN)]]** -> Recommendation System  
    - *clustering*
-7. **[[Artificial Neural Network (ANN)]]** -> Image recognition
+1. **[[Artificial Neural Network (ANN)]]** -> Image recognition
+---
 ## [[11. Algorithms used in Unsupervised learning]]
 
 1. **[[K-means clustering]]** -> Customer segmentation
@@ -189,7 +190,6 @@
 5. **[[Apriori Algorithm]]** -> Market basket analysis
 
 ---
-
 ## [[12. Algorithms used in Reinforcement learning]]
 
 1. **[[Q-learning]]** -> Robot navigation, Game playing
@@ -221,7 +221,6 @@
 Problem Definition -> Data Collection -> Data Preprocessing -> Feature Engineering -> Model Building -> Model Deployment -> Monitoring & Improvement
 
 ---
-
 ## [[Data Preprocessing]]
 
 1. [[Handling missing values]]
@@ -232,7 +231,6 @@ Problem Definition -> Data Collection -> Data Preprocessing -> Feature Engineeri
 6. [[Splitting data into train & test set]]
 
 ---
-
 ## [[Types of Feature Engineering]]
 
 1. [[Feature Selection]]
@@ -240,7 +238,6 @@ Problem Definition -> Data Collection -> Data Preprocessing -> Feature Engineeri
 3. [[Feature Transformation]]
 
 ---
-
 ## [[Confusion Matrix]]
 
 | | **Predicted +ve** | **Predicted -ve** |
@@ -249,7 +246,6 @@ Problem Definition -> Data Collection -> Data Preprocessing -> Feature Engineeri
 | **Actual -ve** | False +ve (FP) | TN |
 
 ---
-
 ## [[Evaluation Metrics]]
 
 ### 1. [[Accuracy]]
@@ -347,32 +343,31 @@ $$\text{RMSE} = \sqrt{\frac{1}{n} \sum (y_i - \hat{y}_i)^2}$$
 * High variance
 ### [[Aspect Comparison Table]]
 
-| **[[Aspect]]**     | **[[Bias]]**                           | **[[Variance]]**                         |
-| :----------------- | :------------------------------------- | :--------------------------------------- |
-| **Meaning**        | Error due to overly simple assumptions | Error due to being too sensitive to data |
-| **Model**          | Usually too simple                     | Usually too complex                      |
-| **Training error** | High                                   | Very low                                 |
-| **Test error**     | High                                   | High                                     |
-| **Main Problem**   | [[Underfitting]]                       | [[Overfitting]]                          || **[[Features]]** | **[[Traditional System]]** | **[[ML-based Intelligence System]]** |
-| :--- | :--- | :--- |
-| [[Decision Making]] | Rule Based | Data driven |
-| [[Learning]] | No | Yes |
-| [[Adaptability]] | Low | High |
-| [[Prediction]] | Limited | Excellent |
-| [[Automation]] | Fixed | Intelligent |
-| [[Handles Complex data]] | Limited | Excellent |
-| [[Improvement]] | Low | Yes |
+| **[[Aspect]]**           | **[[Bias]]**                           | **[[Variance]]**                         |     |                  |                            |                                      |
+| :----------------------- | :------------------------------------- | :--------------------------------------- | --- | ---------------- | -------------------------- | ------------------------------------ |
+| **Meaning**              | Error due to overly simple assumptions | Error due to being too sensitive to data |     |                  |                            |                                      |
+| **Model**                | Usually too simple                     | Usually too complex                      |     |                  |                            |                                      |
+| **Training error**       | High                                   | Very low                                 |     |                  |                            |                                      |
+| **Test error**           | High                                   | High                                     |     |                  |                            |                                      |
+| **Main Problem**         | [[Underfitting]]                       | [[Overfitting]]                          |     | **[[Features]]** | **[[Traditional System]]** | **[[ML-based Intelligence System]]** |
+| [[Decision Making]]      | Rule Based                             | Data driven                              |     |                  |                            |                                      |
+| [[Learning]]             | No                                     | Yes                                      |     |                  |                            |                                      |
+| [[Adaptability]]         | Low                                    | High                                     |     |                  |                            |                                      |
+| [[Prediction]]           | Limited                                | Excellent                                |     |                  |                            |                                      |
+| [[Automation]]           | Fixed                                  | Intelligent                              |     |                  |                            |                                      |
+| [[Handles Complex data]] | Limited                                | Excellent                                |     |                  |                            |                                      |
+| [[Improvement]]          | Low                                    | Yes                                      |     |                  |                            |                                      |
 
 ---
 ## [[Linear Regression]]
 
-- Linear regression is a supervised learning algorithm used to model the relationship betn a dependent variable & one or more independent variable in a straight line.
+- Linear regression is a supervised learning algorithm used to model the relationship between a dependent variable & one or more independent variable in a straight line.
 - The dependent variable is known as '[[Target]]' $\rightarrow$ Output.
 - Independent variable '[[features]]' $\rightarrow$ Input.
 
 ### [[Mathematical Eqn]] $\rightarrow$
-- for one variable : $y = mx + b$ $\leftarrow$ [[bias]]
-- for multiple variables : $y = w_1x_1 + w_2x_2 + \dots + w_mx_m + b$ $\leftarrow$ [[bias]]
+- for one variable : $y = mx + b$ $\leftarrow$ [[Bias]]
+- for multiple variables : $y = w_1x_1 + w_2x_2 + \dots + w_mx_m + b$ $\leftarrow$ [[Bias]]
 
 where...
 $y$ = predicted output
@@ -381,12 +376,40 @@ $w_i$ = weights (coefficient)
 ---
 ### [[Geometrical Interpretation]]
 - **In 2D :** [Graph showing a 2-dimensional Cartesian coordinate system with a plotted straight line and data points]
+          y
+          ↑
+          |
+          |             •
+          |          •
+          |       •
+          |    •
+          |  /
+          | /  ← Regression Line
+          |/
+          +------------------------→ x
+      
 - **In 3D :** [Graph showing a 3-dimensional coordinate system with a plotted plane]
+                z
+                ↑
+                |
+                |        __________
+                |       /         /|
+                |      /   Plane / |
+                |     /_________/  |
+                |    /         /   |
+                |   /_________/    |
+                |  /
+                | /
+                +----------------------→ x
+               /
+              /
+             ↓
+            y
 
 ---
 ### [[When to use]] $\rightarrow$
 1. When output is continuous
-2. When relationship betn variable are approximately linear.
+2. When relationship between variable are approximately linear.
 - eg - [[house prize prediction]], [[Salary prediction]], [[sales forecasting]].
 
 ## [[Code]]
@@ -421,35 +444,24 @@ print("Mean of X : ", mean_x)
 ## [[Advantages of Linear Regression]]
 
 1. Simple to understand & implement
-    
 2. Fast & computational efficient
-    
 3. Easy to interpret
-    
 4. Works well with linear relationships
-    
 5. Useful for identifying important variables
-    
 6. Requires less training data
 ---
 
 ## [[Disadvantages of Linear Regression]]
 
 1. Assumes a linear relationship
-    
 2. Sensitive to outliers
-    
 3. Requires several assumptions
-    
 4. Limited to continuous outputs
-    
 5. Affected by multicollinearity
 ## [[Naive Baye's]]
 
 - It is a [[supervised ML algorithm]] based on [[Baye's theorem]] which is used for [[classification]] and [[probabilistic prediction]].
-    
 - It predicts the class of data using [[probability]] and prior knowledge.
-    
 - It is a [[probabilistic classification algorithm]] that assumes all input features are independent of each other.
 ### [[Key Concepts]] $\rightarrow$
 
@@ -462,15 +474,19 @@ print("Mean of X : ", mean_x)
 ### [[Mathematical Equation]]
 
 **[[Bayes Theorem]]**  
-P(A/B)=P(B/A)P(A)P(B)P(A/B) = \frac{P(B/A) P(A)}{P(B)}
+$$
+P(A \mid B) = \frac{P(B \mid A)P(A)}{P(B)}
+$$
 
 **[[Naive Bayes Formula]]**  
-P(C∣x)=P(x∣C)P(C)P(x)P(C|x) = \frac{P(x|C) P(C)}{P(x)}
+$$
+P(C \mid x) = \frac{P(x \mid C)P(C)}{P(x)}
+$$
 
 where,  
-$P(C|x) \rightarrow$ [[Posterior probability]]  
+$P(C|x) \rightarrow$ [[Posterior Probability]]  
 $P(x|C) \rightarrow$ [[Likelihood]]  
-$P(C) \rightarrow$ [[Prior probability]]  
+$P(C) \rightarrow$ [[Prior Probability]]  
 $P(x) \rightarrow$ [[evidence]]  
 $C \rightarrow$ class  
 $x \rightarrow$ feature vector
@@ -487,13 +503,9 @@ $x \rightarrow$ feature vector
 ### [[Behaviour]] $\rightarrow$
 
 1. Fast probabilistic classification
-    
 2. It is effective for text data
-    
 3. NB calculates probabilities for each class
-    
-4. It assigns the class with highest probability
-    
+4. It assigns the class with highest probability 
 5. Assumes features contribute independently.
 ---
 ## [[Agentic AI Workflow]]
@@ -528,7 +540,7 @@ $x \rightarrow$ feature vector
 - SVM focuses on maximizing the margin for better generalization.
 ### [[Mathematical Eqn]] $\rightarrow$
 
-1. **[[HYPERPLANE]]** $\rightarrow$ $W^Tx + b = 0$
+1. **[[Hyperplane]]** $\rightarrow$ $W^Tx + b = 0$
     
     - $W$ $\rightarrow$ weight vector
         
@@ -599,7 +611,7 @@ _(Note: The page includes graph sketches for [[Linear SVM]] showing a straight b
 - [[LR]] is a supervised ML algorithm used for classification problem. It predicts the probability that an input belongs to a particular class.
     
 - It uses sigmoid functions to output values betn 0 & 1
-### [[Mathematical eqn]]
+### [[Mathematical Eqn]]
 
 **[[Linear Combination]]** : $z = w_1x_1 + w_2x_2 + \dots + w_nx_n + b$  
 where, $w_i = \text{weights}$  
@@ -763,11 +775,11 @@ $P(x,y) = (5, 80)$
 
 ### [[TYPES]]
 
-|**[[Types]]**|**[[Data Used in one Update]]**|**[[Main Characteristic]]**|
-|:--|:--|:--|
-|**[[Batch Gradient Descent]]**|Entire training dataset|Stable updates, but can be slow for large dataset|
-|**[[Stochastic GD]]**|No training sample|Fast & noisy updates can escape some local region.|
-|**[[Mini Batch GD]]**|Small batch of sample|Balances speed & stability widely used in Deep learning|
+| **[[TYPES]]**                  | **[[Data Used in one Update]]** | **[[Main Characteristic]]**                             |
+| :----------------------------- | :------------------------------ | :------------------------------------------------------ |
+| **[[Batch Gradient Descent]]** | Entire training dataset         | Stable updates, but can be slow for large dataset       |
+| **[[Stochastic GD]]**          | No training sample              | Fast & noisy updates can escape some local region.      |
+| **[[Mini Batch GD]]**          | Small batch of sample           | Balances speed & stability widely used in Deep learning |
 
 ### [[Cost Function Graphs]]
 
