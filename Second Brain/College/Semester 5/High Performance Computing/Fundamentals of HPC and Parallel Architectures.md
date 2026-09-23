@@ -1,1266 +1,503 @@
-# [[Fundamentals of HPC and Parallel Architectures]]
+# [[High Performance Computing (HPC)]] — Unit Notes
 
----
+## 1. [[Introduction to High Performance Computing]]
 
-# [[Introduction to High Performance Computing]]
+**[[High Performance Computing]] (HPC)** refers to the practice of aggregating computing power to perform complex computational tasks at significantly higher speeds than traditional standalone systems. Instead of relying on a single processing unit, HPC architectures coordinate multiple processors or cores running concurrently.
+### Core Characteristics of HPC
 
-## Definition
+- **High Computational Throughput:** Massive raw floating-point calculation performance.
+    
+- **[[Parallel Processing]]:** Dividing tasks across multiple compute engines.
+    
+- **High Memory Bandwidth & Capacity:** Substantial main and distributed memory spaces.
+    
+- **Low-Latency Interconnects:** Specialized high-speed communication buses between nodes.
+    
+- **Large-Scale Data Handling:** Efficient processing of terabyte- to petabyte-scale datasets.
+    
+- **Target Workloads:** Highly compute-intensive and simulation-heavy workloads.
+### Primary Application Domains
 
-**High Performance Computing (HPC)** is the use of powerful computers, clusters, and parallel processing techniques to solve computational problems that require extremely high processing power, large memory capacity, and fast data communication.
+- **[[Weather Forecasting]] & [[Climate Modelling]]:** Atmospheric fluid dynamics, global circulation tracking.
+    
+- **[[Artificial Intelligence]] & [[Machine Learning]]:** Distributed deep neural network training.
+    
+- **Computational Biology & Drug Discovery:** Molecular dynamics, protein folding simulations.
+    
+- **Astrophysics & Space Exploration:** N-body cosmological simulations.
+    
+- **[[Computational Fluid Dynamics]] (CFD):** Aerodynamic modeling for aerospace and automotive systems.
+    
+- **Geophysics & Seismic Analysis:** Subsurface imaging and resource detection.
+    
+- **Nuclear Physics:** Fission and fusion plasma modeling.
+    
+- **Big Data Analytics:** High-throughput streaming and graph analysis.
 
-Unlike traditional computers that execute tasks sequentially, HPC systems execute multiple computations simultaneously using thousands or even millions of processor cores.
+## 2. [[Need for HPC in Modern Computing]]
 
-HPC is commonly used in:
+Conventional sequential computing is bounded by execution time and physical architectural ceilings (such as power and memory walls). HPC circumvents these limits by breaking monolithic computing tasks into concurrent sub-problems.
+### Primary Drivers
 
-- Scientific research
+- **Compute Acceleration:** Concurrent instruction execution across multiple hardware units.
     
-- Artificial Intelligence and Machine Learning
+- **Scalable Data Capacity:** Processing datasets exceeding single-system memory architectures.
     
-- Weather forecasting
+- **High-Fidelity Physical Simulations:** Enabling realistic numerical resolutions.
     
-- Climate modeling
+- **Model Training for AI:** Scaling parameter optimization across large compute clusters.
     
-- Space exploration
-    
-- Genomics and bioinformatics
-    
-- Financial simulations
-    
-- Cryptography
-    
-- Engineering simulations
-    
-- Oil and gas exploration
-    
+- **Near-Real-Time Constraints:** Timely generation of mission-critical insights (e.g., severe weather tracking).
+### Architectural Execution Flow
 
----
+#### Sequential Computing Model
 
-## Characteristics of HPC
+Plaintext
 
-- Massive computational power
-    
-- Parallel execution of tasks
-    
-- High-speed networking
-    
-- Large memory capacity
-    
-- Scalability
-    
-- High reliability
-    
-- Efficient resource utilization
-    
+```
+Problem
+   ↓
+Single Processor
+   ↓
+Result
+```
 
----
+#### HPC Parallel Computing Model
 
-## Goals of HPC
+Plaintext
 
-- Reduce computation time
+```
+             ┌─ Processor 1 ─┐
+             ├─ Processor 2 ─┤
+Problem ────→├─ Processor 3 ─┤────→ Result
+             ├─ Processor 4 ─┤
+             └───────────────┘
+```
+
+## 3. [[Flynn's Classification]]
+
+Proposed by Michael J. Flynn in 1966, this taxonomy categorizes computer architectures based on the concurrency of **Instruction Streams** and **Data Streams**.
+
+|**Category**|**Full Form**|**Instruction Streams**|**Data Streams**|**Typical Implementation**|
+|---|---|---|---|---|
+|**[[SISD]]**|Single Instruction, Single Data|Single (1)|Single (1)|Classical Von Neumann architecture, single-core CPUs|
+|**[[SIMD]]**|Single Instruction, Multiple Data|Single (1)|Multiple|Vector processors, CPU SIMD extensions, GPUs|
+|**[[MISD]]**|Multiple Instruction, Single Data|Multiple|Single (1)|Fault-tolerant redundant systems, systolic arrays|
+|**[[MIMD]]**|Multiple Instruction, Multiple Data|Multiple|Multiple|Multicore CPUs, distributed HPC clusters|
+
+## 4. [[SISD|SISD (Single Instruction, Single Data)]]
+
+A single processing unit executes a single instruction stream sequentially against a single memory stream.
+### Structural Flow
+
+```
+Instruction Stream
+       ↓
+   Processor
+       ↓
+  Data Stream
+```
+
+### Characteristics
+
+- One instruction executed per cycle (in non-pipelined implementations).
     
-- Solve larger and more complex problems
+- Strictly sequential execution pipeline.
     
-- Increase simulation accuracy
+- Standard model of early computing architectures.
+### Algorithmic Example
+
+```
+A = 5
+B = 10
+C = A + B   // Executed strictly in chronological sequence
+```
+
+- **Advantages:** Straightforward hardware design; deterministic execution; no concurrency or synchronization bugs.
     
-- Improve throughput
+- **Disadvantages:** Performance is bounded by single-thread CPU clock frequencies.
+
+## 5. [[SIMD|SIMD (Single Instruction, Multiple Data)]]
+
+A single control unit dispatches one instruction to multiple arithmetic logic units (ALUs), which execute the operation simultaneously across distinct data elements.
+### Structural Flow
+
+```
+                 Instruction
+                      ↓
+        ┌─────────────┼─────────────┐
+        ↓             ↓             ↓
+      Data 1        Data 2        Data 3
+        ↓             ↓             ↓
+     ALU / PE      ALU / PE      ALU / PE
+        ↓             ↓             ↓
+     Result 1      Result 2      Result 3
+```
+
+### Vector Operation Example
+
+Given vectors $A = [1, 2, 3, 4]$ and $B = [5, 6, 7, 8]$:
+
+A single `VADD` (Vector Add) instruction executes concurrently:
+
+  
+
+$$[1+5, \; 2+6, \; 3+7, \; 4+8] \longrightarrow [6, 8, 10, 12]$$
+
+### Primary Applications
+
+- Image and digital signal processing (DSP).
+       
+- Multimedia vector acceleration (e.g., AVX-512, ARM Neon).
     
-- Handle massive datasets
+- Massively parallel rendering and tensor operations via [[GPU Computing]].
+## 6. [[MISD|MISD (Multiple Instruction, Single Data)]]
+
+Multiple processing units receive different instructions, but all operate simultaneously on the exact same data stream.
+### Structural Flow
+
+```
+                  Data Stream
+                       ↓
+        ┌──────────────┼──────────────┐
+        ↓              ↓              ↓
+  Instruction 1  Instruction 2  Instruction 3
+        ↓              ↓              ↓
+   Processor 1    Processor 2    Processor 3
+        ↓              ↓              ↓
+        └──────────────┬──────────────┘
+                       ↓
+                     Result
+```
+
+### Characteristics & Applications
+
+- Rare in general-purpose computing.
     
+- Used primarily in **Fault-Tolerant Redundant Systems** (e.g., aerospace flight control computers verifying identical data against multiple distinct algorithms) and systolic array pipelines.
+## 7. [[MIMD|MIMD (Multiple Instruction, Multiple Data)]]
 
----
+Multiple independent processors execute distinct instruction streams on distinct data sets simultaneously. This is the foundation of modern high-performance systems.
+### Structural Flow
 
-## Components of an HPC System
+```
+Instruction 1 ──→ Processor 1 ──→ Data 1
+Instruction 2 ──→ Processor 2 ──→ Data 2
+Instruction 3 ──→ Processor 3 ──→ Data 3
+Instruction 4 ──→ Processor 4 ──→ Data 4
+```
 
-- Compute Nodes
+### Characteristics & Implementations
+
+- High architectural flexibility and task independence.
     
-- CPUs
+- Cores can operate asynchronously or synchronously.
     
-- GPUs
+- Implemented in modern multi-core processors, symmetric multiprocessing (SMP) nodes, and distributed computing clusters.
+## 8. [[Types of Parallelism]]
+
+### 8.1 [[Data Parallelism]]
+
+The same computation is mapped across different partitions of an aggregate dataset simultaneously.
+- **Core Principle:** Uniform operation applied to partitioned data segments.
     
-- High-speed Interconnect
+- **Example:** Multiplying every element of an array by a scalar constant across 4 dedicated cores.
     
-- Storage Systems
+- **Primary Domains:** Dense linear algebra, image convolution, deep learning batch passes.
+### 8.2 [[Task Parallelism]]
+
+Distinct logical tasks or functional subroutines are dispatched to separate processors concurrently.
+- **Core Principle:** Different operations running concurrently; may consume the same or different data.
     
-- Scheduling Software
+- **Example:** Core 1 handles network ingestion, Core 2 parses data packets, Core 3 performs database writes.
     
-- Parallel Programming Frameworks (MPI, OpenMP, CUDA)
-    
+- **Primary Domains:** Asynchronous microservices, multithreaded runtime engines, pipeline rendering.
+### 8.3 [[Instruction-Level Parallelism]] (ILP)
 
----
+Microarchitectural concurrency that enables a processor to execute multiple independent assembly instructions within a single program thread simultaneously.
+- **Key Mechanisms:**
+    - **[[Pipelining]]:** Overlapping the execution stages (Fetch, Decode, Execute, Writeback) of subsequent instructions.
+        
+    - **[[Superscalar Execution]]:** Equipping the CPU core with multiple parallel execution units (ALUs, FPUs) to issue multiple instructions per clock cycle.
+        
+    - **[[Out-of-Order Execution]] (OoO):** Dynamically reordering independent instructions around cache misses or pipeline stalls.
+        
+    - **[[Branch Prediction]]:** Speculatively executing potential conditional instruction paths using speculative execution hardware.
 
-# [[Need for HPC in Modern Computing]]
+## 9. [[Multicore and Manycore Processors]]
 
-Modern applications generate enormous amounts of data and require immense computational power. Traditional sequential computers are no longer sufficient.
+```
+       Multicore (e.g., General CPU)               Manycore (e.g., Modern GPU)
+┌───────────────────────────────────────────┐    ┌───────────────────────────────────────────┐
+│  ┌─────────────┐       ┌─────────────┐   │    │ [c][c][c][c][c][c][c][c][c][c][c][c][c]   │
+│  │   Core 1    │       │   Core 2    │   │    │ [c][c][c][c][c][c][c][c][c][c][c][c][c]   │
+│  │ Large Cache │       │ Large Cache │   │    │ [c][c][c][c][c][c][c][c][c][c][c][c][c]   │
+│  └─────────────┘       └─────────────┘   │    │ [c][c][c][c][c][c][c][c][c][c][c][c][c]   │
+│  ┌─────────────┐       ┌─────────────┐   │    │                                           │
+│  │   Core 3    │       │   Core 4    │   │    │ Hundreds/Thousands of Small Cores         │
+│  │ Large Cache │       │ Large Cache │   │    │ Optimized for Mass Data Throughput        │
+│  └─────────────┘       └─────────────┘   │    │                                           │
+└───────────────────────────────────────────┘    └───────────────────────────────────────────┘
+```
 
----
+### Architectural Comparison
 
-## Reasons HPC is Needed
-
-### Scientific Simulations
-
-Examples:
-
-- Earthquake prediction
-    
-- Molecular dynamics
-    
-- Astrophysics
-    
-- Nuclear research
-    
-
----
-
-### Artificial Intelligence
-
-Training large language models and deep neural networks requires:
-
-- Thousands of GPUs
-    
-- Massive datasets
-    
-- Parallel computation
-    
-
----
-
-### Big Data Analytics
-
-Organizations analyze petabytes of data for:
-
-- Business intelligence
-    
-- Fraud detection
-    
-- Customer analytics
-    
-
----
-
-### Weather Forecasting
-
-Weather models solve millions of mathematical equations every second.
-
-Without HPC:
-
-- Forecasts become inaccurate
-    
-- Processing would take days
-    
-
----
-
-### Medical Research
-
-Applications include:
-
-- DNA sequencing
-    
-- Drug discovery
-    
-- Protein folding
-    
-- Disease modeling
-    
-
----
-
-### Engineering Design
-
-Used for:
-
-- Aircraft simulation
-    
-- Automotive crash testing
-    
-- Structural analysis
-    
-- Computational Fluid Dynamics (CFD)
-    
-
----
-
-### Entertainment
-
-HPC accelerates:
-
-- Movie rendering
-    
-- Game physics
-    
-- Visual effects
-    
-- Animation
-    
-
----
-
-## Benefits of HPC
-
-- Faster execution
-    
-- Better accuracy
-    
-- Reduced development time
-    
-- Energy-efficient large-scale computing
-    
-- Solves problems impossible for conventional computers
-    
-
----
-
-# [[Flynn's Classification]]
-
-Flynn's Taxonomy classifies computer architectures based on the number of instruction streams and data streams.
-
-|Architecture|Instruction Stream|Data Stream|
+|**Dimension**|**[[Multicore Processors]]**|**[[Manycore Processors]]**|
 |---|---|---|
-|SISD|Single|Single|
-|SIMD|Single|Multiple|
-|MISD|Multiple|Single|
-|MIMD|Multiple|Multiple|
+|**Core Count**|Low to moderate (4 to 128 large cores)|Very high (hundreds to tens of thousands)|
+|**Core Architecture**|Complex, heavy out-of-order execution, branch prediction|Simpler, energy-efficient, throughput-focused in-order pipelines|
+|**Workload Focus**|Latency-optimized, complex sequential or light multithreaded logic|Throughput-optimized, massively parallel SIMD/SIMT data sets|
+|**Primary Domain**|Operating systems, web servers, general compute|Matrix multiplication, physics simulation, graphics rendering|
 
----
+## 10. [[Memory Hierarchy]]
 
-# [[SISD]]
-
-**Single Instruction Single Data**
-
-One processor executes one instruction on one data item at a time.
-
-### Characteristics
-
-- Sequential execution
-    
-- No parallelism
-    
-- Traditional von Neumann architecture
-    
-
-### Advantages
-
-- Simple design
-    
-- Easy programming
-    
-- Low hardware complexity
-    
-
-### Disadvantages
-
-- Slow for computationally intensive tasks
-    
-- Poor scalability
-    
-
-### Examples
-
-- Traditional desktop processors (single-core execution)
-    
-- Basic microcontrollers
-    
-
----
-
-# [[SIMD]]
-
-**Single Instruction Multiple Data**
-
-One instruction operates simultaneously on multiple data elements.
-
-Ideal for repetitive operations on large datasets.
-
----
-
-### Characteristics
-
-- Same instruction
-    
-- Different data elements
-    
-- Data parallelism
-    
-
----
-
-### Applications
-
-- Image processing
-    
-- Video encoding
-    
-- Matrix multiplication
-    
-- Machine Learning
-    
-- Graphics rendering
-    
-
----
-
-### Advantages
-
-- High throughput
-    
-- Efficient for vector operations
-    
-- Lower execution time
-    
-
----
-
-### Disadvantages
-
-- Less effective for irregular computations
-    
-- Branch divergence reduces efficiency
-    
-
----
-
-### Examples
-
-- GPU architectures
-    
-- Intel AVX
-    
-- ARM NEON
-    
-- NVIDIA CUDA cores
-    
-
----
-
-# [[MISD]]
-
-**Multiple Instruction Single Data**
-
-Multiple processors perform different operations on the same data.
-
-Very rare in practical systems.
-
----
-
-### Characteristics
-
-- Multiple algorithms
-    
-- Same input data
-    
-- Fault tolerance
-    
-
----
-
-### Applications
-
-- Spacecraft systems
-    
-- Safety-critical computing
-    
-- Redundant control systems
-    
-
----
-
-### Advantages
-
-- High reliability
-    
-- Fault detection
-    
-- Increased safety
-    
-
----
-
-### Disadvantages
-
-- Expensive
-    
-- Rarely used
-    
-- Complex implementation
-    
-
----
-
-# [[MIMD]]
-
-**Multiple Instruction Multiple Data**
-
-Multiple processors execute different instructions on different data independently.
-
-Most modern HPC systems use MIMD architecture.
-
----
-
-### Characteristics
-
-- Independent processors
-    
-- Independent memory
-    
-- Supports multitasking
-    
-- Highly scalable
-    
-
----
-
-### Applications
-
-- Supercomputers
-    
-- Cloud computing
-    
-- Distributed systems
-    
-- HPC clusters
-    
-
----
-
-### Advantages
-
-- Excellent scalability
-    
-- Flexible
-    
-- Supports heterogeneous workloads
-    
-
----
-
-### Disadvantages
-
-- Synchronization overhead
-    
-- Communication latency
-    
-- More complex programming
-    
-
----
-
-# [[Types of Parallelism]]
-
-Parallelism refers to performing multiple operations simultaneously.
-
-Major types:
-
-- Data Parallelism
-    
-- Task Parallelism
-    
-- Instruction Level Parallelism
-    
-
----
-
-# [[Data Parallelism]]
-
-Same operation is performed on multiple pieces of data simultaneously.
-
----
-
-### Example
-
-Adding two vectors:
-
-Instead of processing one element at a time,
+Balancing latency, bandwidth, capacity, and manufacturing costs requires hierarchical data staging:
 
 ```
-A1+B1
-A2+B2
-A3+B3
-A4+B4
+              ▲  Faster, Lower Latency, Lower Capacity, Higher Cost
+              │
+         [Registers]
+              │
+          [L1 Cache]
+              │
+          [L2 Cache]
+              │
+          [L3 Cache]
+              │
+          [Main Memory (DRAM)]
+              │
+        [Non-Volatile Storage (NVMe / SSD)]
+              │
+        [Cold Storage (HDD / Magnetic Tape)]
+              │
+              ▼  Slower, Higher Latency, Higher Capacity, Lower Cost
 ```
 
-all additions occur simultaneously.
+## 11. [[Cache Concepts|Cache Memory Concepts]]
 
----
+Caches bridge the performance gap (the **Memory Wall**) between high-frequency CPU cores and comparatively high-latency DRAM.
+### Multi-Level Cache Organization
 
-### Characteristics
-
-- Same instruction
+- **L1 Cache:** Dedicated private cache per core; partitioned into L1-Instruction (L1i) and L1-Data (L1d). Operates at core clock frequency (1–4 cycle latency).
     
-- Different data
+- **L2 Cache:** Larger private or shared cache per core; slightly higher latency (10–14 cycles).
     
-- Excellent scalability
+- **L3 Cache:** Massive Last-Level Cache (LLC), typically unified and shared across all cores on a die (40–75 cycle latency).
+
+```
+CPU Core ──→ L1 Cache ──→ L2 Cache ──→ L3 Cache (Shared) ──→ Main Memory (RAM)
+```
+
+### Cache Hit vs. Cache Miss
+
+- **Cache Hit:** The requested cache line is resident in cache memory; serviced with minimal clock cycle penalties.
     
+- **Cache Miss:** The requested memory block is absent, requiring eviction passes and retrieval from lower memory levels or DRAM.
+### Cache Hit Rate Metric
 
----
+$$\text{Hit Rate} = \frac{\text{Cache Hits}}{\text{Total Memory Accesses}}$$
 
-### Applications
+## 12. [[Shared Memory Systems]]
 
-- Machine Learning
+All processing units communicate via loads and stores to a globally shared physical address space.
+
+```
+CPU 1 ──┐
+CPU 2 ──┼── High-Speed System Bus / Crossbar ──→ [[Shared Memory]]
+CPU 3 ──┘
+```
+
+- **Advantages:** Simple programming model; zero-copy communication through memory pointer references.
     
-- Matrix multiplication
+- **Disadvantages:** [[Cache Coherence]] traffic (e.g., MESI protocol overhead); memory bus contention; strictly limited physical scalability (Symmetric Multiprocessing limits).
+## 13. [[Distributed Memory Systems]]
+
+Each node acts as an autonomous computing unit with its own private processor and local address space. Nodes communicate exclusively through explicit message packets over an interconnection network.
+
+```
+┌─────────────────┐             ┌─────────────────┐
+│ Node 1          │             │ Node 2          │
+│ [CPU] ↔ [Memory]│             │ [CPU] ↔ [Memory]│
+└────────┬────────┘             └────────┬────────┘
+         │                               │
+         └───── [[Interconnection Networks]] ─────┘
+```
+
+- **Advantages:** Highly scalable; total memory aggregates linearly with node count; free from global memory bus bottlenecks.
     
-- Image processing
+- **Disadvantages:** High communication latency; requires explicit data serialization and partitioning.
     
-- Video rendering
-    
+- **Standard Programming Paradigm:** **[[MPI|MPI (Message Passing Interface)]]**.
+## 14. [[Shared vs Distributed Memory]]
 
----
-
-### Advantages
-
-- Simple to scale
-    
-- High efficiency
-    
-- Excellent GPU performance
-    
-
----
-
-# [[Task Parallelism]]
-
-Different processors perform different tasks simultaneously.
-
----
-
-### Example
-
-A web browser:
-
-Core 1:
-
-- Rendering webpage
-    
-
-Core 2:
-
-- Downloading images
-    
-
-Core 3:
-
-- Running JavaScript
-    
-
-Core 4:
-
-- Audio playback
-    
-
----
-
-### Characteristics
-
-- Different instructions
-    
-- Independent tasks
-    
-- Workload distribution
-    
-
----
-
-### Applications
-
-- Operating Systems
-    
-- Web servers
-    
-- Databases
-    
-- Distributed applications
-    
-
----
-
-### Advantages
-
-- Better CPU utilization
-    
-- Flexible execution
-    
-- Reduced idle time
-    
-
----
-
-# [[Instruction Level Parallelism]]
-
-Instruction Level Parallelism (ILP) executes multiple CPU instructions simultaneously.
-
-Implemented inside modern processors.
-
----
-
-## Techniques
-
-### Instruction Pipelining
-
-Different stages execute simultaneously.
-
-Example:
-
-- Fetch
-    
-- Decode
-    
-- Execute
-    
-- Memory Access
-    
-- Write Back
-    
-
-Multiple instructions occupy different stages at the same time.
-
----
-
-### Superscalar Execution
-
-CPU executes multiple instructions per clock cycle.
-
----
-
-### Out-of-Order Execution
-
-CPU rearranges independent instructions to improve performance.
-
----
-
-### Speculative Execution
-
-Processor predicts branch outcomes before they occur.
-
----
-
-### Advantages
-
-- Faster execution
-    
-- Better CPU utilization
-    
-- No programmer intervention
-    
-
----
-
-# [[Multicore and Manycore Processors]]
-
-Modern processors contain multiple processing cores.
-
----
-
-# [[Multicore Processor]]
-
-Contains a small number of powerful CPU cores.
-
-Usually:
-
-- 2 cores
-    
-- 4 cores
-    
-- 8 cores
-    
-- 16 cores
-    
-- 32 cores
-    
-
----
-
-### Characteristics
-
-- High clock speed
-    
-- Complex cores
-    
-- Shared cache
-    
-
----
-
-### Applications
-
-- Personal computers
-    
-- Laptops
-    
-- Servers
-    
-
----
-
-# [[Manycore Processor]]
-
-Contains dozens, hundreds, or even thousands of simpler cores.
-
----
-
-### Characteristics
-
-- Massive parallelism
-    
-- Lower power per core
-    
-- Optimized for throughput
-    
-
----
-
-### Examples
-
-- NVIDIA GPUs
-    
-- AMD GPUs
-    
-- Intel Xeon Phi (legacy)
-    
-- AI accelerators
-    
-
----
-
-## Multicore vs Manycore
-
-|Feature|Multicore|Manycore|
+|**Architectural Feature**|**[[Shared Memory Systems]]**|**[[Distributed Memory Systems]]**|
 |---|---|---|
-|Number of cores|Few|Hundreds/Thousands|
-|Core complexity|Powerful|Simpler|
-|Best for|General computing|Parallel workloads|
-|Examples|Intel Core, AMD Ryzen|NVIDIA GPU|
+|**Address Space**|Unified global address space|Separate, isolated address space per node|
+|**Inter-Process Communication**|Shared memory reads/writes, pointers|Explicit packetized network messaging|
+|**Programming Model**|Threads (OpenMP, POSIX pthreads)|Message Passing (MPI)|
+|**Scalability**|Limited (typically up to ~64–128 sockets)|Massive (thousands of nodes)|
+|**Data Synchronization**|Locks, semaphores, mutexes, atomic ops|Message send/receive, barriers, reductions|
+|**Hardware Example**|Multi-socket server motherboards|Multi-rack Supercomputer clusters|
 
----
+> **Note on Hybrid Architectures:** Modern HPC systems use a **hybrid model**: shared memory within a single node (using OpenMP/threads) combined with distributed memory across nodes (using MPI).
 
-# [[Memory Hierarchy]]
+## 15. [[Interconnection Networks]]
+The topology of the interconnect determines the bandwidth, latency, and routing diameter between compute nodes.
+### Common Topologies
 
-Memory hierarchy organizes storage based on speed, size, and cost.
+#### 1. Bus Topology
 
-As speed increases:
-
-- Capacity decreases
-    
-- Cost per bit increases
-    
-
----
-
-## Levels
+All nodes attach to a single shared physical medium.
+- _Characteristics:_ Simplest design; low cost; severe contention at scale.
 
 ```
-CPU Registers
-        ↓
-L1 Cache
-        ↓
-L2 Cache
-        ↓
-L3 Cache
-        ↓
-Main Memory (RAM)
-        ↓
-SSD/HDD
+Node 1 ─┐
+Node 2 ─┼── Common Bus Link
+Node 3 ─┤
+Node 4 ─┘
 ```
+#### 2. Ring Topology
 
----
-
-## Importance
-
-Memory hierarchy reduces average memory access time.
-
-Programs run faster because frequently accessed data stays close to the processor.
-
----
-
-# [[Cache Memory]]
-
-Cache is a small, extremely fast memory between CPU and RAM.
-
----
-
-## Purpose
-
-Reduce memory access latency.
-
----
-
-## Cache Levels
-
-### L1 Cache
-
-- Fastest
-    
-- Smallest
-    
-- Private to each core
-    
-
----
-
-### L2 Cache
-
-- Larger
-    
-- Slightly slower
-    
-
----
-
-### L3 Cache
-
-- Shared among CPU cores
-    
-- Much larger
-    
-
----
-
-## Cache Concepts
-
-### Cache Hit
-
-Requested data is found in cache.
-
-Fast access.
-
----
-
-### Cache Miss
-
-Requested data is absent.
-
-CPU must fetch from RAM.
-
-Higher latency.
-
----
-
-### Locality of Reference
-
-#### Temporal Locality
-
-Recently used data is likely to be used again.
-
----
-
-#### Spatial Locality
-
-Nearby memory locations are likely to be accessed soon.
-
----
-
-# [[Shared Memory Systems]]
-
-All processors access the same physical memory.
+Each node is connected to exactly two neighboring nodes, forming an unbroken circular pathway.
+- _Characteristics:_ Low pin count; latency scales linearly $O(N)$ with network size.
 
 ```
-CPU1
-CPU2
-CPU3
-   |
-Shared RAM
+Node 1 ──── Node 2
+  │           │
+Node 4 ──── Node 3
 ```
 
----
+#### 3. Star Topology
 
-## Advantages
-
-- Easy programming
-    
-- Fast communication
-    
-- Shared variables
-    
-
----
-
-## Disadvantages
-
-- Limited scalability
-    
-- Memory contention
-    
-- Synchronization issues
-    
-
----
-
-## Examples
-
-- Multicore processors
-    
-- Symmetric Multiprocessing (SMP)
-    
-
----
-
-# [[Distributed Memory Systems]]
-
-Each processor has its own private memory.
-
-Processors communicate through a network.
+All peripheral nodes connect directly to a centralized network switch or router.
+- _Characteristics:_ Single hop between any two nodes; switch represents a central point of failure and potential throughput bottleneck.
 
 ```
-CPU1 → Memory1
-
-CPU2 → Memory2
-
-CPU3 → Memory3
+       Node 1
+         │
+Node 2 ─ Switch ─ Node 3
+         │
+       Node 4
 ```
 
-Communication occurs using message passing.
+#### 4. Mesh Topology
+
+Nodes are arranged in a multi-dimensional lattice where internal nodes connect to orthogonal neighbors.
+- _Characteristics:_ Highly scalable; predictable localized routing paths.
+
+```
+Node ── Node ── Node
+ │        │        │
+Node ── Node ── Node
+ │        │        │
+Node ── Node ── Node
+```
+
+#### 5. Torus Topology
+
+A mesh topology augmented with wrap-around perimeter connections across dimensions.
+- _Characteristics:_ Eliminates boundary edge constraints; halves the maximum network diameter compared to a standard mesh.
+## 16. [[Supercomputers]]
 
----
+A supercomputer aggregates thousands of compute nodes linked by low-latency interconnects (such as InfiniBand or custom proprietary fabrics), operating as a unified resource.
+### Node Architecture Breakdown
 
-## Advantages
+```
+                      [[Supercomputer]] Cluster
+                                 │
+     ┌───────────────────────────┼───────────────────────────┐
+     ↓                           ↓                           ↓
+ [Node 1]                    [Node 2]                    [Node 3]
+  ├── Host CPU                ├── Host CPU                ├── Host CPU
+  ├── GPU/Accelerator         ├── GPU/Accelerator         ├── GPU/Accelerator
+  └── High-Speed Memory       └── High-Speed Memory       └── High-Speed Memory
+     │                           │                           │
+     └───────────────────────────┼───────────────────────────┘
+                                 ↓
+                 [[Interconnection Networks|Low-Latency Fabric Interconnect]]
+```
+## 17. [[TOP500 Systems]]
 
-- Excellent scalability
-    
-- Large memory capacity
-    
-- High performance
-    
-
----
-
-## Disadvantages
-
-- Programming complexity
-    
-- Communication overhead
-    
-
----
-
-## Communication Library
-
-MPI (Message Passing Interface)
-
----
-
-# [[Shared Memory vs Distributed Memory]]
-
-|Feature|Shared Memory|Distributed Memory|
-|---|---|---|
-|Memory|Common|Separate|
-|Communication|Shared variables|Message passing|
-|Scalability|Limited|Very high|
-|Complexity|Easier|Harder|
-|Example|Multicore CPU|HPC Cluster|
-
----
-
-# [[Interconnection Networks]]
-
-Interconnection networks connect processors and memory in parallel systems.
-
-Their purpose is to enable fast data transfer.
-
----
-
-## Characteristics
-
-- Low latency
-    
-- High bandwidth
-    
-- Reliability
-    
-- Scalability
-    
-
----
-
-## Common Network Topologies
-
-### Bus
-
-- Simple
-    
-- Low cost
-    
-- Limited scalability
-    
-
----
-
-### Ring
-
-Each processor connects to two neighbors.
-
-Advantages:
-
-- Simple implementation
-    
-
-Disadvantages:
-
-- Higher communication delay
-    
-
----
-
-### Star
-
-Central switch connects every node.
-
-Advantages:
-
-- Easy management
-    
-
-Disadvantages:
-
-- Single point of failure
-    
-
----
-
-### Mesh
-
-Processors arranged in a grid.
-
-Advantages:
-
-- Scalable
-    
-- Fault tolerant
-    
-
-Applications:
-
-- Supercomputers
-    
-
----
-
-### Torus
-
-Similar to mesh but edge nodes wrap around.
-
-Advantages:
-
-- Lower communication latency
-    
-
----
-
-### Hypercube
-
-Nodes connected in multiple dimensions.
-
-Advantages:
-
-- Excellent scalability
-    
-
-Used in early parallel computers.
-
----
-
-# [[Overview of Supercomputers]]
+The **[[TOP500]]** project ranks the 500 most powerful non-distributed computing systems globally twice a year, based on the **[[LINPACK Benchmark]]** (solving a dense system of linear equations, measured in High-Performance Linpack / HPL)
+### Computational Scale Units
 
-Supercomputers are the world's fastest computers designed for extremely demanding computational tasks.
+$$\text{FLOPS} = \text{Floating-Point Operations Per Second}$$
 
-Performance is measured in:
-
-**FLOPS**
-
-(Floating Point Operations Per Second)
-
-Examples:
-
-- GFLOPS = 10⁹ FLOPS
-    
-- TFLOPS = 10¹² FLOPS
-    
-- PFLOPS = 10¹⁵ FLOPS
-    
-- EFLOPS = 10¹⁸ FLOPS
-    
-
----
-
-## Characteristics
-
-- Millions of processor cores
-    
-- Massive memory
-    
-- High-speed interconnects
-    
-- Parallel file systems
-    
-- Efficient cooling
-    
-- Huge power consumption
-    
-
----
-
-## Applications
-
-- Weather prediction
-    
-- AI model training
-    
-- Drug discovery
-    
-- Nuclear simulations
-    
-- Astrophysics
-    
-- Quantum simulations
-    
-- National security
-    
-- Space research
-    
-
----
-
-## Components
-
-- Compute Nodes
-    
-- Login Nodes
-    
-- Storage Nodes
-    
-- High-speed Network
-    
-- Job Scheduler
-    
-- Parallel File System
-    
-
----
-
-## Programming Models
-
-- MPI
-    
-- OpenMP
-    
-- CUDA
-    
-- OpenCL
-    
-- OpenACC
-    
-
----
-
-# [[Top500 Systems]]
-
-The **Top500** is a globally recognized ranking of the world's 500 fastest supercomputers.
-
-The list is published **twice each year**:
-
-- June
-    
-- November
-    
-
----
-
-## Benchmark Used
-
-The primary benchmark is **LINPACK**, which measures floating-point computation performance.
-
-Performance is reported in FLOPS.
-
----
-
-## Evaluation Criteria
-
-- LINPACK performance
-    
-- Peak performance
-    
-- Number of processors
+- **$1\text{ GFLOPS}$ (GigaFLOPS):** $10^9\text{ FLOPS}$
     
-- Memory
+- **$1\text{ TFLOPS}$ (TeraFLOPS):** $10^{12}\text{ FLOPS}$
     
-- Energy efficiency
+- **$1\text{ PFLOPS}$ (PetaFLOPS):** $10^{15}\text{ FLOPS}$
     
-- Network architecture
-    
-
----
+- **$1\text{ EFLOPS}$ (ExaFLOPS):** $10^{18}\text{ FLOPS}$
+### Additional Industry Metrics
 
-## Importance of the Top500 List
-
-- Tracks advances in HPC technology
-    
-- Encourages innovation in processor and interconnect design
-    
-- Helps governments and research institutions compare computational capability
+- **[[Green500]]:** Evaluates energy efficiency by measuring performance-per-watt ($\text{GFLOPS/Watt}$).
     
-- Highlights trends such as GPU acceleration and exascale computing
-    
-
----
+- **HPCG Benchmark:** High-Performance Conjugate Gradients, designed to complement LINPACK by testing memory-bandwidth-bound scientific workloads.
+## [[Quick Revision]]
 
-## Examples of Modern Top500 Systems
+```
+[[High Performance Computing (HPC)]]
+│
+├── [[Flynn's Classification]]
+│   ├── [[SISD]]  → 1 Instruction, 1 Data
+│   ├── [[SIMD]]  → 1 Instruction, Multiple Data
+│   ├── [[MISD]]  → Multiple Instructions, 1 Data
+│   └── [[MIMD]]  → Multiple Instructions, Multiple Data
+│
+├── [[Types of Parallelism]]
+│   ├── [[Data Parallelism]]            → Same task, partitioned data
+│   ├── [[Task Parallelism]]            → Distinct tasks, parallel execution
+│   └── [[Instruction-Level Parallelism]] → Pipelining, Superscalar, Out-of-Order
+│
+├── [[Multicore and Manycore Processors]]
+│   ├── [[Multicore Processors]]        → Few, latency-optimized complex cores
+│   └── [[Manycore Processors]]         → Massive arrays of throughput cores
+│
+├── [[Memory Hierarchy]]
+│   └── Registers → L1/L2/L3 Caches → DRAM → Non-Volatile Storage
+│
+├── [[Memory Architectures]]
+│   ├── [[Shared Memory Systems]]       → Uniform memory address space
+│   └── [[Distributed Memory Systems]]  → Private memory per node + [[MPI]]
+│
+├── [[Interconnection Networks]]
+│   └── Bus, Ring, Star, Mesh, Torus
+│
+└── [[Supercomputers]]
+    └── [[TOP500 Systems]] (Measured via HPL / [[LINPACK Benchmark]] in FLOPS)
+```
+## [[Key Exam Definitions]]
 
-- El Capitan (USA)
+- **[[High Performance Computing|HPC]]:** The use of aggregated, parallel computing clusters to solve complex computational problems at high speeds.
     
-- Frontier (USA)
+- **[[SISD]]:** Single instruction stream executing against a single data stream sequentially.
     
-- Aurora (USA)
+- **[[SIMD]]:** A single instruction applied simultaneously across multiple distinct data points.
     
-- Fugaku (Japan)
+- **[[MISD]]:** Multiple independent instructions concurrently evaluating the same data stream.
     
-
-_(The exact rankings change over time as new Top500 lists are released.)_
-
----
-
-# [[Key Terms]]
-
-|Term|Meaning|
-|---|---|
-|HPC|High Performance Computing|
-|CPU|Central Processing Unit|
-|GPU|Graphics Processing Unit|
-|FLOPS|Floating Point Operations Per Second|
-|MPI|Message Passing Interface|
-|OpenMP|Shared-memory parallel programming API|
-|SIMD|Single Instruction Multiple Data|
-|MIMD|Multiple Instruction Multiple Data|
-|Cache Hit|Requested data found in cache|
-|Cache Miss|Requested data not found in cache|
-|Multicore|Processor with a small number of powerful cores|
-|Manycore|Processor with hundreds or thousands of simpler cores|
-|ILP|Instruction Level Parallelism|
-|Top500|Ranking of the world's 500 fastest supercomputers|
-
----
-
-# [[Exam Tips]]
-
-### Frequently Asked Theory Questions
-
-1. Define High Performance Computing (HPC).
+- **[[MIMD]]:** Multiple concurrent processors running different instructions on separate data sets.
     
-2. Explain the need for HPC in modern computing.
+- **[[Data Parallelism]]:** Distributing disjoint data segments across multiple processing units to execute the same operation simultaneously.
     
-3. Describe Flynn's Classification with suitable examples.
+- **[[Task Parallelism]]:** Executing distinct functional tasks or threads concurrently on separate processing units.
     
-4. Differentiate between SISD, SIMD, MISD, and MIMD architectures.
+- **[[Instruction-Level Parallelism|ILP]]:** Overlapping or executing independent machine instructions concurrently within a single processing core.
     
-5. Explain Data Parallelism, Task Parallelism, and Instruction Level Parallelism.
+- **[[Multicore Processors]]:** A single physical die packaging multiple general-purpose, high-clock CPU cores.
     
-6. Compare Multicore and Manycore processors.
+- **[[Manycore Processors]]:** Specialized processors housing large arrays of simpler cores optimized for high-throughput, parallel tasks.
     
-7. Explain the Memory Hierarchy with a neat diagram.
+- **[[Cache Memory]]:** High-speed static memory placed directly adjacent to processor execution units to mitigate main-memory latency.
     
-8. Define Cache Memory and explain cache hits, misses, and locality of reference.
+- **[[Shared Memory Systems]]:** Architecture where all processors read and write to a single, global address space.
     
-9. Differentiate Shared Memory and Distributed Memory systems.
+- **[[Distributed Memory Systems]]:** Multi-node systems where each compute element accesses only its local memory and communicates via explicit network messages.
     
-10. Explain common Interconnection Network topologies.
+- **[[Interconnection Networks]]:** Dedicated physical and logical fabrics enabling communication and data exchange among processing nodes.
     
-11. Describe the architecture and applications of supercomputers.
+- **[[Supercomputers]]:** Scaled computing clusters consisting of thousands of interconnected, heterogeneous compute nodes.
     
-12. What is the Top500 list? Explain its purpose and benchmarking methodology.
+- **[[TOP500]]:** Biannual performance ranking of world supercomputers evaluated via the High-Performance [[LINPACK Benchmark]] in FLOPS.

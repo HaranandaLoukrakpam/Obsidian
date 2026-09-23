@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "ee46cf15d3c3a9ca",
+            "id": "a4a7a62b5442c9cc",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "College/Semester 5/Machine Learning/Theory/Introduction to Machine Learning Class notes.md",
+                "file": "College/Semester 5/Software Engineering/Theory/Unit-1 Class Notes.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,11 +28,11 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Introduction to Machine Learning Class notes"
+              "title": "Unit-1 Class Notes"
             }
           },
           {
-            "id": "9efc7660ec1ed814",
+            "id": "de52e616d8c3cf31",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -100,7 +100,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 200
+    "width": 314.9609375
   },
   "right": {
     "id": "b3f10eecc583f13d",
@@ -116,7 +116,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "College/Semester 5/Machine Learning/Theory/Introduction to Machine Learning Class notes.md",
+                "file": "College/Semester 5/Data Communication and Computer Network/Unit-1 Notes.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +135,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "College/Semester 5/Machine Learning/Theory/Introduction to Machine Learning Class notes.md",
+                "file": "College/Semester 5/Data Communication and Computer Network/Unit-1 Notes.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -178,7 +178,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "College/Semester 5/Machine Learning/Theory/Introduction to Machine Learning Class notes.md",
+                "file": "College/Semester 5/Data Communication and Computer Network/Unit-1 Notes.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -216,34 +216,37 @@
       "bases:Create new base": false
     }
   },
-  "active": "ee46cf15d3c3a9ca",
+  "active": "a4a7a62b5442c9cc",
   "lastOpenFiles": [
-    "College/Semester 5/Machine Learning/Theory/Introduction to Machine Learning Class notes.md",
-    "Tags/Summary of Iterations.md",
-    "Tags/Gradient Descent Iteration Example.md",
-    "Tags/Cost Function Graphs.md",
-    "Tags/Mini Batch GD.md",
-    "Tags/Stochastic GD.md",
-    "Tags/Batch Gradient Descent.md",
-    "Tags/Main Characteristic.md",
-    "Tags/Data Used in one Update.md",
-    "Tags/KNN Prediction Example.md",
-    "Tags/Entropy.md",
-    "Tags/Information gain.md",
-    "Tags/Entropy formula.md",
-    "Tags/leaf nodes.md",
-    "Tags/Branches.md",
-    "Tags/Internal nodes.md",
-    "Tags/Final prediction.md",
-    "Tags/Sigmoid func.md",
-    "Tags/LR.md",
-    "Tags/Assign.md",
-    "Tags/Assumptions.md",
-    "Tags/Non linear SVM.md",
-    "Tags/Linear SVM.md",
-    "Tags/TYPES.md",
-    "Tags/RBF (Gaussian).md",
-    "Tags/Polynomial.md",
+    "College/Semester 5/Software Engineering/Theory/Introduction to Software Engineering Lifecycle Models  Software Design.md",
+    "College/Semester 5/Software Engineering/Theory/Unit-1 Class Notes.md",
+    "Software Life Cycles.md",
+    "Structured Programming.md",
+    "Computer Systems Engineering / Project Management Process.md",
+    "Computer Systems Engineering ",
+    "OutSourced.md",
+    "Software Project.md",
+    "Types of Software Projects.md",
+    "Software Project Size.md",
+    "Effort, Time, Cost vs. Program Size.md",
+    "Exploratory Style.md",
+    "Exploratory Programming.md",
+    "Evolution of Software Engineering.md",
+    "Software Products — Problems.md",
+    "Lecture - 04.md",
+    "Hardware / Software Cost Ratio.md",
+    "Hardware ",
+    "Technology Development Pattern.md",
+    "Software Engineering — Science and Art.md",
+    "Software Services.md",
+    "Lecture - 03.md",
+    "Software Product vs Software Services.md",
+    "Evolution of Software.md",
+    "Program vs Product.md",
+    "Software Engineering — Science or Art.md",
+    "Lecture - 02.md",
+    "Build and Fix.md",
+    "Tags/TCP",
     "PyTorch ",
     "Recommended library",
     "Label ",
@@ -251,9 +254,6 @@
     "Spam ",
     "Async",
     "Tags/TCP",
-    "College/Semester 4/Computational System and Digital World",
-    "College/Semester 4/Basic Acclimatizing Skills",
-    "College/Semester 4/Trees and Graph Basics",
     "Untitled.canvas",
     "Pasted image 20260721213748.png",
     "Tags/Pasted image 20260721213738.png"

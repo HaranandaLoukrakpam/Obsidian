@@ -437,7 +437,7 @@ print("Mean of X : ", mean_x)
 
 ## [[Hyperparameter]]
 
-- A [[Hyperparameter]] is a setting in comp or configuration that we chose before training model.
+- A [[Hyperparameter]] is a setting in computer or configuration that we chose before training model.
     
 - It controls how the learning algorithm works rather than being learned from training data.
 ---
@@ -529,7 +529,7 @@ $x \rightarrow$ feature vector
 
 - [[SVM]] is a supervised ML algorithm used for classification, regression & outlier detection. It finds the optimal boundaries. Optimal boundaries known as [[Hyperplane]] that separate data points into classes.
     
-- [[SVM]] tries to find the best decision boundary with the max margin betn the classes.
+- [[SVM]] tries to find the best decision boundary with the max margin between the classes.
     
 - **[[Hyperplane]]** $\rightarrow$ Decision Boundary
     

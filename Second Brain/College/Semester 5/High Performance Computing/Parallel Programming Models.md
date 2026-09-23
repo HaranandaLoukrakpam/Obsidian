@@ -1,888 +1,910 @@
-# [[Parallel Programming Models]]
+# [[Parallel Programming Models]] — Unit Notes
 
-Parallel Programming is a programming paradigm in which multiple computations or tasks are executed simultaneously using multiple processing elements (CPU cores, GPUs, or distributed computers). Instead of executing instructions sequentially, work is divided among multiple processors to reduce execution time and improve performance.
+## 1. [[Parallel Programming Models]]
 
-Parallel programming forms the foundation of **High Performance Computing (HPC)** and is widely used in scientific computing, artificial intelligence, simulations, big data analytics, and cloud computing.
+A **[[Parallel Programming Model]]** provides a way for programmers to express how a problem should be divided and executed across multiple processors or cores.
 
+The major models covered in this unit are:
+
+1. **[[Thread-based Programming]] / [[Shared Memory Programming]]**
+    
+2. **[[Message Passing]] / [[Distributed Memory Programming]]**
+    
+3. **[[Hybrid Programming]]**
+The objective is to make multiple processing units cooperate to solve a problem faster.
 ---
+# 2. [[Parallel Programming Concepts]]
 
-# [[Parallel Programming Concepts]]
+**[[Parallel Programming]]** is the process of designing a program so that multiple parts of it can execute simultaneously.
 
-Parallel programming involves dividing a problem into smaller sub-problems that can be solved simultaneously by multiple processors.
+### Basic idea
 
----
+```text
+Sequential Program
 
-## [[Objectives of Parallel Programming]]
+Problem
+   ↓
+Task 1
+   ↓
+Task 2
+   ↓
+Task 3
+   ↓
+Result
+```
 
-- Reduce execution time
-    
-- Improve resource utilization
-    
-- Increase computational performance
-    
-- Solve larger and more complex problems
-    
-- Achieve scalability
-    
+Parallel version:
 
----
+```text
+             ┌→ Task 1 ─┐
+Problem ─────┼→ Task 2 ─┼→ Result
+             └→ Task 3 ─┘
+```
 
-## [[Characteristics of Parallel Programming]]
+### Important concepts
 
-- Simultaneous execution
+- **[[Parallelism]]** — executing multiple operations concurrently.
     
-- Task decomposition
+- **[[Concurrency]]** — multiple tasks making progress during overlapping periods.
     
-- Communication between processors
+- **[[Thread]]** — lightweight execution unit within a process.
     
-- Synchronization of tasks
+- **[[Process]]** — independent program execution environment.
     
-- Load balancing
+- **[[Synchronization]]** — coordinating concurrent execution.
     
-- Scalability
+- **[[Communication]]** — exchanging data between parallel execution units.
     
-
----
-
-## [[Advantages of Parallel Programming]]
-
-- Faster computation
-    
-- Efficient CPU utilization
-    
-- Handles large datasets
-    
-- Improves throughput
-    
-- Supports real-time processing
-    
-
----
-
-## [[Challenges of Parallel Programming]]
-
-- Race conditions
-    
-- Deadlocks
-    
-- Synchronization overhead
-    
-- Communication latency
-    
-- Load imbalance
-    
-- Debugging complexity
+- **[[Load Balancing]]** — distributing work evenly among processors.
     
 
 ---
 
-# [[Threads and Processes]]
+# 3. [[Processes and Threads]]
 
-Processes and threads are two fundamental execution units in an operating system.
+## [[Process]]
+
+A **[[Process]]** is an independent instance of a running program.
+
+Each process normally has its own:
+
+- [[Address Space]]
+    
+- [[Memory]]
+    
+- [[Resources]]
+    
+- [[Execution State]]
+    
+
+Example:
+
+```text
+Process 1
+├── Code
+├── Data
+├── Heap
+└── Stack
+
+Process 2
+├── Code
+├── Data
+├── Heap
+└── Stack
+```
+
+Processes communicate using mechanisms such as **[[Message Passing]]** or shared operating-system resources.
 
 ---
 
-# [[Process]]
+## [[Thread]]
 
-A **Process** is an independent program in execution with its own memory space and system resources.
+A **[[Thread]]** is a lightweight execution path within a process.
 
-Each process contains:
+Threads belonging to the same process typically share:
 
-- Program Code
+- Code
     
-- Data
+- Global variables
     
 - Heap
     
-- Stack
+- Other process resources
+
+But each thread generally has its own:
+
+- Program counter
     
 - Registers
     
-- File descriptors
-    
+- Stack
 
----
-
-## [[Characteristics of Processes]]
-
-- Independent execution
-    
-- Separate memory space
-    
-- Higher resource consumption
-    
-- Communication through IPC (Inter-Process Communication)
-    
-
----
-
-## [[Advantages of Processes]]
-
-- High security
-    
-- Fault isolation
-    
-- Independent execution
-    
-
----
-
-## [[Disadvantages of Processes]]
-
-- Expensive to create
-    
-- Slow context switching
-    
-- Communication overhead
-    
-
----
-
-# [[Thread]]
-
-A **Thread** is the smallest unit of execution within a process.
-
-Multiple threads share the same process memory while executing independently.
-
----
-
-## [[Characteristics of Threads]]
-
-- Shared memory
-    
-- Lightweight
-    
-- Faster creation
-    
-- Fast context switching
-    
-
----
-
-## [[Advantages of Threads]]
-
-- Better performance
-    
-- Lower overhead
-    
-- Efficient communication
-    
-- Shared resources
-    
-
----
-
-## [[Disadvantages of Threads]]
-
-- Synchronization required
-    
-- Race conditions
-    
-- Difficult debugging
-    
-
----
-
-# [[Process vs Thread]]
-
-|Feature|Process|Thread|
-|---|---|---|
-|Memory|Separate|Shared|
-|Communication|IPC|Shared variables|
-|Creation Cost|High|Low|
-|Context Switching|Slow|Fast|
-|Isolation|High|Low|
-
----
-
-# [[Shared Memory Programming using OpenMP]]
-
-**OpenMP (Open Multi-Processing)** is an API for parallel programming on **shared memory systems**.
-
-It enables programmers to create multiple threads using compiler directives.
-
----
-
-## [[Features of OpenMP]]
-
-- Thread-based programming
-    
-- Shared memory model
-    
-- Easy to learn
-    
-- Incremental parallelization
-    
-- Portable across platforms
-    
-
----
-
-## [[OpenMP Execution Model]]
-
-1. Master thread starts execution.
-    
-2. Parallel region is encountered.
-    
-3. Worker threads are created.
-    
-4. Work is distributed among threads.
-    
-5. Threads synchronize.
-    
-6. Worker threads terminate.
-    
-7. Master thread continues execution.
-    
-
----
-
-## [[OpenMP Directives]]
-
-Common compiler directives:
-
-- `#pragma omp parallel`
-    
-- `#pragma omp for`
-    
-- `#pragma omp sections`
-    
-- `#pragma omp single`
-    
-- `#pragma omp critical`
-    
-- `#pragma omp barrier`
-    
-
----
-
-## [[Advantages of OpenMP]]
-
-- Simple programming model
-    
-- Good for multicore processors
-    
-- Automatic thread management
-    
-- Low programming effort
-    
-
----
-
-## [[Limitations of OpenMP]]
-
-- Only works on shared-memory systems
-    
-- Limited scalability
-    
-- Synchronization overhead
-    
-
----
-
-# [[Distributed Memory Programming using MPI]]
-
-**MPI (Message Passing Interface)** is a standardized communication library for programming distributed-memory systems.
-
-Each processor has its own memory and communicates by sending messages.
-
----
-
-## [[Features of MPI]]
-
-- Distributed memory model
-    
-- Explicit communication
-    
-- Portable
-    
-- Highly scalable
-    
-- Suitable for supercomputers
-    
-
----
-
-## [[MPI Execution Model]]
-
-Each process executes independently.
-
-Communication occurs through:
-
-- Sending messages
-    
-- Receiving messages
-    
-- Broadcasting
-    
-- Gathering
-    
-- Reducing data
-    
-
----
-
-## [[Common MPI Functions]]
-
-- `MPI_Init()`
-    
-- `MPI_Finalize()`
-    
-- `MPI_Send()`
-    
-- `MPI_Recv()`
-    
-- `MPI_Bcast()`
-    
-- `MPI_Reduce()`
-    
-- `MPI_Barrier()`
-    
-
----
-
-## [[Advantages of MPI]]
-
-- Excellent scalability
-    
-- Suitable for HPC clusters
-    
-- Efficient distributed computing
-    
-- Supports thousands of processors
-    
-
----
-
-## [[Disadvantages of MPI]]
-
-- Difficult programming
-    
-- Explicit communication
-    
-- Communication latency
-    
-
----
-
-# [[OpenMP vs MPI]]
-
-|Feature|OpenMP|MPI|
-|---|---|---|
-|Memory Model|Shared|Distributed|
-|Parallel Unit|Threads|Processes|
-|Communication|Shared Variables|Message Passing|
-|Scalability|Moderate|Very High|
-|Suitable For|Multicore CPUs|HPC Clusters|
-
----
-
-# [[Message Passing Concepts]]
-
-Message passing is the exchange of information between processes executing on different processors.
-
-Since distributed systems do not share memory, all communication occurs through messages.
-
----
-
-## [[Types of Communication]]
-
-### [[Point-to-Point Communication]]
-
-Communication between exactly two processes.
-
-Examples:
-
-- Send
-    
-- Receive
-    
-
----
-
-### [[Collective Communication]]
-
-Communication among multiple processes.
-
-Examples:
-
-- Broadcast
-    
-- Scatter
-    
-- Gather
-    
-- Reduce
-    
-- All-Reduce
-    
-
----
-
-## [[Communication Modes]]
-
-### [[Blocking Communication]]
-
-The sender or receiver waits until communication completes.
-
-Advantages:
-
-- Simple programming
-    
-
-Disadvantages:
-
-- Idle waiting
-    
-
----
-
-### [[Non-Blocking Communication]]
-
-Processes continue executing while communication occurs.
-
-Advantages:
-
-- Better performance
-    
-- Overlapping communication and computation
-    
-
-Disadvantages:
-
-- More complex programming
-    
-
----
-
-# [[Synchronization and Race Conditions]]
-
-Synchronization coordinates multiple threads or processes to ensure correct execution.
-
----
-
-# [[Synchronization]]
-
-Synchronization ensures shared resources are accessed safely.
-
----
-
-## [[Synchronization Mechanisms]]
-
-- Mutex Locks
-    
-- Semaphores
-    
-- Barriers
-    
-- Critical Sections
-    
-- Atomic Operations
-    
-- Condition Variables
-    
-
----
-
-## [[Importance of Synchronization]]
-
-- Prevents data corruption
-    
-- Ensures consistency
-    
-- Coordinates parallel execution
-    
-- Protects shared resources
-    
-
----
-
-# [[Race Conditions]]
-
-A **Race Condition** occurs when multiple threads access shared data simultaneously and the program's result depends on the order of execution.
-
----
-
-## [[Example of Race Condition]]
-
-Two threads increment the same variable simultaneously.
-
-Expected value:
 
 ```text
-Counter = Counter + 1
+              Process
+                 │
+       ┌─────────┼─────────┐
+       ↓         ↓         ↓
+    Thread 1  Thread 2  Thread 3
+       │         │         │
+       └─────────┼─────────┘
+             Shared Memory
 ```
 
-Without synchronization, updates may be lost, producing incorrect results.
+### [[Process vs Thread]]
+
+|Feature|[[Process]]|[[Thread]]|
+|---|---|---|
+|Memory|Separate address space|Shares process address space|
+|Creation|Relatively expensive|Relatively lightweight|
+|Communication|More expensive|Easier through shared memory|
+|Failure isolation|Higher|Lower|
+|Parallel programming|[[MPI]] commonly uses processes|[[OpenMP]] commonly uses threads|
 
 ---
 
-## [[Causes]]
+# 4. [[Shared Memory Programming]] Using [[OpenMP]]
 
-- Shared variables
+**[[OpenMP]] (Open Multi-Processing)** is an API for parallel programming on **[[Shared Memory Systems]]**.
+
+It provides:
+
+- Compiler directives
     
-- Unsynchronized access
+- Runtime library functions
     
-- Concurrent writes
+- Environment variables
+
+OpenMP is primarily used with languages such as **C, C++ and Fortran**.
+
+### Basic model
+
+```text
+             Shared Memory
+          ┌─────────────────┐
+          │                 │
+       Thread 1          Thread 2
+          │                 │
+       Thread 3          Thread 4
+          │                 │
+          └─────────────────┘
+```
+
+All threads belong to the same process and can access shared data.
+
+---
+
+# 5. [[OpenMP Parallel Region]]
+
+A common OpenMP construct is:
+
+```c
+#pragma omp parallel
+{
+    printf("Hello from thread\n");
+}
+```
+
+The `parallel` directive creates a team of threads that execute the enclosed block.
+
+Conceptually:
+
+```text
+Main Thread
+     │
+     ↓
+Create Threads
+ ┌───┼───┬───┐
+ ↓   ↓   ↓   ↓
+ T1  T2  T3  T4
+ └───┼───┴───┘
+     ↓
+  Continue
+```
+
+---
+
+# 6. [[OpenMP Parallel Loop]]
+
+One of the most useful OpenMP constructs is `parallel for`.
+
+```c
+#pragma omp parallel for
+for (int i = 0; i < 100; i++) {
+    A[i] = B[i] + C[i];
+}
+```
+
+The iterations of the loop are distributed among available threads.
+
+For example:
+
+```text
+Iterations: 0 1 2 3 4 5 6 7
+
+Thread 1 → 0 1
+Thread 2 → 2 3
+Thread 3 → 4 5
+Thread 4 → 6 7
+```
+
+This is an example of **[[Data Parallelism]]**.
+
+---
+
+# 7. [[Distributed Memory Programming]] Using [[MPI]]
+
+**[[MPI]] = Message Passing Interface**
+
+MPI is a standard programming interface used for parallel programming in **[[Distributed Memory Systems]]**.
+
+Each process has its own memory.
+
+```text
+┌──────────────┐
+│ Process 1    │
+│ Local Memory │
+└──────┬───────┘
+       │
+     Network
+       │
+┌──────┴───────┐
+│ Process 2    │
+│ Local Memory │
+└──────────────┘
+```
+
+Processes communicate by **sending and receiving messages**.
+
+---
+
+# 8. [[Message Passing Concepts]]
+
+[[Message Passing]] allows one process to send data to another process.
+
+The basic operations are:
+
+- **[[Send]]**
+    
+- **[[Receive]]**
+    
+
+Conceptually:
+
+```text
+Process 1                  Process 2
+
+   Data
+     │
+     ↓
+   SEND ───────────────→ RECEIVE
+                              │
+                              ↓
+                            Data
+```
+
+### Example
+
+```c
+MPI_Send(...);
+MPI_Recv(...);
+```
+
+`MPI_Send()` sends data.
+
+`MPI_Recv()` receives data.
+
+---
+
+## [[MPI Communicator]]
+
+A **[[Communicator]]** defines a group of processes that can communicate with each other.
+
+The most commonly used communicator is:
+
+```text
+MPI_COMM_WORLD
+```
+
+It represents all processes participating in the MPI program.
+
+---
+
+## [[MPI Rank]]
+
+Each MPI process has a unique **[[Rank]]** within a communicator.
+
+For example, with four processes:
+
+```text
+Process       Rank
+
+Process 0       0
+Process 1       1
+Process 2       2
+Process 3       3
+```
+
+Rank is used to identify processes.
+
+---
+
+# 9. [[OpenMP vs MPI]]
+
+|Feature|[[OpenMP]]|[[MPI]]|
+|---|---|---|
+|Memory model|Shared memory|Distributed memory|
+|Execution unit|Threads|Processes|
+|Communication|Shared variables|Messages|
+|Typical system|Multicore CPU|Cluster|
+|Programming difficulty|Relatively easier|More complex|
+|Scalability|Within shared-memory system|Across many nodes|
+|Common API|OpenMP directives|MPI functions|
+
+---
+
+# 10. [[Synchronization]]
+
+**[[Synchronization]]** coordinates multiple threads or processes so that they access resources and execute operations in a controlled manner.
+
+It is necessary when multiple execution units interact with shared data or depend on one another.
+
+### Example
+
+Suppose two threads update the same variable:
+
+```text
+Initial count = 0
+
+Thread 1 → count = count + 1
+Thread 2 → count = count + 1
+```
+
+Without proper synchronization, the final result may be incorrect.
+
+---
+
+# 11. [[Race Condition]]
+
+A **[[Race Condition]]** occurs when multiple threads/processes access shared data concurrently and the final result depends on the timing or ordering of their operations.
+
+Example:
+
+```text
+count = 0
+
+Thread 1                  Thread 2
+
+Read count → 0            Read count → 0
+Add 1                      Add 1
+Write 1                    Write 1
+```
+
+Expected:
+
+```text
+count = 2
+```
+
+Actual:
+
+```text
+count = 1
+```
+
+This occurs because both threads read the old value before either update becomes visible.
+
+### Solution
+
+Use [[Synchronization]] mechanisms such as:
+
+- [[Locks]]
+    
+- [[Mutexes]]
+    
+- [[Critical Sections]]
+    
+- [[Atomic Operations]]
+    
+- [[Barriers]]
     
 
 ---
 
-## [[Solutions]]
+# 12. [[Critical Section]]
 
-- Mutex
+A **[[Critical Section]]** is a portion of code that accesses a shared resource and must not be executed by multiple threads simultaneously.
+
+OpenMP:
+
+```c
+#pragma omp critical
+{
+    count++;
+}
+```
+
+Only one thread at a time can execute the critical section.
+
+```text
+Thread 1 ──→ [ Critical Section ] ──→
+Thread 2 ──→ WAIT ───────────────→ [ Critical Section ]
+Thread 3 ──→ WAIT ───────────────→
+```
+
+---
+
+# 13. [[Atomic Operation]]
+
+An **[[Atomic Operation]]** performs a small update to shared data indivisibly.
+
+Example:
+
+```c
+#pragma omp atomic
+count++;
+```
+
+This is generally more lightweight than protecting a larger block with a critical section.
+
+---
+
+# 14. [[Barrier Synchronization]]
+
+A **[[Barrier]]** forces threads to wait until all threads reach a particular point.
+
+```text
+Thread 1 ────────────┐
+Thread 2 ────────┐   │
+Thread 3 ─────────────┤ Barrier
+Thread 4 ────────┘   │
+                     ↓
+                Continue
+```
+
+OpenMP:
+
+```c
+#pragma omp barrier
+```
+
+### Purpose
+
+Ensures that no thread proceeds beyond the barrier until all required threads have arrived.
+
+---
+
+# 15. [[Deadlock]]
+
+A **[[Deadlock]]** occurs when two or more processes/threads wait indefinitely for resources held by one another.
+
+Example:
+
+```text
+Thread 1
+   │
+   ├── Holds Lock A
+   ↓
+ Waits for Lock B
+
+
+Thread 2
+   │
+   ├── Holds Lock B
+   ↓
+ Waits for Lock A
+```
+
+Neither can continue.
+
+```text
+Thread 1 → waiting for Thread 2
+Thread 2 → waiting for Thread 1
+```
+
+### Conditions commonly associated with deadlock
+
+1. **[[Mutual Exclusion]]**
     
-- Locks
+2. **[[Hold and Wait]]**
     
-- Atomic operations
+3. **[[No Preemption]]**
     
-- Critical sections
+4. **[[Circular Wait]]**
+    
+
+### Avoiding deadlocks
+
+- Acquire locks in a consistent order.
+    
+- Avoid unnecessary locks.
+    
+- Keep critical sections short.
+    
+- Use timeouts where appropriate.
+    
+- Carefully design resource allocation.
     
 
 ---
 
-# [[Deadlocks in Parallel Systems]]
+# 16. [[Parallel Loop Scheduling]]
 
-A **Deadlock** occurs when two or more processes wait indefinitely for resources held by each other.
+When a loop is parallelized, its iterations must be distributed among threads.
 
-No process can continue execution.
-
----
-
-## [[Necessary Conditions for Deadlock]]
-
-1. Mutual Exclusion
-    
-2. Hold and Wait
-    
-3. No Preemption
-    
-4. Circular Wait
-    
-
-All four conditions must exist simultaneously.
+OpenMP provides several scheduling strategies.
 
 ---
 
-## [[Example]]
+## [[Static Scheduling]]
 
-Thread A holds Lock 1 and waits for Lock 2.
+Iterations are divided among threads before execution.
 
-Thread B holds Lock 2 and waits for Lock 1.
+```c
+#pragma omp parallel for schedule(static)
+```
 
-Neither thread can proceed.
+Example:
 
----
+```text
+Iterations: 0 1 2 3 4 5 6 7
 
-## [[Deadlock Prevention]]
+Thread 1 → 0 1
+Thread 2 → 2 3
+Thread 3 → 4 5
+Thread 4 → 6 7
+```
 
-- Resource ordering
-    
-- Timeout mechanisms
-    
-- Lock hierarchy
-    
-- Avoid circular waiting
-    
-- Resource preemption
-    
+### Advantages
 
----
-
-# [[Parallel Loop Scheduling]]
-
-Loop scheduling determines how iterations of a loop are distributed among processors.
-
-Proper scheduling improves load balancing and performance.
-
----
-
-## [[Types of Loop Scheduling]]
-
-### [[Static Scheduling]]
-
-Iterations are assigned before execution.
-
-Advantages:
-
-- Low overhead
+- Low scheduling overhead
     
 - Predictable
     
-
-Disadvantages:
-
-- Poor load balancing
+- Good when iterations have similar workloads
     
 
 ---
 
-### [[Dynamic Scheduling]]
+## [[Dynamic Scheduling]]
 
-Iterations are assigned during execution.
+Iterations are assigned to threads as threads become available.
 
-Advantages:
+```c
+#pragma omp parallel for schedule(dynamic)
+```
+
+Conceptually:
+
+```text
+Thread 1 → Task → Task → Task
+Thread 2 → Task → Task
+Thread 3 → Task → Task → Task
+Thread 4 → Task
+```
+
+### Advantages
 
 - Better load balancing
     
+- Useful when iteration execution time varies
+    
 
-Disadvantages:
+### Disadvantage
 
 - Higher scheduling overhead
     
 
 ---
 
-### [[Guided Scheduling]]
+## [[Guided Scheduling]]
 
-Initially assigns large chunks.
+Starts with larger chunks and gradually reduces chunk size.
 
-Chunk sizes decrease over time.
-
-Advantages:
-
-- Good balance
-    
-- Reduced overhead
-    
-
----
-
-### [[Auto Scheduling]]
-
-Compiler or runtime automatically selects the scheduling strategy.
-
----
-
-## [[Importance of Loop Scheduling]]
-
-- Reduces idle processors
-    
-- Improves scalability
-    
-- Better workload distribution
-    
-
----
-
-# [[Hybrid Programming Models]]
-
-Hybrid programming combines two or more parallel programming models.
-
-The most common hybrid model is:
-
-**MPI + OpenMP**
-
-- MPI distributes work across nodes.
-    
-- OpenMP creates threads within each node.
-    
-
----
-
-## [[Architecture of Hybrid Programming]]
-
-```text
-Cluster
-│
-├── Node 1
-│     ├── OpenMP Thread 1
-│     ├── OpenMP Thread 2
-│     └── OpenMP Thread 3
-│
-├── Node 2
-│     ├── OpenMP Thread 1
-│     ├── OpenMP Thread 2
-│     └── OpenMP Thread 3
+```c
+#pragma omp parallel for schedule(guided)
 ```
 
-MPI communicates between nodes, while OpenMP manages threads within each node.
+It attempts to balance:
 
----
-
-## [[Advantages of Hybrid Programming]]
-
-- Better scalability
+- [[Load Balancing]]
     
-- Efficient memory usage
-    
-- Reduced communication overhead
-    
-- Improved performance on modern HPC systems
+- Scheduling overhead
     
 
 ---
 
-## [[Disadvantages]]
+## [[Scheduling Comparison]]
 
-- Complex programming
-    
-- Difficult debugging
-    
-- Synchronization challenges
-    
-
----
-
-# [[Basics of Parallel Algorithm Design]]
-
-A parallel algorithm is an algorithm designed to execute multiple operations simultaneously.
+|Schedule|Main idea|Suitable for|
+|---|---|---|
+|[[Static Scheduling]]|Fixed assignment|Uniform workloads|
+|[[Dynamic Scheduling]]|Assign work as threads become free|Uneven workloads|
+|[[Guided Scheduling]]|Decreasing chunk sizes|Large uneven workloads|
 
 ---
 
-## [[Characteristics of a Good Parallel Algorithm]]
+# 17. [[Hybrid Programming Models]]
 
-- High parallelism
+A **[[Hybrid Programming Model]]** combines two or more parallel programming approaches.
+
+A common HPC approach combines:
+
+**[[MPI]] + [[OpenMP]]**
+
+MPI is used **between nodes**, while OpenMP is used **within each node**.
+
+```text
+             HPC Cluster
+                  │
+       ┌──────────┴──────────┐
+       ↓                     ↓
+     Node 1                Node 2
+       │                     │
+   MPI Process            MPI Process
+       │                     │
+   ┌───┼───┐             ┌───┼───┐
+   ↓   ↓   ↓             ↓   ↓   ↓
+  T1  T2  T3             T1  T2  T3
+  OpenMP                  OpenMP
+```
+
+### Why hybrid programming?
+
+It combines:
+
+- **[[MPI Scalability]]** across nodes
     
-- Minimal communication
+- **[[OpenMP Shared-Memory Parallelism]]** within each node
     
-- Good load balancing
-    
-- Scalability
-    
-- Low synchronization overhead
-    
+
+This can reduce the number of MPI processes and make better use of multicore nodes.
 
 ---
 
-## [[Steps in Parallel Algorithm Design]]
+# 18. [[Basics of Parallel Algorithm Design]]
 
-### [[Problem Decomposition]]
+A **[[Parallel Algorithm]]** divides a problem into multiple parts that can be executed concurrently.
 
-Divide a large problem into smaller independent tasks.
+### Basic design process
+
+```text
+1. Identify the problem
+        ↓
+2. Find independent operations
+        ↓
+3. Partition the data/work
+        ↓
+4. Assign work to processors
+        ↓
+5. Manage communication
+        ↓
+6. Synchronize when required
+        ↓
+7. Combine results
+```
 
 ---
 
-### [[Task Assignment]]
+## Important Principles
 
-Assign tasks to processors.
+### 1. [[Decomposition]]
+
+Break the problem into smaller tasks.
+
+Example:
+
+```text
+Array of 1,000,000 elements
+             ↓
+       Divide into 4
+             ↓
+250,000 | 250,000 | 250,000 | 250,000
+```
 
 ---
 
-### [[Communication]]
+### 2. [[Data Partitioning]]
 
-Exchange required information between processors.
+Divide data among processors.
+
+```text
+Processor 1 → Data 1
+Processor 2 → Data 2
+Processor 3 → Data 3
+Processor 4 → Data 4
+```
 
 ---
+
+### 3. [[Load Balancing]]
+
+Each processor should receive a reasonable amount of work.
+
+Poor balancing:
+
+```text
+CPU 1 → ████████████████
+CPU 2 → ██
+CPU 3 → ███
+CPU 4 → █
+```
+
+Good balancing:
+
+```text
+CPU 1 → █████
+CPU 2 → █████
+CPU 3 → █████
+CPU 4 → █████
+```
+
+Poor load balancing causes processors to sit idle.
+
+---
+
+### 4. [[Communication]]
+
+Processors may need to exchange intermediate results.
+
+Too much communication can reduce the benefits of parallelism.
+
+---
+
+### 5. [[Synchronization]]
+
+Synchronization ensures that dependent operations occur in the correct order.
+
+---
+
+### 6. [[Granularity]]
+
+**[[Granularity]]** refers to the amount of computation performed between communication or synchronization events.
+
+- **[[Fine-Grained Parallelism]]:** Small tasks, frequent communication.
+    
+- **[[Coarse-Grained Parallelism]]:** Larger tasks, less frequent communication.
+    
+
+Generally, excessive fine-grained parallelism can introduce significant overhead.
+
+---
+
+# 19. [[Speedup and Efficiency]]
+
+Two important measures of a parallel algorithm are **[[Speedup]]** and **[[Parallel Efficiency]]**.
+
+### [[Speedup]]
+
+S=T1TpS = \frac{T_1}{T_p}
+
+Where:
+
+- T1T_1 = execution time using one processor
+    
+- TpT_p = execution time using pp processors
+    
+
+Example:
+
+If a program takes 100 seconds on one processor and 25 seconds on four processors:
+
+S=10025=4S = \frac{100}{25}=4
+
+So the speedup is **4×**.
+
+---
+
+### [[Parallel Efficiency]]
+
+E=SpE = \frac{S}{p}
+
+For the above example:
+
+E=44=1=100%E = \frac{4}{4}=1=100\%
+
+In real systems, efficiency is usually below 100% because of communication, synchronization, load imbalance and other overheads.
+
+---
+
+# 20. [[Important Exam Definitions]]
+
+### [[Parallel Programming]]
+
+Designing programs so that multiple computational operations can execute concurrently.
+
+### [[Thread]]
+
+A lightweight execution unit within a process that shares the process's resources.
+
+### [[Process]]
+
+An independent executing program with its own address space.
+
+### [[OpenMP]]
+
+An API for shared-memory parallel programming using compiler directives, runtime functions and environment variables.
+
+### [[MPI]]
+
+A standard message-passing interface for communication between processes in distributed-memory systems.
+
+### [[Message Passing]]
+
+A communication model in which processes exchange data explicitly through messages.
 
 ### [[Synchronization]]
 
-Coordinate execution to maintain correctness.
+Coordination of parallel execution units to ensure correct ordering and safe access to shared resources.
 
----
+### [[Race Condition]]
+
+A situation where the result depends on the timing or ordering of concurrent accesses to shared data.
+
+### [[Deadlock]]
+
+A state where processes or threads wait indefinitely for resources held by one another.
 
 ### [[Load Balancing]]
 
-Ensure all processors receive approximately equal work.
+Distributing computational work evenly among processing units.
+
+### [[Hybrid Programming]]
+
+A parallel programming approach combining models such as MPI and OpenMP.
+
+### [[Parallel Algorithm]]
+
+An algorithm that divides computation into tasks that can be executed concurrently.
 
 ---
 
-### [[Performance Evaluation]]
-
-Measure:
-
-- Execution Time
-    
-- Speedup
-    
-- Efficiency
-    
-- Scalability
-    
-
----
-
-# [[Performance Metrics]]
-
-## [[Execution Time]]
-
-The total time required to complete a program.
-
----
-
-## [[Speedup]]
-
-Measures improvement obtained through parallel execution.
-
-**Formula:**
+# [[Quick Revision]]
 
 ```text
-Speedup = Sequential Execution Time / Parallel Execution Time
+[[Parallel Programming]]
+│
+├── [[Processes and Threads]]
+│   ├── [[Process]] → Independent execution + memory
+│   └── [[Thread]]  → Lightweight execution unit
+│
+├── [[Shared Memory Programming]]
+│   └── [[OpenMP]]
+│       ├── [[OpenMP Parallel Region]]
+│       ├── [[OpenMP Parallel Loop]]
+│       ├── [[Critical Section]]
+│       ├── [[Atomic Operation]]
+│       └── [[Barrier Synchronization]]
+│
+├── [[Distributed Memory Programming]]
+│   └── [[MPI]]
+│       ├── [[MPI Communicator]]
+│       ├── [[MPI Rank]]
+│       ├── [[Send]]
+│       └── [[Receive]]
+│
+├── [[Synchronization]]
+│   ├── [[Critical Section]]
+│   ├── [[Atomic Operation]]
+│   └── [[Barrier]]
+│
+├── Problems
+│   ├── [[Race Condition]]
+│   └── [[Deadlock]]
+│
+├── [[Parallel Loop Scheduling]]
+│   ├── [[Static Scheduling]]
+│   ├── [[Dynamic Scheduling]]
+│   └── [[Guided Scheduling]]
+│
+├── [[Hybrid Programming Models]]
+│   └── [[MPI]] + [[OpenMP]]
+│
+└── [[Basics of Parallel Algorithm Design]]
+    ├── [[Decomposition]]
+    ├── [[Data Partitioning]]
+    ├── [[Load Balancing]]
+    ├── [[Communication]]
+    ├── [[Synchronization]]
+    └── [[Granularity]]
 ```
-
-Ideal Speedup = Number of Processors
-
----
-
-## [[Efficiency]]
-
-Measures processor utilization.
-
-**Formula:**
-
-```text
-Efficiency = Speedup / Number of Processors
-```
-
-Efficiency ranges from **0 to 1 (or 0% to 100%)**.
-
----
-
-## [[Scalability]]
-
-The ability of a parallel program to maintain performance as the number of processors increases.
-
-Good scalability means adding processors results in proportional performance improvement.
-
----
-
-# [[Key Terms]]
-
-|Term|Meaning|
-|---|---|
-|Parallel Programming|Simultaneous execution of multiple computations|
-|Process|Independent executing program with its own memory|
-|Thread|Lightweight execution unit within a process|
-|OpenMP|Shared-memory parallel programming API|
-|MPI|Message Passing Interface for distributed-memory systems|
-|Synchronization|Coordination of concurrent tasks|
-|Race Condition|Incorrect behavior due to unsynchronized concurrent access|
-|Deadlock|Processes waiting indefinitely for each other's resources|
-|Loop Scheduling|Distribution of loop iterations among processors|
-|Hybrid Programming|Combination of MPI and OpenMP (or other models)|
-|Load Balancing|Equal distribution of work across processors|
-|Speedup|Performance improvement from parallel execution|
-|Efficiency|Effectiveness of processor utilization|
-|Scalability|Ability to maintain performance as processors increase|
-
----
-
-# [[Exam Tips]]
-
-### Frequently Asked Theory Questions
-
-1. Define Parallel Programming and explain its objectives.
-    
-2. Differentiate between Processes and Threads.
-    
-3. Explain Shared Memory Programming using OpenMP.
-    
-4. Explain Distributed Memory Programming using MPI.
-    
-5. Compare OpenMP and MPI with suitable examples.
-    
-6. Explain Message Passing Concepts and communication modes.
-    
-7. What is Synchronization? Discuss various synchronization mechanisms.
-    
-8. Explain Race Conditions with examples and methods to prevent them.
-    
-9. Define Deadlock. Explain its necessary conditions and prevention techniques.
-    
-10. Explain Parallel Loop Scheduling and its types.
-    
-11. Describe Hybrid Programming Models and their advantages.
-    
-12. Explain the steps involved in designing an efficient Parallel Algorithm.
-    
-13. Define Speedup, Efficiency, and Scalability in parallel systems.

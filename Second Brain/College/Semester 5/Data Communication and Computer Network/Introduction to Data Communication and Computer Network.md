@@ -367,7 +367,7 @@ Benefits:
 
 ---
 
-# [[IP Model]]
+# [[IP Model 1]]
 
 |Layer|Protocols|
 |---|---|
