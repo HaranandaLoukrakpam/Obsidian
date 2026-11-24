@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "College/Semester 5/Software Engineering/Theory/Unit-1 Class Notes.md",
+                "file": "College/Semester 5/Data Communication and Computer Network/Unit I – Foundations, Network Models and Physical Layer.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,20 +28,35 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Unit-1 Class Notes"
+              "title": "Unit I – Foundations, Network Models and Physical Layer"
             }
           },
           {
-            "id": "de52e616d8c3cf31",
+            "id": "5930f96116b6180c",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "College/Semester 5/Data Communication and Computer Network/Unit I – Foundations, Network Models and Physical Layer.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Unit I – Foundations, Network Models and Physical Layer"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -216,36 +231,36 @@
       "bases:Create new base": false
     }
   },
-  "active": "a4a7a62b5442c9cc",
+  "active": "5930f96116b6180c",
   "lastOpenFiles": [
-    "College/Semester 5/Software Engineering/Theory/Introduction to Software Engineering Lifecycle Models  Software Design.md",
+    "College/Semester 5/Data Communication and Computer Network/Introduction to Data Communication and Computer Network.md",
+    "College/Semester 5/Data Communication and Computer Network/Unit I – Foundations, Network Models and Physical Layer.md",
+    "Tags/Integration or System Testing.md",
+    "Tags/Five Components of Data Communication.md",
+    "Tags/Introduction to Data Communication.md",
+    "College/Semester 5/Backend Programming and API Design Lab/Notes.md",
+    "Tags/Localhost.md",
+    "Tags/Server.md",
+    "Tags/Request Body.md",
+    "Tags/Query Parameters.md",
+    "Tags/URL Parameters.md",
+    "Tags/CRUD Operations.md",
+    "Tags/URL.md",
+    "Tags/HTTP Status Codes.md",
+    "Tags/DELETE.md",
+    "Tags/PATCH.md",
+    "Tags/PUT.md",
+    "Tags/POST.md",
+    "Tags/GET.md",
+    "Tags/HTTP Methods.md",
+    "Tags/HTTP Request and Response.md",
+    "Tags/Client-Server Model.md",
+    "Tags/Backend API.md",
     "College/Semester 5/Software Engineering/Theory/Unit-1 Class Notes.md",
-    "Software Life Cycles.md",
-    "Structured Programming.md",
-    "Computer Systems Engineering / Project Management Process.md",
+    "Tags/Advantages of Decomposition.md",
+    "Tags/Decomposition.md",
     "Computer Systems Engineering ",
-    "OutSourced.md",
-    "Software Project.md",
-    "Types of Software Projects.md",
-    "Software Project Size.md",
-    "Effort, Time, Cost vs. Program Size.md",
-    "Exploratory Style.md",
-    "Exploratory Programming.md",
-    "Evolution of Software Engineering.md",
-    "Software Products — Problems.md",
-    "Lecture - 04.md",
-    "Hardware / Software Cost Ratio.md",
     "Hardware ",
-    "Technology Development Pattern.md",
-    "Software Engineering — Science and Art.md",
-    "Software Services.md",
-    "Lecture - 03.md",
-    "Software Product vs Software Services.md",
-    "Evolution of Software.md",
-    "Program vs Product.md",
-    "Software Engineering — Science or Art.md",
-    "Lecture - 02.md",
-    "Build and Fix.md",
     "Tags/TCP",
     "PyTorch ",
     "Recommended library",

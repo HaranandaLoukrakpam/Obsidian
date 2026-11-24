@@ -431,7 +431,7 @@ Integration modules testing ---> one modules tested together with others a 1.
 
 • each module of the design is [[Coded]].
 
-• each module is [[Unit Tested]].
+• each module is [[UNIT tested]].
 
 ↳ tested independently as a stand alone unit  
 and debugged.
