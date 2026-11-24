@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "College/Semester 5/Data Communication and Computer Network/Unit I – Foundations, Network Models and Physical Layer.md",
+                "file": "College/Semester 5/Data Communication and Computer Network/Sessional 1.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,35 +28,20 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Unit I – Foundations, Network Models and Physical Layer"
+              "title": "Sessional 1"
             }
           },
           {
-            "id": "5930f96116b6180c",
+            "id": "c5d4baaf3de7c708",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "College/Semester 5/Data Communication and Computer Network/Unit I – Foundations, Network Models and Physical Layer.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Unit I – Foundations, Network Models and Physical Layer"
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -231,34 +216,35 @@
       "bases:Create new base": false
     }
   },
-  "active": "5930f96116b6180c",
+  "active": "a4a7a62b5442c9cc",
   "lastOpenFiles": [
-    "College/Semester 5/Data Communication and Computer Network/Introduction to Data Communication and Computer Network.md",
+    "College/Semester 5/Data Communication and Computer Network/Sessional 2.md",
+    "College/Semester 5/Data Communication and Computer Network/Sessional 1.md",
     "College/Semester 5/Data Communication and Computer Network/Unit I – Foundations, Network Models and Physical Layer.md",
-    "Tags/Integration or System Testing.md",
-    "Tags/Five Components of Data Communication.md",
-    "Tags/Introduction to Data Communication.md",
-    "College/Semester 5/Backend Programming and API Design Lab/Notes.md",
-    "Tags/Localhost.md",
-    "Tags/Server.md",
-    "Tags/Request Body.md",
-    "Tags/Query Parameters.md",
-    "Tags/URL Parameters.md",
-    "Tags/CRUD Operations.md",
-    "Tags/URL.md",
-    "Tags/HTTP Status Codes.md",
-    "Tags/DELETE.md",
-    "Tags/PATCH.md",
-    "Tags/PUT.md",
-    "Tags/POST.md",
-    "Tags/GET.md",
-    "Tags/HTTP Methods.md",
-    "Tags/HTTP Request and Response.md",
-    "Tags/Client-Server Model.md",
-    "Tags/Backend API.md",
-    "College/Semester 5/Software Engineering/Theory/Unit-1 Class Notes.md",
-    "Tags/Advantages of Decomposition.md",
-    "Tags/Decomposition.md",
+    "Tags/Application Layer.md",
+    "Tags/UDP.md",
+    "Tags/Physical Layer.md",
+    "Tags/Ethernet.md",
+    "Tags/MAC Addressing.md",
+    "Tags/Data Link Layer.md",
+    "Tags/IP Addresses.md",
+    "Tags/Network Layer.md",
+    "Tags/TCP.md",
+    "Tags/Port Numbers.md",
+    "Tags/Transport Layer.md",
+    "Tags/Session Layer.md",
+    "Tags/SMTP.md",
+    "Tags/FTP.md",
+    "Tags/Presentation Layer.md",
+    "Tags/OSI – Open Systems Interconnection.md",
+    "Tags/Layered Architecture.md",
+    "Tags/RFC – Request for Comments.md",
+    "Tags/IEEE 802.11.md",
+    "Tags/IEEE 802.3.md",
+    "Tags/OSI Reference Model.md",
+    "Tags/Standards Organisations.md",
+    "Tags/Network Protocol.md",
+    "TCP",
     "Computer Systems Engineering ",
     "Hardware ",
     "Tags/TCP",
@@ -268,7 +254,6 @@
     "Pass ",
     "Spam ",
     "Async",
-    "Tags/TCP",
     "Untitled.canvas",
     "Pasted image 20260721213748.png",
     "Tags/Pasted image 20260721213738.png"

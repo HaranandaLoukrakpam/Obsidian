@@ -16,7 +16,6 @@ A data communication system is effective when it satisfies four criteria:
 3. **[[Timeliness]]:** Data must reach the destination within the required time.
     
 4. **[[Jitter]]:** Variation in packet arrival time should be minimum, especially in audio and video communication.
-    
 
 ## 1.2 [[Five Components of Data Communication]]
 
@@ -29,7 +28,6 @@ A data communication system is effective when it satisfies four criteria:
 4. **[[Transmission Medium]]:** Physical or wireless path through which data travels.
     
 5. **[[Protocol]]:** Set of rules governing communication between devices.
-    
 
 **Example:** When sending an email, the email is the message, your computer is the sender, the recipient's computer is the receiver, the network is the medium, and protocols control communication.
 
@@ -373,7 +371,7 @@ The Internet evolved from a small research network into a global network connect
 
 1. **[[ARPANET]] (1969):** Developed by the US Department of Defense's ARPA to connect research institutions.
     
-2. **[[TCP/IP]] (1983):** Adopted as the standard communication protocol for ARPANET, helping establish the modern Internet.
+2. **[[IP 2]] (1983):** Adopted as the standard communication protocol for ARPANET, helping establish the modern Internet.
     
 3. **[[World Wide Web]] (1989–1991):** Tim Berners-Lee developed the Web, enabling access to linked documents through browsers.
     
@@ -514,7 +512,7 @@ The [[OSI – Open Systems Interconnection]] model is a seven-layer reference mo
     
 - Uses [[IP Addresses]].
     
-- Protocol: [[IP]].
+- Protocol: [[IP 2]].
     
 
 #### Layer 2 – [[Data Link Layer]]
