@@ -8,18 +8,18 @@
 
   
 
-- **Mechanism:** It operates on the same physical principle as [[Frequency-Division Multiplexing (FDM)]], but applies to light waves rather than radio frequencies. Multiple optical signals, each assigned a distinct [[wavelength]] (color) of light, are combined by an [[optical multiplexer]] (prism or [[diffraction grating]]) onto a single fibre core and separated at the receiver.
+- **Mechanism:** It operates on the same physical principle as [[Frequency-Division Multiplexing (FDM)]], but applies to light waves rather than radio frequencies. Multiple optical signals, each assigned a distinct [[Wavelength]] (color) of light, are combined by an [[optical multiplexer]] (prism or [[diffraction grating]]) onto a single fibre core and separated at the receiver.
     
 - **Advantage:** [[Wavelength-Division Multiplexing (WDM)]] exploits the massive [[bandwidth]] capacity of optical fibres (terabits per second) without requiring higher electronic switching speeds per channel.
     
 
 #### 2. Differentiate between a single-bit error and a burst error.
 
-|**Feature**|**[[Single-Bit Error]]**|**[[Burst Error]]**|
-|---|---|---|
-|**Definition**|Only **one bit** of a given data unit (byte, character, or packet) is altered from `1` to `0` or `0` to `1`.|**Two or more bits** in the data unit have changed from `1` to `0` or `0` to `1`.|
-|**Measurement**|Counted as a single isolated bit flip.|Measured from the **first corrupted bit to the last corrupted bit** (intermediate bits may remain intact).|
-|**Common Cause**|Short-duration noise spikes in [[parallel transmission]] or low-speed serial links.|[[Impulse noise]], lightning, or [[attenuation]]/fading in high-speed [[serial transmission]] where noise duration exceeds single-bit period ($T_b$).|
+| **Feature**      | **[[Single-Bit Error]]**                                                                                     | **[[Burst Error]]**                                                                                                                                   |
+| ---------------- | ------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Definition**   | Only **one bit** of a given data unit (byte, character, or packet) is altered from `1` to `0` or `0` to `1`. | **Two or more bits** in the data unit have changed from `1` to `0` or `0` to `1`.                                                                     |
+| **Measurement**  | Counted as a single isolated bit flip.                                                                       | Measured from the **first corrupted bit to the last corrupted bit** (intermediate bits may remain intact).                                            |
+| **Common Cause** | Short-duration noise spikes in [[parallel transmission]] or low-speed serial links.                          | [[Impulse noise]], lightning, or [[attenuation]]/fading in high-speed [[serial transmission]] where noise duration exceeds single-bit period ($T_b$). |
 
 #### 3. Why can twisted-pair cable cancel noise, but two untwisted parallel wires cannot?
 
@@ -45,7 +45,7 @@
 
   
 
-1. **[[Sampling]]:** The continuous analog signal is measured at uniform time intervals ($T_s$), producing a [[Pulse Amplitude Modulation (PAM)]] signal. According to the [[Nyquist Theorem]], the [[sampling rate]] ($f_s$) must be at least twice the highest frequency component of the analog signal ($f_s \ge 2 \cdot f_{\max}$).
+1. **[[Sampling]]:** The continuous analog signal is measured at uniform time intervals ($T_s$), producing a [[Pulse Amplitude Modulation (PAM)]] signal. According to the [[Nyquist Theorem]], the [[Sampling rate]] ($f_s$) must be at least twice the highest frequency component of the analog signal ($f_s \ge 2 \cdot f_{\max}$).
     
 2. **[[Quantization]]:** Each continuous sample amplitude is mapped to the nearest discrete voltage level within a finite set of $L$ levels ($L = 2^n$, where $n$ is the number of bits per sample).
     
@@ -149,7 +149,7 @@ Computer 4 ──► [Modulator f4] ──┘                                   
         
 - **Receiving Side ([[Demultiplexer]]):**
     
-    1. At the server end, the composite signal enters the **[[demultiplexer]]**, which splits the signal equally across four parallel branches.
+    1. At the server end, the composite signal enters the **[[Demultiplexer]]**, which splits the signal equally across four parallel branches.
         
     2. Each branch passes through a **[[Band-Pass Filter (BPF)]]** tuned specifically to one carrier frequency band ($f_1, f_2, f_3,$ or $f_4$). Each [[Band-Pass Filter (BPF)]] allows only its designated frequency range to pass while attenuating all other channels.
         
@@ -162,7 +162,7 @@ Computer 4 ──► [Modulator f4] ──┘                                   
     
 - **Consequence of Omitting Guard Bands:**
     
-    1. **Filter Roll-off Overlap:** Practical [[Band-Pass Filter (BPF)]] circuits do not have infinitely sharp vertical cutoffs; their attenuation slopes gradually at the band edges. Without [[guard bands]], the skirts of adjacent channels overlap, causing **[[Adjacent Channel Interference (ACI)]]** or **[[crosstalk]]**.
+    1. **Filter Roll-off Overlap:** Practical [[Band-Pass Filter (BPF)]] circuits do not have infinitely sharp vertical cutoffs; their attenuation slopes gradually at the band edges. Without [[Guard Bands]], the skirts of adjacent channels overlap, causing **[[Adjacent Channel Interference (ACI)]]** or **[[crosstalk]]**.
         
     2. **[[Carrier Drift]]:** Minor thermal or oscillator frequency drift in the modulators can push one channel's spectrum directly into the neighboring channel, corrupting the demodulated output at the server.
         
@@ -181,7 +181,7 @@ Computer 4 ──► [Modulator f4] ──┘                                   
         
     - User $C$ data units: $C_1, C_2$ (2 units)
         
-- **Frame Allocation:** Since User $A$ has the maximum number of data units ($3$), the [[multiplexer]] must transmit **3 [[frames]]** to clear all queues. In [[Synchronous Time-Division Multiplexing (TDM)]], slots remain strictly pre-assigned to users regardless of whether they have data ready.
+- **Frame Allocation:** Since User $A$ has the maximum number of data units ($3$), the [[Multiplexer]] must transmit **3 [[frames]]** to clear all queues. In [[Synchronous Time-Division Multiplexing (TDM)]], slots remain strictly pre-assigned to users regardless of whether they have data ready.
     
 
 Plaintext

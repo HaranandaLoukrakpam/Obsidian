@@ -213,9 +213,9 @@ In mesh topology, every device is connected to every other device through dedica
 
 **Formula for a Full Mesh:**
 
-[  
+$$
 L=\frac{n(n-1)}{2}  
-]
+$$
 
 Where:
 
@@ -551,7 +551,7 @@ The [[OSI – Open Systems Interconnection]] model is a seven-layer reference mo
 
 Data → Segment → Packet → Frame → Bits.
 
-## 3.5 [[TCP/IP Reference Model]]
+## 3.5 [[IP Reference Model]]
 
 TCP/IP stands for [[Transmission Control Protocol]] / [[Internet Protocol]].
 
@@ -568,7 +568,7 @@ It is the protocol suite used for communication over the Internet.
 - Protocols: HTTP, HTTPS, FTP, SMTP and DNS.
     
 
-#### 2. [[Transport Layer – TCP/IP]]
+#### 2. [[IP 3]]
 
 - Provides process-to-process communication.
     
@@ -1034,17 +1034,17 @@ There are four major components of network delay.
 
 Transmission delay is the time required to place all bits of a packet onto the transmission link.
 
-[  
+$$
 D_{trans}=\frac{\text{Packet Size (bits)}}{\text{Bandwidth (bps)}}  
-]
+$$
 
 ### 2. [[Propagation Delay]]
 
 Propagation delay is the time taken by a signal to travel from sender to receiver through the transmission medium.
 
-[  
+$$
 D_{prop}=\frac{\text{Distance}}{\text{Propagation Speed}}  
-]
+$$
 
 ### 3. [[Processing Delay]]
 
@@ -1058,17 +1058,17 @@ It generally increases during network congestion.
 
 ### Total Network Delay
 
-[  
+$$
 D_{total}=D_{trans}+D_{prop}+D_{proc}+D_{queue}  
-]
+$$
 
 ### [[Round-Trip Time (RTT)]]
 
 RTT is the total time taken for a signal or packet to travel from the source to the destination and for a response to return to the source.
 
-[  
+$$
 RTT=T_{\text{request}}+T_{\text{response}}  
-]
+$$
 
 RTT is commonly used to measure network responsiveness.
 
@@ -1080,7 +1080,7 @@ Transmission impairment refers to the degradation or alteration of a signal whil
 
 There are three major types.
 
-### 1. [[Attenuation]]
+### 1. [[attenuation]]
 
 Attenuation is the loss of signal strength as it travels through a transmission medium.
 
@@ -1108,9 +1108,9 @@ Noise refers to unwanted electrical or electromagnetic signals that interfere wi
     
 - **[[Induced Noise]]:** Caused by external electrical sources.
     
-- **[[Crosstalk]]:** Interference from neighbouring communication channels.
+- **[[crosstalk]]:** Interference from neighbouring communication channels.
     
-- **[[Impulse Noise]]:** Sudden high-energy disturbances.
+- **[[Impulse noise]]:** Sudden high-energy disturbances.
     
 
 ## 4.7 [[Channel Capacity – Shannon's Theorem]]
@@ -1119,9 +1119,9 @@ Channel capacity is the maximum theoretical data rate at which information can b
 
 ### [[Shannon's Capacity Formula]]
 
-[  
+$$
 \boxed{C=B\log_2(1+SNR)}  
-]
+$$
 
 Where:
 
@@ -1136,21 +1136,21 @@ Where:
 
 SNR is the ratio of signal power to noise power.
 
-[  
+$$
 SNR=\frac{P_{signal}}{P_{noise}}  
-]
+$$
 
 ### SNR in Decibels
 
-[  
+$$
 SNR_{dB}=10\log_{10}(SNR)  
-]
+$$
 
 ### Convert SNR from dB to Linear Value
 
-[  
+$$
 SNR=10^{SNR_{dB}/10}  
-]
+$$
 
 ### Solved Numerical 1
 
@@ -1158,43 +1158,43 @@ SNR=10^{SNR_{dB}/10}
 
 **Given:**
 
-[  
+$$
 B=3000\ Hz  
-]
-
-[  
+$$
+ $$
 SNR_{dB}=30\ dB  
-]
+$$
 
 **Step 1: Convert SNR into linear form.**
 
-[  
+$$
 SNR=10^{30/10}  
-]
+$$
 
-[  
+$$ 
 SNR=1000  
-]
+
+$$
 
 **Step 2: Apply Shannon's formula.**
 
-[  
+$$
 C=B\log_2(1+SNR)  
-]
+$$
 
-[  
+$$
 C=3000\log_2(1001)  
-]
+$$
 
-[  
+$$
 C=3000\times9.967  
-]
+$$
 
 **Final Answer:**
 
-[  
+$$
 \boxed{C\approx29,901\ bps}  
-]
+$$
 
 Therefore, the maximum theoretical channel capacity is approximately **29.9 kbps**.
 
@@ -1204,29 +1204,29 @@ Therefore, the maximum theoretical channel capacity is approximately **29.9 kbps
 
 **Given:**
 
-[  
+$$
 B=4000\ Hz,\quad SNR=15  
-]
+$$
 
 Using Shannon's formula:
 
-[  
+$$
 C=4000\log_2(1+15)  
-]
+$$
 
-[  
+$$
 C=4000\log_2(16)  
-]
+$$
 
-[  
+$$ 
 C=4000\times4  
-]
+$$
 
 **Final Answer:**
 
-[  
+$$
 \boxed{C=16,000\ bps=16\ kbps}  
-]
+$$
 
 ### Important Points for Numericals
 
@@ -1240,12 +1240,9 @@ C=4000\times4
     
 5. Remember:
     
-    - (\log_2(16)=4)
-        
-    - (\log_2(8)=3)
-        
-    - (\log_2(32)=5)
-        
+    - $$(\log_2(16)=4)$$
+    - $$(\log_2(8)=3)$$
+    - $$(\log_2(32)=5)$$
 
 ## 4.8 [[Networking Hardware]]
 
@@ -1322,7 +1319,7 @@ A router is a networking device that operates at the [[Network Layer]] (Layer 3)
     
 - Uses IP addresses to forward packets.
     
-- Maintains a [[Routing Table]].
+- Maintains a [[routing table]].
     
 - Selects suitable paths for packet transmission.
     
@@ -1364,17 +1361,17 @@ A router is a networking device that operates at the [[Network Layer]] (Layer 3)
 
 # 5. [[Important Formulas – Unit I]]
 
-|Topic|Formula|
-|---|---|
-|Mesh topology links|(L=\frac{n(n-1)}{2})|
-|Transmission delay|(D_t=\frac{\text{Packet Size}}{\text{Bandwidth}})|
-|Propagation delay|(D_p=\frac{\text{Distance}}{\text{Propagation Speed}})|
-|Total delay|(D=D_t+D_p+D_{proc}+D_{queue})|
-|SNR|(SNR=\frac{P_s}{P_n})|
-|SNR in dB|(10\log_{10}(SNR))|
-|Linear SNR|(10^{SNR_{dB}/10})|
-|Shannon capacity|(C=B\log_2(1+SNR))|
-|Round-trip time|Request time + Response time|
+| Topic               | Formula                                                  |
+| ------------------- | -------------------------------------------------------- |
+| Mesh topology links | $$L=\frac{n(n-1)}{2}$$                                   |
+| Transmission delay  | $$D_t=\frac{\text{Packet Size}}{\text{Bandwidth}}$$      |
+| Propagation delay   | $$D_p=\frac{\text{Distance}}{\text{Propagation Speed}}$$ |
+| Total delay         | $$D=D_t+D_p+D_{proc}+D_{queue}$$                         |
+| SNR                 | $$SNR=\frac{P_s}{P_n}$$                                  |
+| SNR in dB           | $$10\log_{10}(SNR)$$                                     |
+| Linear SNR          | $$10^{SNR_{dB}/10}$$                                     |
+| Shannon capacity    | $$C=B\log_2(1+SNR)$$                                     |
+| Round-trip time     | Request time + Response time                             |
 
 ---
 
@@ -1563,7 +1560,7 @@ A router is a networking device that operates at the [[Network Layer]] (Layer 3)
     
 - [[OSI Reference Model]] – all seven layers.
     
-- [[TCP/IP Reference Model]] and comparison.
+- [[IP Reference Model]] and comparison.
     
 - [[Encapsulation and Decapsulation]].
     

@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "a4a7a62b5442c9cc",
+            "id": "6ebfbbc86ee00d2a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "College/Semester 5/Data Communication and Computer Network/Sessional 1.md",
+                "file": "Tags/Blocked Port.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,11 +28,59 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Sessional 1"
+              "title": "Blocked Port"
+            }
+          },
+          {
+            "id": "a4a7a62b5442c9cc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "College/Semester 5/Data Communication and Computer Network/Unit III – Network Layer.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Unit III – Network Layer"
             }
           },
           {
             "id": "c5d4baaf3de7c708",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "College/Semester 5/Data Communication and Computer Network/Sessional 2 DCCN.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Sessional 2 DCCN"
+            }
+          },
+          {
+            "id": "2cf54d3ece284c63",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -41,7 +89,8 @@
               "title": "Graph view"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -100,7 +149,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 314.9609375
+    "width": 200
   },
   "right": {
     "id": "b3f10eecc583f13d",
@@ -218,42 +267,42 @@
   },
   "active": "a4a7a62b5442c9cc",
   "lastOpenFiles": [
-    "College/Semester 5/Data Communication and Computer Network/Sessional 2.md",
-    "College/Semester 5/Data Communication and Computer Network/Sessional 1.md",
-    "College/Semester 5/Data Communication and Computer Network/Unit I – Foundations, Network Models and Physical Layer.md",
-    "Tags/Application Layer.md",
-    "Tags/UDP.md",
-    "Tags/Physical Layer.md",
-    "Tags/Ethernet.md",
-    "Tags/MAC Addressing.md",
-    "Tags/Data Link Layer.md",
-    "Tags/IP Addresses.md",
-    "Tags/Network Layer.md",
-    "Tags/TCP.md",
-    "Tags/Port Numbers.md",
-    "Tags/Transport Layer.md",
-    "Tags/Session Layer.md",
-    "Tags/SMTP.md",
-    "Tags/FTP.md",
-    "Tags/Presentation Layer.md",
-    "Tags/OSI – Open Systems Interconnection.md",
-    "Tags/Layered Architecture.md",
-    "Tags/RFC – Request for Comments.md",
-    "Tags/IEEE 802.11.md",
-    "Tags/IEEE 802.3.md",
-    "Tags/OSI Reference Model.md",
-    "Tags/Standards Organisations.md",
-    "Tags/Network Protocol.md",
+    "OSPF (Open Shortest Path First).md",
+    "College/Semester 5/Data Communication and Computer Network/Unit III – Network Layer.md",
+    "Distance Vector vs Link State Routing.md",
+    "Link State.md",
+    "Distance Vector.md",
+    "MTU.md",
+    "ICMP.md",
+    "Prefix Length.md",
+    "IP Addressing.md",
+    "Public IP.md",
+    "Private IP.md",
+    "Broadcast Address.md",
+    "Block Size.md",
+    "PAT.md",
+    "TTL.md",
+    "Network Address.md",
+    "Dijkstra's Algorithm.md",
+    "Link State Advertisements (LSAs).md",
+    "RIP (Routing Information Protocol).md",
+    "Link State Routing.md",
+    "Distance Vector Routing.md",
+    "BGP.md",
+    "OSPF.md",
+    "RIP.md",
+    "Dynamic Routing.md",
+    "Static Routing.md",
+    "RTS",
+    "CSMA",
+    "Tags/Transport Layer – TCP",
+    "Application Layer – TCP",
+    "Internet Protocol (IPv4",
     "TCP",
     "Computer Systems Engineering ",
     "Hardware ",
     "Tags/TCP",
     "PyTorch ",
-    "Recommended library",
-    "Label ",
-    "Pass ",
-    "Spam ",
-    "Async",
     "Untitled.canvas",
     "Pasted image 20260721213748.png",
     "Tags/Pasted image 20260721213738.png"

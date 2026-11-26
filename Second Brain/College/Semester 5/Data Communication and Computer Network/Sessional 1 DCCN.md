@@ -45,7 +45,7 @@ Given:
     
     $$T = \frac{1}{f} = \frac{1}{2,000\text{ Hz}} = 0.0005\text{ s} = \mathbf{0.5\text{ ms}}$$
     
-3. **Effect of Doubling Frequency:** Because [[period]] and [[frequency]] are inversely proportional ($T = \frac{1}{f}$), doubling the frequency ($f' = 4\text{ kHz}$) **halves the period** ($T' = \frac{0.5\text{ ms}}{2} = \mathbf{0.25\text{ ms}}$).
+3. **Effect of Doubling Frequency:** Because [[Period]] and [[frequency]] are inversely proportional ($T = \frac{1}{f}$), doubling the frequency ($f' = 4\text{ kHz}$) **halves the period** ($T' = \frac{0.5\text{ ms}}{2} = \mathbf{0.25\text{ ms}}$).
     
 
 #### 4. Differentiate between a Protocol and a Standard. Name two standards organizations.
@@ -93,7 +93,7 @@ $$\lambda_{\text{fibre}} = \frac{2 \times 10^8\text{ m/s}}{1 \times 10^9\text{ H
 
 - **[[Frequency]] is an invariant property of the source:** When a signal transitions from air into an [[optical fibre]], its [[frequency]] ($1\text{ GHz}$) remains completely unchanged.
     
-- **[[Wavelength]] depends on the transmission medium:** Because $\lambda = \frac{v}{f}$, [[wavelength]] is directly proportional to the [[propagation speed]] ($v$) in the medium. When the signal slows down in glass fibre, its cycles compress spatially, shortening the [[wavelength]] from $0.3\text{ m}$ to $0.2\text{ m}$.
+- **[[Wavelength]] depends on the transmission medium:** Because $\lambda = \frac{v}{f}$, [[Wavelength]] is directly proportional to the [[propagation speed]] ($v$) in the medium. When the signal slows down in glass fibre, its cycles compress spatially, shortening the [[Wavelength]] from $0.3\text{ m}$ to $0.2\text{ m}$.
     
 
 #### 6. Bit Rate vs. Signal Rate, Bandwidth vs. Throughput, and Nyquist Capacity
@@ -136,16 +136,16 @@ According to [[Fourier Analysis]], any complex [[analog signal]] (voice or music
 
 ##### (a) Why a Voice on a Phone Call is Still Recognizable
 
-- **[[Fundamental Frequency]] and Formants:** The core energy and intelligibility of human speech—including the [[fundamental frequency]] (pitch, typically $85\text{ Hz} – 255\text{ Hz}$) and the primary [[formants]] (resonant frequencies that distinguish vowels and consonants)—are concentrated below $3,400\text{ Hz}$.
+- **[[Fundamental Frequency]] and Formants:** The core energy and intelligibility of human speech—including the [[Fundamental Frequency]] (pitch, typically $85\text{ Hz} – 255\text{ Hz}$) and the primary [[formants]] (resonant frequencies that distinguish vowels and consonants)—are concentrated below $3,400\text{ Hz}$.
     
-- **[[Harmonics]] Retention:** Although frequencies below $300\text{ Hz}$ and above $3,400\text{ Hz}$ are filtered out by the [[band-pass filter]], the brain reconstructs missing fundamental pitches from the remaining lower [[harmonics]] present inside the $300\text{ Hz} – 3,400\text{ Hz}$ voiceband, preserving speaker identity and word clarity.
+- **[[Harmonics]] Retention:** Although frequencies below $300\text{ Hz}$ and above $3,400\text{ Hz}$ are filtered out by the [[band-pass filter]], the brain reconstructs missing fundamental pitches from the remaining lower [[Harmonics]] present inside the $300\text{ Hz} – 3,400\text{ Hz}$ voiceband, preserving speaker identity and word clarity.
     
 
 ##### (b) Why Music Over a Phone Call Sounds Poor
 
 - **Wide [[Frequency Spectrum]]:** Musical instruments produce rich, wide-band [[composite signals]] spanning roughly $20\text{ Hz}$ to $20,000\text{ Hz}$.
     
-- **Loss of Bass and Timbre:** Passing music through a narrow $3.1\text{ kHz}$ [[band-pass filter]] strips away all low-frequency bass fundamentals (below $300\text{ Hz}$) and all high-frequency overtones/harmonics (above $3,400\text{ Hz}$). Because upper [[harmonics]] define an instrument's unique **[[timbre]]** (tonal color), truncating them makes music sound thin, muffled, and distorted.
+- **Loss of Bass and Timbre:** Passing music through a narrow $3.1\text{ kHz}$ [[band-pass filter]] strips away all low-frequency bass fundamentals (below $300\text{ Hz}$) and all high-frequency overtones/harmonics (above $3,400\text{ Hz}$). Because upper [[Harmonics]] define an instrument's unique **[[timbre]]** (tonal color), truncating them makes music sound thin, muffled, and distorted.
     
 
 ### Section C: In-Depth Long Answer Questions (5 Marks × 2 = 10 Marks)
@@ -154,7 +154,7 @@ According to [[Fourier Analysis]], any complex [[analog signal]] (voice or music
 
 ##### Why [[Protocol Layering]] is Required
 
-Modern network communication involves dozens of complex, interdependent tasks—application formatting, reliable delivery, global routing, local addressing, and physical electrical signaling. [[Protocol layering]] divides this complexity into modular, hierarchical layers where:
+Modern network communication involves dozens of complex, interdependent tasks—application formatting, reliable delivery, global routing, local addressing, and physical electrical signaling. [[Protocol Layering]] divides this complexity into modular, hierarchical layers where:
 
   
 
@@ -189,17 +189,17 @@ SENDER (Guwahati)                                              RECEIVER (Imphal)
 └──────────────────────────────────┘                          └──────────────────────────────────┘
 ```
 
-|**Postal Stage**|**Corresponding [[TCP/IP]] / [[OSI]] Layer**|**Functional Comparison**|
+|**Postal Stage**|**Corresponding [[IP 3]] / [[OSI]] Layer**|**Functional Comparison**|
 |---|---|---|
 |**1. Writing the Letter**|**[[Application Layer]]**|The sender composes the message in a mutually understood language (e.g., English or Manipuri), just as HTTP/SMTP formats user data.|
 |**2. Envelope & Speed Post Receipt**|**[[Transport Layer]]**|Placing the letter inside an envelope with recipient/sender names and opting for Speed Post tracking mirrors adding [[port numbers]] (process delivery) and [[TCP]] sequence/acknowledgment reliability.|
 |**3. PIN Code Sorting (RMS)**|**[[Network Layer]]**|India Post routes mail bags across cities using hierarchical **6-digit PIN codes** via Railway Mail Service (RMS) hubs, directly mirroring [[routers]] forwarding packets across networks using hierarchical [[IP addresses]].|
-|**4. Mail Bags & Local Postman**|**[[Data Link Layer]]**|At each intermediate hub and final post office, letters are bundled into hop-specific mail bags and handed to a local postman who knows the physical house location—mirroring hop-by-hop [[framing]] and local [[MAC addressing]].|
+|**4. Mail Bags & Local Postman**|**[[Data Link Layer]]**|At each intermediate hub and final post office, letters are bundled into hop-specific mail bags and handed to a local postman who knows the physical house location—mirroring hop-by-hop [[Framing]] and local [[MAC addressing]].|
 |**5. Road, Rail, or Air Transport**|**[[Physical Layer]]**|Mail vans, trains, and cargo aircraft physically move the bags across geography, analogous to copper cables, [[optical fibres]], and radio waves carrying raw bits ($0$s and $1$s).|
 
 #### 9. End-to-End Trace of a Web Request Through the TCP/IP Protocol Suite
 
-When a student enters a URL (e.g., `[http://example.com](http://example.com)`) into a browser, the request travels **down** the [[TCP/IP Protocol Suite]] at the client ([[encapsulation]]) and **up** the stack at the web server ([[decapsulation]]).
+When a student enters a URL (e.g., `[http://example.com](http://example.com)`) into a browser, the request travels **down** the [[IP Protocol Suite]] at the client ([[encapsulation]]) and **up** the stack at the web server ([[decapsulation]]).
 
   
 
@@ -262,7 +262,7 @@ At the sender, each layer wraps the payload received from the layer above with i
     
     - **Protocol:** [[Ethernet (IEEE 802.3)]] or [[Wi-Fi (IEEE 802.11)]].
         
-    - **Address Used:** **Physical [[MAC Addresses]]** (Client NIC Source MAC and Local Default Gateway Router Destination MAC, obtained via [[Address Resolution Protocol (ARP)]]).
+    - **Address Used:** **Physical [[MAC addresses]]** (Client NIC Source MAC and Local Default Gateway Router Destination MAC, obtained via [[Address Resolution Protocol (ARP)]]).
         
     - **[[Protocol Data Unit (PDU)]]:** **[[Frame]]** (Data Link) $\rightarrow$ **[[Bits]]** (Physical).
         
@@ -271,7 +271,7 @@ At the sender, each layer wraps the payload received from the layer above with i
 
 ##### Step 2: Intermediate Routing & Up the Server Stack — [[Decapsulation]]
 
-- **Across Intermediate [[Routers]]:** Each router decapsulates the incoming frame up to the [[Internet Layer]], inspects the destination [[IP address]], consults its [[routing table]], and re-encapsulates the packet into a new frame with updated next-hop [[MAC addresses]].
+- **Across Intermediate [[routers]]:** Each router decapsulates the incoming frame up to the [[Internet Layer]], inspects the destination [[IP address]], consults its [[routing table]], and re-encapsulates the packet into a new frame with updated next-hop [[MAC addresses]].
     
 - **At the Web Server (Decapsulation):**
     
@@ -288,7 +288,7 @@ At the sender, each layer wraps the payload received from the layer above with i
 
 - [[OSI Reference Model]]
     
-- [[TCP/IP Protocol Suite]]
+- [[IP Protocol Suite]]
     
 - [[Encapsulation and Decapsulation]]
     
