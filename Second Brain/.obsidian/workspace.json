@@ -13,6 +13,54 @@
             "state": {
               "type": "markdown",
               "state": {
+                "file": "College/Semester 5/High Performance Computing/Unit-2 Parallel Programming Models.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Unit-2 Parallel Programming Models"
+            }
+          },
+          {
+            "id": "c7434e811ac7abfb",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "College/Semester 5/High Performance Computing/Sessional-1 HPC.md",
+                "mode": "source",
+                "source": false,
+                "backlinks": true,
+                "backlinkOpts": {
+                  "collapseAll": false,
+                  "extraContext": false,
+                  "sortOrder": "alphabetical",
+                  "showSearch": false,
+                  "searchQuery": "",
+                  "backlinkCollapsed": false,
+                  "unlinkedCollapsed": true
+                }
+              },
+              "icon": "lucide-file",
+              "title": "Sessional-1 HPC"
+            }
+          },
+          {
+            "id": "f3210f6c4ec1087a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
                 "file": "College/Semester 5/High Performance Computing/Sessional-2 HPC.md",
                 "mode": "source",
                 "source": false,
@@ -29,16 +77,6 @@
               },
               "icon": "lucide-file",
               "title": "Sessional-2 HPC"
-            }
-          },
-          {
-            "id": "996534512a68dd38",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
             }
           }
         ]
@@ -218,32 +256,32 @@
   },
   "active": "b7ca142dd0f82327",
   "lastOpenFiles": [
-    "CPUs.md",
+    "College/Semester 5/High Performance Computing/Unit-1 Fundamentals of HPC and Parallel Architectures.md",
     "College/Semester 5/High Performance Computing/Sessional-2 HPC.md",
-    "HBM.md",
-    "Memory Bandwidth.md",
-    "CPU.md",
-    "Warps.md",
-    "Threads.md",
-    "Grid.md",
-    "SIMT.md",
-    "CUDA Kernels.md",
-    "Thread Blocks.md",
-    "Thread Hierarchy.md",
-    "Host-Device Model.md",
-    "NVIDIA CUDA.md",
-    "GPGPU.md",
-    "OpenACC.md",
-    "LU Decomposition.md",
-    "Compute Cluster.md",
-    "False Sharing.md",
-    "Capacity Misses.md",
-    "Memory Wall.md",
-    "Parallel Execution Time.md",
-    "Serial Execution Time.md",
     "College/Semester 5/High Performance Computing/Sessional-1 HPC.md",
-    "Communication Optimization.md",
-    "Lock-Free Data Structures.md",
+    "College/Semester 5/High Performance Computing/Unit-5.md",
+    "Machine Learning (ML).md",
+    "Artificial Intelligence (AI).md",
+    "College/Semester 5/High Performance Computing/Unit-4 Accelerators, Clusters and Cloud HPC.md",
+    "Containerization.md",
+    "Google Cloud Batch.md",
+    "Google Cloud Storage.md",
+    "Google Kubernetes Engine (GKE).md",
+    "Google Compute Engine.md",
+    "Google Cloud Platform (GCP).md",
+    "Azure CycleCloud.md",
+    "Azure Storage.md",
+    "Azure Virtual Machines.md",
+    "Microsoft Azure.md",
+    "Elastic Fabric Adapter.md",
+    "AWS ParallelCluster.md",
+    "Amazon FSx for Lustre.md",
+    "Amazon EC2.md",
+    "Amazon Web Services (AWS).md",
+    "Cloud HPC.md",
+    "LSF.md",
+    "HTCondor.md",
+    "PBS Professional.md",
     "Parallel I",
     "Input",
     "Tags/RTS",

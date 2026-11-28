@@ -990,13 +990,13 @@ $$
 
 $$  
 \text{Miss Ratio} = 1 - \text{Hit Ratio}  
-$$$$
+$$
 
 **Example:**
 
 If a processor performs 100 memory accesses and 90 are cache hits:
 
-$$$$  
+$$  
 \text{Hit Ratio} = \frac{90}{100} = 0.9 = 90%  
 $$
 
@@ -1810,21 +1810,21 @@ Where:
 
 ## 11.3 Cache Hit Ratio
 
-$$$$  
+$$  
 \text{Hit Ratio} = \frac{\text{Cache Hits}}{\text{Total Memory Accesses}}  
-$$$$
+$$
 
 ## 11.4 Cache Miss Ratio
 
-$$$$  
+$$  
 \text{Miss Ratio} = 1 - \text{Hit Ratio}  
-$$$$
+$$
 
 ## 11.5 Average Memory Access Time
 
-$$$$  
+$$  
 AMAT = T_{hit} + (M_r \times P_m)  
-$$$$
+$$
 
 Where:
 
