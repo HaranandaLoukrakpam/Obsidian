@@ -124,7 +124,7 @@ H.W:- Software Engineering is both a Science and an art. It applies rigorous eng
                                                                     Time
 ```
 
-### [[Hardware / Software Cost Ratio]]
+### [[ Software Cost Ratio]]
 
 ```text
     Hardware / Software Cost
@@ -206,7 +206,7 @@ Que: Types of Software Projects.
 
 ➤ [[Project Management]]:-
 
-### [[Computer Systems Engineering / Project Management Process]]
+### [[ Project Management Process]]
 
 ```text
   +-------------+

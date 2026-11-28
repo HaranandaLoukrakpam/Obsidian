@@ -1029,16 +1029,16 @@ It determines which device can transmit data at a particular time.
 
 Examples:
 
-- [[CSMA/CD]].
+- [[CD]].
     
-- [[CSMA/CA]].
+- [[CA]].
     
 - [[Token Passing]].
     
 
-### 5.2 [[CSMA/CD (Carrier Sense Multiple Access with Collision Detection)]]
+### 5.2 [[CD (Carrier Sense Multiple Access with Collision Detection)]]
 
-[[CSMA/CD]] is a channel access method traditionally used in shared, half-duplex Ethernet networks.
+[[CD]] is a channel access method traditionally used in shared, half-duplex Ethernet networks.
 
 It allows devices to detect collisions while transmitting.
 
@@ -1135,7 +1135,7 @@ $$
 
 ### 5.3 [[CSMA/CA (Carrier Sense Multiple Access with Collision Avoidance)]]
 
-[[CSMA/CA]] is used in wireless LANs, particularly [[Wi-Fi]].
+[[CA]] is used in wireless LANs, particularly [[Wi-Fi]].
 
 Unlike CSMA/CD, wireless devices generally cannot reliably detect collisions while transmitting. Therefore, CSMA/CA attempts to avoid collisions before transmission.
 
@@ -1216,9 +1216,9 @@ The [[Hidden Terminal Problem]] occurs when two wireless devices cannot hear eac
 - Their transmissions collide at the access point.
     
 
-**Solution:** [[RTS/CTS]] helps reserve the channel and reduce hidden-terminal collisions.
+**Solution:** [[CTS]] helps reserve the channel and reduce hidden-terminal collisions.
 
-### 5.4 [[CSMA/CD]] vs [[CSMA/CA]]
+### 5.4 [[CD]] vs [[CA]]
 
 |CSMA/CD|CSMA/CA|
 |---|---|
@@ -1421,7 +1421,7 @@ STP is based on [[IEEE 802.1D]].
 |Operates at Data Link Layer|Traditionally operates at Data Link Layer|
 |Often software-based forwarding|Commonly uses hardware-based forwarding|
 
-### 8.4 [[CSMA/CD]] vs [[CSMA/CA]]
+### 8.4 [[CD]] vs [[CA]]
 
 |CSMA/CD|CSMA/CA|
 |---|---|
@@ -1450,9 +1450,9 @@ STP is based on [[IEEE 802.1D]].
     
 7. Compare [[Go-Back-N ARQ]] and [[Selective Repeat ARQ]].
     
-8. Explain [[CSMA/CD]] and [[Binary Exponential Backoff]].
+8. Explain [[CD]] and [[Binary Exponential Backoff]].
     
-9. Explain [[CSMA/CA]] with [[DIFS]], [[RTS/CTS]] and the [[Hidden Terminal Problem]].
+9. Explain [[CA]] with [[DIFS]], [[CTS]] and the [[Hidden Terminal Problem]].
     
 10. Explain the working of a [[Learning Bridge]].
     
@@ -1532,13 +1532,13 @@ STP is based on [[IEEE 802.1D]].
     
 - [[Sliding Window]] and [[Channel Utilisation]]
     
-- [[CSMA/CD]]
+- [[CD]]
     
-- [[CSMA/CA]]
+- [[CA]]
     
 - [[Binary Exponential Backoff]]
     
-- [[RTS/CTS]] and [[Hidden Terminal Problem]]
+- [[CTS]] and [[Hidden Terminal Problem]]
     
 - [[Learning Bridge]]
     
@@ -1555,9 +1555,9 @@ STP is based on [[IEEE 802.1D]].
     
 3. **Study flow control:** Understand [[Stop-and-Wait ARQ]], [[Go-Back-N ARQ]] and [[Selective Repeat ARQ]] with diagrams.
     
-4. **Study MAC protocols:** Focus on [[CSMA/CD]], [[CSMA/CA]] and [[Backoff]] calculations.
+4. **Study MAC protocols:** Focus on [[CD]], [[CA]] and [[Backoff]] calculations.
     
 5. **Finish with LAN switching:** [[Bridges]], [[MAC Address Tables]], [[Flooding]] and [[STP]].
     
 
-**Exam priority:** Give particular attention to [[CRC]] division, [[Hamming Code]] numericals, [[ARQ]] comparisons, [[Channel Utilisation]], [[Binary Exponential Backoff]] and [[CSMA/CA]]. These topics combine theory with problem-solving and are useful to prepare thoroughly.
+**Exam priority:** Give particular attention to [[CRC]] division, [[Hamming Code]] numericals, [[ARQ]] comparisons, [[Channel Utilisation]], [[Binary Exponential Backoff]] and [[CA]]. These topics combine theory with problem-solving and are useful to prepare thoroughly.

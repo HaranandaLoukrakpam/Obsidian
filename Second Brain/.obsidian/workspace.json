@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "6ebfbbc86ee00d2a",
+            "id": "b7ca142dd0f82327",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Tags/Blocked Port.md",
+                "file": "College/Semester 5/High Performance Computing/Sessional-2 HPC.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": true,
@@ -28,59 +28,11 @@
                 }
               },
               "icon": "lucide-file",
-              "title": "Blocked Port"
+              "title": "Sessional-2 HPC"
             }
           },
           {
-            "id": "a4a7a62b5442c9cc",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "College/Semester 5/Data Communication and Computer Network/Unit III – Network Layer.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Unit III – Network Layer"
-            }
-          },
-          {
-            "id": "c5d4baaf3de7c708",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "College/Semester 5/Data Communication and Computer Network/Sessional 2 DCCN.md",
-                "mode": "source",
-                "source": false,
-                "backlinks": true,
-                "backlinkOpts": {
-                  "collapseAll": false,
-                  "extraContext": false,
-                  "sortOrder": "alphabetical",
-                  "showSearch": false,
-                  "searchQuery": "",
-                  "backlinkCollapsed": false,
-                  "unlinkedCollapsed": true
-                }
-              },
-              "icon": "lucide-file",
-              "title": "Sessional 2 DCCN"
-            }
-          },
-          {
-            "id": "2cf54d3ece284c63",
+            "id": "996534512a68dd38",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -89,8 +41,7 @@
               "title": "Graph view"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -265,44 +216,44 @@
       "bases:Create new base": false
     }
   },
-  "active": "a4a7a62b5442c9cc",
+  "active": "b7ca142dd0f82327",
   "lastOpenFiles": [
-    "OSPF (Open Shortest Path First).md",
-    "College/Semester 5/Data Communication and Computer Network/Unit III – Network Layer.md",
-    "Distance Vector vs Link State Routing.md",
-    "Link State.md",
-    "Distance Vector.md",
-    "MTU.md",
-    "ICMP.md",
-    "Prefix Length.md",
-    "IP Addressing.md",
-    "Public IP.md",
-    "Private IP.md",
-    "Broadcast Address.md",
-    "Block Size.md",
-    "PAT.md",
-    "TTL.md",
-    "Network Address.md",
-    "Dijkstra's Algorithm.md",
-    "Link State Advertisements (LSAs).md",
-    "RIP (Routing Information Protocol).md",
-    "Link State Routing.md",
-    "Distance Vector Routing.md",
-    "BGP.md",
-    "OSPF.md",
-    "RIP.md",
-    "Dynamic Routing.md",
-    "Static Routing.md",
-    "RTS",
-    "CSMA",
+    "CPUs.md",
+    "College/Semester 5/High Performance Computing/Sessional-2 HPC.md",
+    "HBM.md",
+    "Memory Bandwidth.md",
+    "CPU.md",
+    "Warps.md",
+    "Threads.md",
+    "Grid.md",
+    "SIMT.md",
+    "CUDA Kernels.md",
+    "Thread Blocks.md",
+    "Thread Hierarchy.md",
+    "Host-Device Model.md",
+    "NVIDIA CUDA.md",
+    "GPGPU.md",
+    "OpenACC.md",
+    "LU Decomposition.md",
+    "Compute Cluster.md",
+    "False Sharing.md",
+    "Capacity Misses.md",
+    "Memory Wall.md",
+    "Parallel Execution Time.md",
+    "Serial Execution Time.md",
+    "College/Semester 5/High Performance Computing/Sessional-1 HPC.md",
+    "Communication Optimization.md",
+    "Lock-Free Data Structures.md",
+    "Parallel I",
+    "Input",
+    "Tags/RTS",
+    "Tags/CSMA",
     "Tags/Transport Layer – TCP",
     "Application Layer – TCP",
-    "Internet Protocol (IPv4",
+    "Tags/Internet Protocol (IPv4",
     "TCP",
-    "Computer Systems Engineering ",
-    "Hardware ",
-    "Tags/TCP",
-    "PyTorch ",
+    "Tags/Computer Systems Engineering ",
+    "Tags/Hardware ",
     "Untitled.canvas",
     "Pasted image 20260721213748.png",
     "Tags/Pasted image 20260721213738.png"

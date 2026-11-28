@@ -250,7 +250,7 @@ At the sender, each layer wraps the payload received from the layer above with i
         
 3. **[[Internet Layer]] (Network Layer):**
     
-    - **Protocol:** [[Internet Protocol (IPv4/IPv6)]].
+    - **Protocol:** [[IPv6)]].
         
     - **Address Used:** **Logical [[IP Addresses]]** (Client Source IP and Web Server Destination IP).
         
